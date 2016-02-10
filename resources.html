@@ -18,6 +18,20 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
         <nav id="nav">
+            <div class="nav-wrapper blue darken-4">
+
+                <a href='/' class="left-padding breadcrumb left"><strong>CS
+                        DOJO</strong></a>
+                <a href='#!' class='breadcrumb white-text'>Resources</a>
+
+                <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+                    <li><a href="./about">About</a></li>
+                    <li class='active'><a href="./resources.html">Resources</a></li>
+                    <li><a href="./dev">Projects</a></li>
+                    <li><a href="./blog">Dojo Blog</a></li>
+                    <li><a href="./irc">Chat</a></li>
+                </ul>
+            </div>
         </nav>
         <div class="container">
             <h4>Resources</h4>
@@ -36,18 +50,25 @@
                 <div class="col s4">
                     <h5>Guides and Tutorials</h5>
                     <ul>
+                        <li><a href='./tutorials/install_ubuntu.html'>Installing
+                            Ubuntu</a></li>
+                        <li><a href='#'>dual boot instructions</a></li>
+                        <li><a href='#'>vim guide</a></li>
+                        <li><a href='#'>emacs guide</a></li>
+                        <li><a href='#'>github guide</a></li>
+                    </ul>
+                </div>
+
+                <div class="col s4">
+                    <h5>Useful Links and Tools</h5>
+                    <ul>
                         <li><a href="http://www.w3schools.com/">W3schools</a></li>
                         <li><a href="http://www.emacswiki.org/">Emacs wiki</a></li>
                         <li><a
                                 href="http://vim.wikia.com/wiki/Vim_Tips_Wiki">Vim
                             tips wiki</a></li>
                         <li>
-                    </ul>
-                </div>
 
-                <div class="col s4">
-                    <h5>Useful Tools</h5>
-                    <ul>
                         <li><a href="https://jsfiddle.net">JS fiddle</a></li>
                         <li><a href="http://cdecl.org/">C-English
                                 Translator</a></li>
@@ -55,9 +76,5 @@
                 </div>
             </div>
         </div>
-        <script>
-        $("#nav").load("./nav.html");
-        </script>
-
     </body>
 </html>
