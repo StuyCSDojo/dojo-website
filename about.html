@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+        <link rel="stylesheet" href="./style/main.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>CS Dojo - Home</title>
+    </head>
+
+    <body class="gray-lighten-4">
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+        <nav id="nav">
+            <div class="nav-wrapper blue darken-4">
+                <a href='/' class="left-padding left brand-logo">CS DOJO</a>
+                <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+                    <li><a href="./about">About</a></li>
+                    <li><a href="./resources.html">Resources</a></li>
+                    <li><a href="./dev">Projects</a></li>
+                    <li><a href="./blog">Dojo Blog</a></li>
+                    <li><a href="./irc">Chat</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h4>About</h4>
+            <div class='divider'></div>
+            <p>CS Dojo is a space for anyone struggling in a computer science
+            class to find the help they need. Anyone may come simply to have a
+            place to do their work, to ask specific questions about concepts
+            from class that they do not understand, to have some guidance in
+            completing homework assignments, or to receive help studying for a
+            test.</p>
+
+            <h4>Our Sensais</h4>
+            <div class='divider'></div>
+            <div class='row'>
+            <div class='col s4 ad-col'>
+                <img class='center circle responsive-img' width='150px' src='./image/blin.jpg'>
+            </div>
+            <div class='col s4 ad-col'>
+                <img class='center circle responsive-img' width='150px' src='./image/rjoyce.jpg'>
+            </div>
+            <div class='col s4 ad-col'>
+                <img class='center circle responsive-img' width='150px' src='./image/szheng.jpg'>
+            </div>
+            </div>
+
+        </div>
+
+        <script>
+        $("#nav").load("./nav.html");
+        </script>
+
+    </body>
+</html>
