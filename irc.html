@@ -10,6 +10,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <title>CS Dojo - IRC Chat</title>
+        <link rel='shortcut icon' href='image/dough-joe.jpg'>
+
     </head>
 
     <body class="gray-lighten-4">
@@ -18,6 +20,19 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
         <nav id="nav">
+            <div class="nav-wrapper blue darken-4">
+                <a href='/' class="left-padding breadcrumb left"><strong>CS
+                        DOJO</strong></a>
+                <a href='#!' class='breadcrumb white-text'>IRC</a>
+
+                <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+                    <li><a href="./about">About</a></li>
+                    <li><a href="./resources.html">Resources</a></li>
+                    <li><a href="./dev">Projects</a></li>
+                    <li><a href="./blog">Dojo Blog</a></li>
+                    <li class='active'><a href="./irc">Chat</a></li>
+                </ul>
+            </div>
         </nav>
 
         <div class="container">
@@ -30,10 +45,5 @@
 
             <iframe src="https://kiwiirc.com/client/irc.freenode.com/#csdojo" style="border:0; width:100%; height:450px;"></iframe>
         </div>
-
-        <script>
-        $("#nav").load("./nav.html");
-        </script>
-
     </body>
 </html>
