@@ -1,0 +1,69 @@
+{% extends "master.html" %}
+
+{% block title %}Resources{% endblock %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+<div class="nav-wrapper blue darken-4">
+
+    <a href='/' class="left-padding breadcrumb left"><strong>CS
+            DOJO</strong></a>
+    <a href='#!' class='breadcrumb white-text'>Resources</a>
+
+    <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+        <li><a href='/'>Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li class='active'><a href="/resources">Resources</a></li>
+        <li><a href="/dev">Projects</a></li>
+        <li><a href="/blog">Dojo Blog</a></li>
+        <li><a href="/irc">Chat</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block container %}
+<h4>Resources</h4>
+<div class="row">
+    <div class="col s4">
+        <h5>Documentations</h5>
+        <ul>
+            <li><a href="https://docs.racket-lang.org">Racket</a></li>
+            <li><a href="https://ccl.northwestern.edu/netlogo/docs">NetLogo</a></li>
+            <li><a href="https://docs.python.org/2/library/index.html">Python 2.7</a></li>
+            <li><a href="https://docs.oracle.com/javase/7/docs/api">Java 7</a></li>
+            <li><a href="https://processing.org/reference">Processing</a></li>
+        </ul>
+    </div>
+
+    <div class="col s4">
+        <h5>Guides and Tutorials</h5>
+        <ul>
+            <li><a href='./tutorials/install_ubuntu.html'>Installing
+                    Ubuntu</a></li>
+            <li><a href='#'>dual boot instructions</a></li>
+            <li><a href='#'>vim guide</a></li>
+            <li><a href='#'>emacs guide</a></li>
+            <li><a href='#'>github guide</a></li>
+        </ul>
+    </div>
+
+    <div class="col s4">
+        <h5>Useful Links and Tools</h5>
+        <ul>
+            <li><a href="http://www.w3schools.com/">W3schools</a></li>
+            <li><a href="http://www.emacswiki.org/">Emacs wiki</a></li>
+            <li><a
+                   href="http://vim.wikia.com/wiki/Vim_Tips_Wiki">Vim
+                   tips wiki</a></li>
+            <li>
+
+                <li><a href="https://jsfiddle.net">JS fiddle</a></li>
+                <li><a href="http://cdecl.org/">C-English
+                        Translator</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
