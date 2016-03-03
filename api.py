@@ -66,4 +66,9 @@ def irc():
 def tutorial(tut):
     return render_template("./tutorials/" + tut)
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    try:
+        app.secret_key = argv[argv.index('--key') + 1]
+    except ValueError:
+        app.secret_key = "afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF"
+
+    app.run(host="0.0.0.0", port=8000, debug=("--debug" in argv))
