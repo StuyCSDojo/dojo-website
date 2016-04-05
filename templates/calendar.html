@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+<div class="nav-wrapper blue darken-4">
+    <a href='/' class="left-padding breadcrumb left"><strong>CS
+            DOJO</strong></a>
+    <a href='#!' class='breadcrumb white-text'>Senpai Calendar</a>
+    <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+        <li><a href='/'>Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li class='active'><a href='/calendar'>Calendar</a></li>
+        <li><a href="/blog">Dojo Blog</a></li>
+        <li><a href="/irc">Chat</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block container %}
+<h2>Senpai Calendar</h2>
+<div class='divider'></div>
+<p>Find below which senpai will be at Dojo on a particular day. If you are a
+senpai who wishes to add to the calendar, please click on the addition symbol at
+the bottom right corner of the calendar.</p>
+<center>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=3463hcvmbniib4op33lkpupoec%40group.calendar.google.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</center>
+{% endblock %}

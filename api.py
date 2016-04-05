@@ -5,7 +5,7 @@
 #  YEECH <alex-wyc>                                                            #
 #                                                                              #
 # Description                                                                  #
-#  lawls                                                                     #
+#  lawls                                                                       #
 #                                                                              #
 ################################################################################
 
@@ -62,9 +62,18 @@ def resources():
 def irc():
     return render_template("irc.html")
 
+@app.route('/calendar')
+def calendar():
+    return render_template('calendar.html')
+
 @app.route("/tutorials/<tut>")
 def tutorial(tut):
-    return render_template("./tutorials/" + tut)
+    return render_template("tutorials/" + tut)
+
+@app.route('/blog/blogpost')
+def blog(blogpost):
+    return render_template('blog/' + blogpost)
+
 if __name__ == "__main__":
     try:
         app.secret_key = argv[argv.index('--key') + 1]
