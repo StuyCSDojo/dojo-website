@@ -1,0 +1,142 @@
+{% extends "master.html" %}
+
+{% block title %}Tutorial: Installing Ubuntu{% endblock %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+<div class="nav-wrapper blue darken-4">
+
+    <a href='/' class="left-padding breadcrumb left"><strong>CS
+            DOJO</strong></a>
+    <a href='/resources' class='breadcrumb'>Resources</a>
+
+    <a href='#!' class='breadcrumb white-text'>Tutorial: How to Use Terminal</a>
+
+
+    <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+        <li><a href='/'>Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li class='active'><a href="/resources">Resources</a></li>
+        <li><a href='/calendar'>Calendar</a></li>
+        <li><a href="/blog">Dojo Blog</a></li>
+        <li><a href="/irc">Chat</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block container %}
+<h4>Introduction to Vim</h4>
+<p class='condensed light a_info'>Written by Brandon Lin on 2016-04-06</p>
+<h5>What is Terminal?</h5>
+<p>Terminal is the main navigation system within systems such as OS X and distributions of Linux. 
+For Windows users, you may know Terminal as a pseudo-Command Prompt. However, the two 
+systems are very different, with Terminal having a lot more capabilities. If you are a 
+Linux user, Terminal will be the main application for you to get around your machine.</p>
+
+<h5>Running Terminal</h5>
+Running Terminal can be done in the following fashion <code>Ctrl</code> + <code>Alt</code> + <code>t</code>:
+
+
+<h5>Using Vim</h5>
+<p>The hallmark of Vim and what distinguishes it from other text editors is its
+<b>modal</b> nature. Vim operates in several modes, each with its own key
+bindings and functions, here's a brief rundown of the three most basic ones:</p>
+<ul>
+    <li><b>Normal Mode</b>: The default mode that Vim is in. This is the mode
+        that Vim starts in. It is also where you put in a lot of the commands
+        for Vim. Commands are entered either by a key binding or by typing
+        <code>:</code> in normal mode. One can enter this mode by pressing <code>&lt;Esc&gt;</code> in
+    any of the other modes.</li>
+    <li><b>Insert Mode</b>: Triggered by typing <code>i</code> in normal mode, this what
+    you use to insert characters into the buffer. This is also why people are so
+    confused when they smash keys and they don't appear on the screen in Vim --
+    they need to be in insert mode!</li>
+    <li><b>Visual Mode</b>: Triggered by typing <code>v</code> in normal mode,
+        this is what you use to select text within the buffer.</li>
+</ul>
+<p>This system may seem convoluted and overtly complicated at first, but it
+actually opens up so many quick key bindings by quickly switching between normal
+and insert mode. It will make sense after a while, trust me.</p>
+<p>But to beginners this may be very confusing, and this is perhaps best
+illustrated by the simple act of exiting Vim. This is a frustration to many and
+a running joke in the community, as demonstrated by the following tweet:</p>
+<center>
+    <img width='400px' src='../static/vim_meme.png'></img>
+</center>
+<p>This is how you quit Vim: <code>:q!</code></p> in normal mode. The
+<code>q</code> stands for "quit" and <code>!</code> stands for ignore warnings
+and errors.</p>
+
+<p>Apart from <code>q</code>, here are a few more commands to start (optional
+parameters are surrounded by parenthesis, necessary parameters are surrounded by
+brackets):</p>
+<ul>
+    <li><b>Movement (Applicable in Both Normal and Visual Modes)</b></li>
+    <li>
+        <ul>
+            <li><code>h</code> Left</li>
+            <li><code>j</code> Down</li>
+            <li><code>k</code> Up</li>
+            <li><code>l</code> Right</li>
+            <li><code>$</code> Go to end of line</li>
+            <li><code>^</code> Go to beginning of line</li>
+            <li><code>x</code> Cut character under cursor</li>
+            <li><code>s</code> Cut current character AND enter insert mode</li>
+        </ul>
+    </li>
+    <li><b>Visual Mode Key Bindings and Commands</b>:</li>
+    <li>
+        <ul>
+            <li><code>y</code> Yanks (copies) selected text</li>
+        </ul>
+    </li>
+    <li><b>Normal Mode Key Bindings and Commands</b>:</li>
+    <li>
+        <ul>
+            <li><code>p</code> Paste after the cursor</li>
+            <li><code>P</code> Paste before the cursor</li>
+            <li><code>i</code> Enter insert mode</li>
+            <li><code>v</code> Enter visual mode</li>
+            <li><code>o</code> Create newline and enter insert mode</li>
+            <li><code>O</code> Create newline before current line and enter
+                insert mode</li>
+            <li><code>A</code> Go to end of current line and enter insert mode</li>
+            <li><code>I</code> Go to beginning of current line and enter insert
+            mode</li>
+            <li><code>:w (filename)</code> Write/save</li>
+            <li><code>:sp (filename)</code> Split screen horizontally, if a filename is
+                provided, also opens said file</li>
+            <li><code>:vsp (filename)</code> Split screen vertically</li>
+            <li><code>&lt;Ctrl&gt;w [direction]</code> Switch to buffer in
+                [direction] of the current one</li>
+            <li><code>![shell command]</code> Execute shell command</li>
+            <li><code>/[string]</code> Search for the given string</li>
+        </ul>
+    </li>
+</ul>
+
+<h5>Configuring/Personalizing Vim</h5>
+
+<p>Sample vimrc:</p>
+<codeblock>set number
+set ruler
+call pathogen#infect('~/.vim/bundle/{}')
+filetype plugin indent on
+syntax enable
+syntax on
+set backspace=indent,eol,start
+set ai
+set si
+set wrap
+set confirm
+set mouse=a
+set lbr
+set shiftwidth=4
+set tabstop=4
+</codeblock>
+
+<h5>Useful Plugins</h5>
+{% endblock %}
