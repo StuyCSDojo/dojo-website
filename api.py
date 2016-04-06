@@ -5,7 +5,7 @@
 #  YEECH <alex-wyc>                                                            #
 #                                                                              #
 # Description                                                                  #
-#  lawls                                                                       #
+#  lawls                                                                     #
 #                                                                              #
 ################################################################################
 
@@ -19,6 +19,7 @@ from flask import Flask, request, render_template, session, redirect, url_for
 from functools import wraps
 from hashlib import sha256
 from sys import argv
+from werkzeug.contrib.fixers import ProxyFix
 
 app = Flask(__name__)
 
@@ -62,22 +63,16 @@ def resources():
 def irc():
     return render_template("irc.html")
 
-@app.route('/calendar')
-def calendar():
-    return render_template('calendar.html')
-
 @app.route("/tutorials/<tut>")
 def tutorial(tut):
-    return render_template("tutorials/" + tut)
+    return render_template("./tutorials/" + tut)
 
-@app.route('/blog/blogpost')
-def blog(blogpost):
-    return render_template('blog/' + blogpost)
+app.wsgi_app = ProxyFix(app.wsgi_app)
+
+try:
+    app.secret_key = argv[argv.index('--key') + 1]
+except ValueError:
+    app.secret_key = "afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF"
 
 if __name__ == "__main__":
-    try:
-        app.secret_key = argv[argv.index('--key') + 1]
-    except ValueError:
-        app.secret_key = "afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF"
-
-    app.run(host="0.0.0.0", port=8000, debug=("--debug" in argv))
+    app.run()
