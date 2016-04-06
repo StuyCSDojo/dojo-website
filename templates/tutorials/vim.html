@@ -1,0 +1,97 @@
+{% extends "master.html" %}
+
+{% block title %}Tutorial: Installing Ubuntu{% endblock %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+<div class="nav-wrapper blue darken-4">
+
+    <a href='/' class="left-padding breadcrumb left"><strong>CS
+            DOJO</strong></a>
+    <a href='/resources' class='breadcrumb'>Resources</a>
+
+    <a href='#!' class='breadcrumb white-text'>Tutorial: Introduction to Vim</a>
+
+
+    <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+        <li><a href='/'>Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li class='active'><a href="/resources">Resources</a></li>
+        <li><a href='/calendar'>Calendar</a></li>
+        <li><a href="/blog">Dojo Blog</a></li>
+        <li><a href="/irc">Chat</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block container %}
+<h4>Introduction to Vim</h4>
+<p class='condensed light a_info'>Written by Yicheng Wang on 2016-04-05</p>
+<h5>What is Vim</h5>
+<p>Vim stands for "vi-improved", which in turn stands for "visual
+instrument." It is one of the most widely used text editors on the planet. It is
+a terminal based programmable editor, backed by its very own (and much hated) macro
+language <i>vimscript</i>, but supports interpreters of a wide array of
+scripting languages such as bash, python, ruby, perl, and lua.</p>
+<p>It is worth noting that Vim (or at least Vi) comes pre-installed in almost
+every Linux distribution, and it is worthwhile for everyone to at least know the
+basics of Vim because it's going to come in handy sometimes down the line.</p>
+
+<h5>Installing Vim</h5>
+<p>I'LL DO THIS LATER</p>
+
+<h5>Using Vim</h5>
+<p>The hallmark of Vim and what distinguishes it from other text editors is its
+<b>modal</b> nature. Vim operates in several modes, each with its own key
+bindings and functions, here's a brief rundown of the three most basic ones:</p>
+<ul>
+    <li><b>Normal Mode</b>: The default mode that Vim is in. This is the mode
+        that Vim starts in. It is also where you put in a lot of the commands
+        for Vim. Commands are entered either by a key binding or by typing
+        <code>:</code> in normal mode. One can enter this mode by pressing <code>&lt;Esc&gt;</code> in
+    any of the other modes.</li>
+    <li><b>Insert Mode</b>: Triggered by typing <code>i</code> in normal mode, this what
+    you use to insert characters into the buffer. This is also why people are so
+    confused when they smash keys and they don't appear on the screen in Vim --
+    they need to be in insert mode!</li>
+    <li><b>Visual Mode</b>: Triggered by typing <code>v</code> in normal mode,
+        this is what you use to select text within the buffer.</li>
+</ul>
+<p>This system may seem convoluted and overtly complicated at first, but it
+actually opens up so many quick key bindings by quickly switching between normal
+and insert mode. It will make sense after a while, trust me.</p>
+<p>But to beginners this may be very confusing, and this is perhaps best
+illustrated by the simple act of exiting Vim. This is a frustration to many and
+a running joke in the community, as demonstrated by the following tweet:</p>
+<center>
+    <img width='400px' src='../static/vim_meme.png'></img>
+</center>
+<p>This is how you quit Vim: <code>:q!</code></p> in normal mode. The
+<code>q</code> stands for "quit" and <code>!</code> stands for ignore warnings
+and errors.</p>
+
+<h5>Configuring/Personalizing Vim</h5>
+
+<p>Sample vimrc:</p>
+<codeblock>set number
+set ruler
+call pathogen#infect('~/.vim/bundle/{}')
+filetype plugin indent on
+syntax enable
+syntax on
+set backspace=indent,eol,start
+set ai
+set si
+set wrap
+set confirm
+set mouse=a
+set lbr
+set shiftwidth=4
+set tabstop=4
+</codeblock>
+
+<h5>Useful Plugins</h5>
+{% endblock %}
