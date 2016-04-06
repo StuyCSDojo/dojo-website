@@ -32,7 +32,7 @@
 <p class='condensed light a_info'>Written by Yicheng Wang on 2016-04-05</p>
 <h5>What is Vim</h5>
 <p>Vim stands for "vi-improved", which in turn stands for "visual
-instrument." It is one of the most widely used text editors on the planet. It is
+instrument-improved." It is one of the most widely used text editors on the planet. It is
 a terminal based programmable editor, backed by its very own (and much hated) macro
 language <i>vimscript</i>, but supports interpreters of a wide array of
 scripting languages such as bash, python, ruby, perl, and lua.</p>
@@ -41,7 +41,11 @@ every Linux distribution, and it is worthwhile for everyone to at least know the
 basics of Vim because it's going to come in handy sometimes down the line.</p>
 
 <h5>Installing Vim</h5>
-<p>I'LL DO THIS LATER</p>
+<p>Vi should come pre-installed in almost all linux distributions. to install
+vim in ubuntu, one needs to run:</p>
+<codeblock>$ sudo apt-get install vim</codeblock>
+<p>For other operating systems, one can get instructions form the vim website <a
+    href="http://www.vim.org/download.php">here</a></p>
 
 <h5>Using Vim</h5>
 <p>The hallmark of Vim and what distinguishes it from other text editors is its
@@ -77,14 +81,46 @@ and errors.</p>
 parameters are surrounded by parenthesis, necessary parameters are surrounded by
 brackets):</p>
 <ul>
-    <li><b>Normal Mode</b>:</li>
+    <li><b>Movement (Applicable in Both Normal and Visual Modes)</b></li>
     <li>
         <ul>
+            <li><code>h</code> Left</li>
+            <li><code>j</code> Down</li>
+            <li><code>k</code> Up</li>
+            <li><code>l</code> Right</li>
+            <li><code>$</code> Go to end of line</li>
+            <li><code>^</code> Go to beginning of line</li>
+            <li><code>x</code> Cut character under cursor</li>
+            <li><code>s</code> Cut current character AND enter insert mode</li>
+        </ul>
+    </li>
+    <li><b>Visual Mode Key Bindings and Commands</b>:</li>
+    <li>
+        <ul>
+            <li><code>y</code> Yanks (copies) selected text</li>
+        </ul>
+    </li>
+    <li><b>Normal Mode Key Bindings and Commands</b>:</li>
+    <li>
+        <ul>
+            <li><code>p</code> Paste after the cursor</li>
+            <li><code>P</code> Paste before the cursor</li>
+            <li><code>i</code> Enter insert mode</li>
+            <li><code>v</code> Enter visual mode</li>
+            <li><code>o</code> Create newline and enter insert mode</li>
+            <li><code>O</code> Create newline before current line and enter
+                insert mode</li>
+            <li><code>A</code> Go to end of current line and enter insert mode</li>
+            <li><code>I</code> Go to beginning of current line and enter insert
+            mode</li>
             <li><code>:w (filename)</code> Write/save</li>
             <li><code>:sp (filename)</code> Split screen horizontally, if a filename is
                 provided, also opens said file</li>
             <li><code>:vsp (filename)</code> Split screen vertically</li>
-            <li><code></code></li>
+            <li><code>&lt;Ctrl&gt;w [direction]</code> Switch to buffer in
+                [direction] of the current one</li>
+            <li><code>![shell command]</code> Execute shell command</li>
+            <li><code>/[string]</code> Search for the given string</li>
         </ul>
     </li>
 </ul>
