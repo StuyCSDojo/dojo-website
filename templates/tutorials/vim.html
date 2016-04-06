@@ -126,24 +126,33 @@ brackets):</p>
 </ul>
 
 <h5>Configuring/Personalizing Vim</h5>
+<p>Vim is a programmable editor, it comes with its own scripting language
+<i>vimscript</i>, which is a very interesting language. I will not cover it
+here, but <a href='http://learnvimscriptthehardway.stevelosh.com/'>this book</a>
+is a really good tutorial. But before you click on the link, let us first go
+over where these stuff goes.</p>
 
-<p>Sample vimrc:</p>
-<codeblock>set number
-set ruler
-call pathogen#infect('~/.vim/bundle/{}')
-filetype plugin indent on
-syntax enable
-syntax on
-set backspace=indent,eol,start
-set ai
-set si
-set wrap
-set confirm
-set mouse=a
-set lbr
-set shiftwidth=4
-set tabstop=4
-</codeblock>
+<p>There is a folder that stores your Vim configurations, it is a part of the
+Vim RUNTIME_PATH variable, and on unix-based systems it is located at
+<code>~/.vim</code> and on Windows it's located at
+<code>%USERPROFILE%</code>. In this file one puts one's personal configuration
+and settings. It is worthwhile to dig around a bit around the <a
+    href='http://vim.wikia.com/wiki/Vim_Tips_Wiki'>Vim Tip Wiki</a> for
+guidelines. If you want a sample, here's <a
+    href='https://github.com/alex-wyc/dotFiles/blob/master/nvimrc'>my vimrc
+    file</a>.</p>
 
 <h5>Useful Plugins</h5>
+<p>Of course, like emacs, Vim has a great community and tons of useful plugins,
+some useful plugins I use are:</p>
+<ul>
+    <li><a href='https://github.com/scrooloose/nerdtree'>NERDTree</a> - A
+        directory explorer for Vim</li>
+    <li><a href='https://github.com/scrooloose/syntastic'>Syntastic</a> -
+        Automatic Syntax Checking for Vim</li>
+    <li><a href='https://github.com/SirVer/ultisnips'>UltiSnips</a> - Powerful
+        Snippet Tool for Vim</li>
+    <li><a href='https://github.com/tpope/vim-surround'>Vim-Surround</a> -
+        Surrounding Changes (This sounds stupid and dumb but is super useful)</li>
+</ul>
 {% endblock %}
