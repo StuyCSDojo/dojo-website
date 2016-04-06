@@ -63,6 +63,10 @@ def resources():
 def irc():
     return render_template("irc.html")
 
+@app.route('/calendar')
+def calendar():
+    return render_template('calendar.html')
+
 @app.route("/tutorials/<tut>")
 def tutorial(tut):
     return render_template("./tutorials/" + tut)
