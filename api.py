@@ -69,7 +69,14 @@ def calendar():
 
 @app.route("/tutorials/<tut>")
 def tutorial(tut):
-    return render_template("./tutorials/" + tut)
+    try:
+        return render_template("./tutorials/" + tut)
+    except:
+        return render_template('404.html'), 404
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
@@ -77,6 +84,8 @@ try:
     app.secret_key = argv[argv.index('--key') + 1]
 except ValueError:
     app.secret_key = "afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF"
+
+app.debug = True
 
 if __name__ == "__main__":
     app.run()
