@@ -11,16 +11,16 @@
 }
 
 code {
-    background:#333333;
-    color:#aaaaaa;
+    color:#222222;
+    background:#aaaaaa;
     padding: 0px 4px 0px 4px;
     border-radius: 5px;
     font-family:monospace;
 }
 
 codeblock {
-    background:#333333;
-    color:#aaaaaa;
+    color:#222222;
+    background:#aaaaaa;
     padding: 0px 4px 0px 4px;
     border-radius: 5px;
     font-family:monospace;
