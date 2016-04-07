@@ -96,8 +96,14 @@ starting directory will be in your home directory, which should look something l
 
 <h5>Replication</h5>
 <p>We can also make copies of a file and give it a new name:</p>
-<codeblock>$ xcp file1 file1copy</codeblock>
+<codeblock>$ cp file1 file1copy</codeblock>
 
 <h5>Having a Look</h5>
 <p>If we ever want to look at the contents of a file and have it print it in the Terminal, we can use the <code>cat</code> command; this just takes a file and shows what text is in it.</p>
+
+<h5>I Am Superuser</h5>
+<p>You should note that your entire file system isn't editable by the typical user. Some files that are critical to the functioning of the computer have limiting write permissions. There are two modes you can be in the Terminal: normal user mode, which you should be in when you open the terminal, and <b>root</b>, or <b>sudo</b>, mode, which is analogous to having "admin" privileges.</p>
+<p>To run a command with sudo privileges, simply precede the desired command with <code>sudo</code></p>
+<codeblock>$ sudo mv file1 file2</codeblock>
+<p>Admin privileges don't come for free, so you will have to enter your password before the command runs. After running a command with sudo, you will maintain sudo privileges for a brief while.</p>
 {% endblock %}
