@@ -70,6 +70,22 @@ starting directory will be in your home directory, which should look something l
 <h5>Moving Around</h5>
 <p>Staying in our home directory must be boring. We would really like to move ourselves around to other folders within directories. We can accomplish this with the <code>cd</code> command. </p>
 <p>Typing <codeblock>$ cd folderName/</codeblock> will navigate yourself into <code>folderName</code> and make that your current directory. We can also navigate through multiple folders at the same time: <codeblock>$ cd folder1/folder2/folder3/</codeblock></p>
-<p>We also want to know how to navigate backwards in our directory system. To go one level back,
+<p>We also want to know how to navigate backwards in our directory system. To go one level back, the command is <code>cd ..</code>. We can also go two levels up at the same time: <code>cd ../..</code></p>
+
+<h5>Making Files</h5>
+<p>To make a blank file within the current directory, use the touch command:</p>
+<codeblock>$ touch blah.txt</codeblock>
+<p>This can also be used to update the timestamp on a currently existing file.
+
+<h5>Making Directories</h5>
+<p>Making new folders is simple:</p>
+<codeblock>$ mkdir folderName</codeblock>
+<p>This creates a new directory in which you can navigate now.</p>
+
+<h5>Be Gone!</h5>
+<p>Making things is cool and everything, but what happens when you want to remove a file? We can use the <code>rm</code> and <code>rmdir</code> commands to remove files and directories, respectively.</p>
+<p>Two important things: once you remove a file through the Terminal, there is no "recycling bin"; the file is gone for good. Also, <code>rmdir</code> only works if the desired directory is empty. Therefore, you must remove all the objects in a directory before deleting it. If you wish to remove a folder in one go, you may do:</p>
+<codeblock>$ rm -rf folderName</codeblock>
+<p>Be very careful when you do this; you could possibly remove a whole bunch of files within a massive folder.</p>
 
 {% endblock %}
