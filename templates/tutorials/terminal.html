@@ -38,7 +38,7 @@ Linux user, Terminal will be the main application for you to get around your mac
 
 <h5>Running Terminal</h5>
 <p>Running Terminal can be done in the following fashion: <code>Ctrl</code> + <code>Alt</code> + <code>t</code></p>
-<p>You will then be presented will something like this:</p> <!-- insert pic of terminal here --> <br>
+<p>You will then be presented will something like this:</p> <!-- insert pic of terminal here -->
 <p>The text that appears before your cursor is known as the <b>prompt</b>. 
 The default prompt will consist of your username, the name of your machine, as well as the 
 current active directory (more on this later). </p>
@@ -53,5 +53,23 @@ the Terminal as a person in a public library. The various categories of books an
 the different chapters, represent the folders, or <b>directories</b>, in your file system.</p>
 <p>So now that we have a grasp of what we do with the Terminal, let's introduce a very basic 
 command: <code>pwd</code>. Enter the command like this: <codeblock>username@Linux:~$ pwd</codeblock></p>
+<p>This command will tell you where you currently are in your file system. For example, your usual
+starting directory will be in your home directory, which should look something like : <code>/home/username</code>
+<p>Many times the home directory is abbreviated as a tilde: <code>~</code>
+
+<h5>Who's There?</h5>
+<p>We often forget what files are currently in our system. To view what files and other folders are in our current directory, use the <code>ls</code> command. This command will display all the files and folders within the directory you are currently in.
+<p>There are some variations of the <code>ls</code> command, with the use of <b>flags</b>:
+<ul>
+  <li><code>ls -l</code> Views the files in a list format, alongside other 
+    properties of these files, like permissions and write times.</li>
+  <li><code>ls -a</code> Views ALL files in the directory, including hidden files 
+    (hidden files have a preceding <code>.</code> in their name).
+</ul>
+
+<h5>Moving Around</h5>
+<p>Staying in our home directory must be boring. We would really like to move ourselves around to other folders within directories. We can accomplish this with the <code>cd</code> command. </p>
+<p>Typing <codeblock>$ cd folderName/</codeblock> will navigate yourself into <code>folderName</code> and make that your current directory. We can also navigate through multiple folders at the same time: <codeblock>$ cd folder1/folder2/folder3/</codeblock></p>
+<p>We also want to know how to navigate backwards in our directory system. To go one level back,
 
 {% endblock %}
