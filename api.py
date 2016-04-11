@@ -5,7 +5,7 @@
 #  YEECH <alex-wyc>                                                            #
 #                                                                              #
 # Description                                                                  #
-#  lawls                                                                     #
+#  lawls                                                                       #
 #                                                                              #
 ################################################################################
 
@@ -17,34 +17,11 @@
 
 from flask import Flask, request, render_template, session, redirect, url_for
 from functools import wraps
-from hashlib import sha256
+from hashlib import sha1
 from sys import argv
 from werkzeug.contrib.fixers import ProxyFix
 
 app = Flask(__name__)
-
-def login_required(f):
-    """
-    login_required: a function decorator that redirects you to the login page is
-    one tries to access the page without logging in
-
-    Args:
-        f (function): the decorator of the function
-       
-    Example:
-        @login_required
-        def function():
-            return blah;
-    """
-
-    @wraps(f)
-
-    def decorated_function(*args, **kwargs):
-        if 'email' not in session:
-            return render_template('login.html', err='You must be logged in to continue')
-        return f(*args, **kwargs)
-
-    return decorated_function()
 
 @app.route("/")
 @app.route("/home")
@@ -73,6 +50,15 @@ def tutorial(tut):
         return render_template("./tutorials/" + tut)
     except:
         return render_template('404.html'), 404
+
+@app.route('/admins')
+def admins():
+    return render_template('make_announcement_admin.html')
+
+@app.route('/admins', methods = ['POST'])
+def update_announcements():
+# TODO
+    return redirect(url_for('home'));
 
 @app.errorhandler(404)
 def page_not_found(error):

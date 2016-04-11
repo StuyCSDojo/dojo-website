@@ -27,3 +27,39 @@ codeblock {
     white-space:pre;
     display:block;
 }
+
+span.badge.newc {
+    position:relative;
+    left:5px;
+    font-weight:300;
+    font-size:0.8rem;
+    color: #ffffff;
+    background-color:#26a69a;
+    border-radius:2px;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+span.badge.unfinished {
+    position:relative;
+    left:5px;
+    font-weight:300;
+    font-size:0.8rem;
+    color: #ffffff;
+    background-color:#ef5350;
+    border-radius:2px;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+span.badge.construction {
+    position:relative;
+    left:5px;
+    font-weight:300;
+    font-size:0.8rem;
+    color: #666666;
+    background-color:#ffee58;
+    border-radius:2px;
+    padding-top:2px;
+    padding-bottom:2px;
+}
