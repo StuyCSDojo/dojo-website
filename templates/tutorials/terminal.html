@@ -1,6 +1,6 @@
 {% extends "master.html" %}
 
-{% block title %}Tutorial: Installing Ubuntu{% endblock %}
+{% block title %}Tutorial: Terminal{% endblock %}
 
 {% block head %}
 {{ super() }}
@@ -28,7 +28,7 @@
 {% endblock %}
 
 {% block container %}
-<h4>Introduction to Vim</h4>
+<h4>How to Use the Terminal</h4>
 <p class='condensed light a_info'>Written by Brandon Lin on 2016-04-06</p>
 <h5>What is Terminal?</h5>
 <p>Terminal is the main navigation system within systems such as OS X and distributions of Linux. 
@@ -106,4 +106,20 @@ starting directory will be in your home directory, which should look something l
 <p>To run a command with sudo privileges, simply precede the desired command with <code>sudo</code></p>
 <codeblock>$ sudo mv file1 file2</codeblock>
 <p>Admin privileges don't come for free, so you will have to enter your password before the command runs. After running a command with sudo, you will maintain sudo privileges for a brief while.</p>
+
+<h5>Some Terminal Perks</h5>
+There are many more Terminal commands that exist. <a href="http://ss64.com/bash/">This website</a> is a good comprehensive list of many Terminal commands. Here, we go over a few more things you can do with your Terminal.
+
+<h6>Auto Complete</h6>
+If you have a long file name to type, you can type the first few letters of the name, then hit the <code>Tab</code> key to autocomplete the rest of the name! Convenient! However, if you have multiple files with the same first few letters, the terminal will display the names of those files and you can type a few more letters to get the desired files.
+
+<h6>Customizing Terminal</h6>
+You can change the color scheme of your Terminal, the way the prompt looks, and many other things! Many configurations lie in the <code>.bashrc</code> file in your home directory; go check them out, and feel free to look up how to do more!
+
+<h6>ZShell</h6>
+You can soup your Terminal up from the built-in Bash, and change it into ZShell, which is more versatile and more customizable. More <a href="http://www.zsh.org/">here</a>.
+
+<h5>Conclusion</h5>
+That concludes this guide on Terminal. Hopefully you are able to navigate your system efficiently; happy coding!
+
 {% endblock %}
