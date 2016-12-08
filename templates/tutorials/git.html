@@ -1,0 +1,75 @@
+{% extends "master.html" %}
+
+{% block title %}Tutorial: Learning Emacs{% endblock %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+<div class="nav-wrapper blue darken-4">
+
+    <a href='/' class="left-padding breadcrumb left"><strong>CS
+            DOJO</strong></a>
+    <a href='/resources' class='breadcrumb'>Resources</a>
+
+    <a href='#!' class='breadcrumb white-text'>Tutorial: Learning Emacs</a>
+
+
+    <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+        <li><a href='/'>Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li class='active'><a href="/resources">Resources</a></li>
+        <li><a href='/calendar'>Calendar</a></li>
+        <li><a href="/blog">Dojo Blog</a></li>
+        <li><a href="/irc">Chat</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block container %}
+<h4>Welcome to the hub of Git</h4>
+<p class='condensed light a_info'>Written by PChan on 2016-12-08</p>
+
+<h5><b><i><u>Installing GIT on your home machines</u></i></b></h5>
+<p>Under Construction</p>
+
+<h5><b><i><u>General definitions:</u></i></b></h5>
+<p>A <strong>repository</strong> is basically a GitHub project folder.  Inside the folder, you will find the project files and information containing the version history.</p>
+<p><strong>Repo</strong> is an abbreviation for repository.</p>
+<p><strong>Cloning Link/Repo Link:</strong> There are two forms for the repo link: <strong>SSH link</strong> and <strong>HTTPS link</strong>.  The HTTPS link allows anyone to clone your repo, as long as they are public.  There's no way to disable that feature with public repo.  SSH links are only usable if you have a copy of your public key on GitHub and your private key on the local machine.  With SSH links, at most all operations will require your SSH passphrase for authentication (if you entered one during creation); if you did not configure SSH pairs, you would not be able to work via the SSH links.  With HTTPS link, you will be prompted first for your GitHub username and second for your GitHub password.  The advantage of HTTPS is you can use it anywhere, the advantage of SSH links is faster and more secure authentication.</p>
+<p><strong>HTTPS link:</strong> The easiest way to get the HTTPS link is copy the url when you're at the repo page.  Another way is to click on the green button that says "Clone or download" on the repo page.  Make sure it says "Clone with HTTPS" in bold, copy the link via Ctrl-C or the button to the right of the url.  General Structure: https://github.com/&ltusername&gt/&ltrepo name&gt(.git).</p>
+<p><strong>SSH link:</strong> To get the SSH link, click on the green button that says "Clone or download" on the repo page.  Make sure it says "Clone with SSH" in bold, copy the link via Ctrl-C or the button to the right of the url.  General Structure: git@github.com:&ltusername&gt/&ltrepo name&gt.git.</p>
+<p><strong>Upstream:</strong> Think of upstream as the online copy of your repo, or the state of the repo on GitHub.</p>
+
+<h5><b><i><u>GitHub WorkFlow ProTips</u></i></b></h5>
+<p>When working with partners, try not to modify the same files at the same time.  This leads to merge conflicts.  Aim to work on separate files.</p>
+
+<p>Before making any additional changes:</p>
+<codeblock>  // Make sure you download all changes, this allows you to avoid merge conflicts<br>  $ git pull</codeblock>
+
+<p>After making your changes:</p>
+<codeblock>  $ git add &ltfilename&gt/&ltdirectoryName&gt <em>OR</em> git add . -A<br>  $ git commit -am &ltyour commit message&gt<br>  // Make sure you push your changes upstream or the teacher can't see your changes<br>  $ git push</codeblock>
+
+<p>GitHub Basic Operations</p>
+<p><strong>Cloning a repo:</strong> Make a copy of the repo onto your local machine.  Repo links are defined above</p>
+<codeblock>  $ git clone &ltrepo link&gt</codeblock>
+
+<p><strong>Pulling from a repo:</strong> Sync your repo with upstream by downloading any changes and merging them with your local copy.  Always do this before you make any changes to your repo, or else merge conflicts will hound you to death.</p>
+<codeblock>  $ git pull</codeblock>
+
+<p><strong>Find the status of the repo:</strong> The command to uses to see what has been added, modified, removed.  Allows you to see untracked files/directories.</p>
+<codeblock>  $ git status</codeblock>
+
+<p><strong>Adding changes:</strong> To uploads files to GitHub, you need to tell GitHub to keep track of it using this command.  This command doesn't change upstream, it simply tells Git to keep an eye on when the file changes.  There are two forms of this command.</p>
+<codeblock>  // Tell Git to keep an eye on all files in present directories<br>  $ git add . -A<br>  // Tell Git to keep an eye on all previously added files/directories, and this additional file/directory<br>  $ git add &ltfilename&gt/&ltdirectoryName&gt</codeblock>
+
+<p><strong>Committing changes:</strong> This command prepares your files for upload.  Again, this does not change the upstream repo.  Use this command to "save" your work which creates a unique hash and keep a record of the files changed and the authors who made the changes.  Typically a message is passed which briefly states the changes that has been made.</p>
+<codeblock>  // Surround your message with quotes<br>  $ git commit -am &ltcommit message&gt</codeblock>
+
+<p><strong>Pushing to a repo:</strong> Sync your repo with upstream by uploading any changes and merging them with the online copy.  Always remember to do after you finished your work locally.</p>
+<codeblock>  $ git push</codeblock>
+
+<h5><b><i><u>GitHub Advance Operations</u></i></b></h5>
+<p>To be updated in the future...</p>
+{% endblock %}

@@ -17,7 +17,7 @@
 
 from flask import Flask, request, render_template, session, redirect, url_for
 from functools import wraps
-from hashlib import sha1
+from hashlib import sha512
 from sys import argv
 from werkzeug.contrib.fixers import ProxyFix
 from time import gmtime, strftime
@@ -43,13 +43,15 @@ def log_time(f):
 admin_accounts = {
         'brandon' : 'b8a49162dce8ad8afb06a563ea862c04063b6f7a',
         'sophia': '6f516c4f69481dff8c01aec9da09c620f319cecd',
-        'roz' : '6a5955fc112ecb6adf59c8d6023e1c41e1e9ae83'
+        'roz' : '6a5955fc112ecb6adf59c8d6023e1c41e1e9ae83',
+    'pchan': 'ce57d8bc990447c7ec35557040756db2a9ff7cdab53911f3c7995bc6bf3572cda8c94fa53789e523a680de9921c067f6717e79426df467185fc7a6dbec4b2d57'
         }
 
 admin_names = {
         'brandon' : 'Brandon Lin',
         'sophia' : 'Sophia Zheng',
-        'roz' : 'Roz Joyce'
+        'roz' : 'Roz Joyce',
+    'pchan' : 'PChan'
         }
 
 def format_announcement(name, title, body):
@@ -101,7 +103,7 @@ def admins():
 def update_announcements():
     user = request.form['user']
     if user in admin_accounts:
-        password = sha1()
+        password = sha512()
         password.update(request.form['pass'])
         password = password.hexdigest()
         if admin_accounts[user] == password: # validated

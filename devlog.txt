@@ -1,3 +1,11 @@
 patrickC -- 2016-12-08 09:54
 - Fix TypeError when navigating through the resources section
 - Updated the "Installing Ubuntu" tutorial
+
+patrickC -- 2016-12-08 15:11
+- Modified api.py while exploring announcement functionality
+- Organized the static files
+- Tutorials
+  - Added git tutorial
+  - Started working on emacs tutorial
+- Updated resource.html to point to new tutorials
