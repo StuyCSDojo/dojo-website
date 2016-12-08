@@ -24,9 +24,10 @@ from time import gmtime, strftime
 
 def log_name(f):
     @wraps(f)
-    def inner(*args):
-        print f.func_name + '(' + str(*args) + ')'
-        return f(*args)
+    def inner(*args, **kwargs):
+        keyWordArgs = kwargs.values()
+        print f.func_name + '(' + str(*args) + str(','.join(keyWordArgs)) + ')'
+        return f(*args, **kwargs)
     return inner
 
 def log_time(f):
