@@ -41,23 +41,19 @@ def log_time(f):
     return inner
 
 admin_accounts = {
-        'brandon' : 'b8a49162dce8ad8afb06a563ea862c04063b6f7a',
-        'sophia': '6f516c4f69481dff8c01aec9da09c620f319cecd',
-        'roz' : '6a5955fc112ecb6adf59c8d6023e1c41e1e9ae83',
-    'pchan': 'ce57d8bc990447c7ec35557040756db2a9ff7cdab53911f3c7995bc6bf3572cda8c94fa53789e523a680de9921c067f6717e79426df467185fc7a6dbec4b2d57'
-        }
+    'pchan': 'ce57d8bc990447c7ec35557040756db2a9ff7cdab53911f3c7995bc6bf3572cda8c94fa53789e523a680de9921c067f6717e79426df467185fc7a6dbec4b2d57',
+    'st234pa': '14d60abd2dc5d59e023913ca2ec999970071da68cee4a0ec56dd4e44d442bc113ef4f09a548f348290ad329119963400c77b3684a412e588faedb4821d0e5c72'
+}
 
 admin_names = {
-        'brandon' : 'Brandon Lin',
-        'sophia' : 'Sophia Zheng',
-        'roz' : 'Roz Joyce',
-    'pchan' : 'PChan'
-        }
+    'pchan' : 'PChan',
+    'st234pa' : 'Stephanie Yoon'
+}
 
 def format_announcement(name, title, body):
     return """<h4>%s</h4>
-<p class='condensed light a_info'>Posted by %s on %s</p>
-<p>%s</p>""" % (title, admin_names[name], strftime('%c', gmtime()), body)
+    <p class='condensed light a_info'>Posted by %s on %s</p>
+    <p>%s</p>""" % (title, admin_names[name], strftime('%c', gmtime()), body)
 
 app = Flask(__name__)
 
@@ -128,9 +124,10 @@ try:
     app.secret_key = argv[argv.index('--key') + 1]
 except ValueError:
     app.secret_key = "afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF"
-
+    
 app.debug = True
 
 if __name__ == "__main__":
     #app.run()
     app.run(host='0.0.0.0', port=5000)
+    
