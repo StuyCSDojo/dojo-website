@@ -1,0 +1,84 @@
+{% extends "master.html" %}
+
+{% block title %}Tutorial: Learning Emacs{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block nav %}
+    <div class="nav-wrapper blue darken-4">
+
+        <a href='/' class="left-padding breadcrumb left"><strong>CS
+            DOJO</strong></a>
+        <a href='/resources' class='breadcrumb'>Resources</a>
+
+        <a href='#!' class='breadcrumb white-text'>Tutorial: Learning Emacs</a>
+
+
+        <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+            <li><a href='/'>Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li class='active'><a href="/resources">Resources</a></li>
+            <li><a href='/calendar'>Calendar</a></li>
+            <li><a href="/blog">Dojo Blog</a></li>
+            <li><a href="/irc">Chat</a></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block container %}
+    <h4>Introduction to Emacs</h4>
+    <p class='condensed light a_info'>Written by PChan on 2016-12-08</p>
+    <h5>What is Emacs</h5>
+    <p>Emacs is a multi-purpose extensible text editor built upon Elisp (think Scheme).</p>
+
+    <h5>Installing Emacs</h5>
+    <p>Unlike vim which comes pre-installed on almost all linux distributions, one usually needs to install emacs.  Feel free to come to the Dojo if you are having trouble</p>
+    <p>
+        The instruction for Debian/Ubuntu (using the official repo):
+        <codeblock>
+            $ sudo apt-get install emacs
+        </codeblock>
+        
+        The instruction for Ubuntu (for the latest development version):
+        <codeblock>
+            $ sudo add-apt-repository ppa:ubuntu-elisp/ppa
+            $ sudo apt-get update
+            $ sudo apt-get install emacs-snapshot emacs-snapshot-el
+            $ sudo ln -s /usr/bin/emacs-snapshot /usr/bin/emacs
+        </codeblock>
+    </p>
+
+    <h5>Using Emacs</h5>
+    <p>
+        Emacs commands generally involve the CONTROL/CTRL key or the META/ALT key.  For this guide we will use the following abbreviations:
+    </p>
+    <p>
+        <code>C-&ltchr&gt</code> means hold the CONTROL key while typing the character &ltchr&gt
+        
+        <code>M-&ltchr&gt</code> means hold the META/ALT key while typing the character &ltchr&gt
+        
+        Example: <code>C-f</code> means hold the CONTROL key and type f
+    </p>
+    <p>
+        Some common emacs command:
+        <codeblock>
+            C-x C-c    save-buffers-kill-terminal    Exit emacs
+            C-x C-s    save-buffer                   Save file
+            C-x C-f    find-file                     Open file
+            C-h C-h    help-for-help                 Open up the help window
+            C-g        keyboard-quit                 Quit a partially entered command
+        </codeblock>
+    </p>
+
+    <h5>Emacs KeyBinding</h5>
+    <p>
+    </p>
+
+    <h5>Buffers and Windows</h5>
+    <p>
+
+    </p>
+    <script src="../../static/main.js"></script>
+{% endblock %}

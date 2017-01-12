@@ -1,0 +1,223 @@
+{% extends "master.html" %}
+
+{% block title %}Tutorial: Terminal{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block nav %}
+    <div class="nav-wrapper blue darken-4">
+
+	<a href='/' class="left-padding breadcrumb left"><strong>CS
+            DOJO</strong></a>
+	<a href='/resources' class='breadcrumb'>Resources</a>
+
+	<a href='#!' class='breadcrumb white-text'>Tutorial: How to Use Terminal</a>
+
+
+	<ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+            <li><a href='/'>Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li class='active'><a href="/resources">Resources</a></li>
+            <li><a href='/calendar'>Calendar</a></li>
+            <li><a href="/blog">Dojo Blog</a></li>
+            <li><a href="/irc">Chat</a></li>
+	</ul>
+    </div>
+{% endblock %}
+
+{% block container %}
+    <h4>How to Use the Terminal</h4>
+    <p class='condensed light a_info'>Written by Brandon Lin on 2016-04-06</p>
+    <h5>What is Terminal?</h5>
+    <p>Terminal is the main navigation system within systems such as OS X and distributions of Linux.
+	For Windows users, you may know Terminal as a pseudo-Command Prompt. However, the two
+	systems are very different, with Terminal having a lot more capabilities. If you are a
+	Linux user, Terminal will be the main application for you to get around your machine.</p>
+
+    <h5>Running Terminal</h5>
+    <p>Running Terminal can be done in the following fashion: <code>Ctrl</code> + <code>Alt</code> + <code>t</code></p>
+    <p>
+	You will then be presented will something like this:
+    </p>
+    <center>
+	<img src="../../static/terminal/terminal.png"/>
+    </center>
+    <p>
+	The text that appears before your cursor is known as the <b>prompt</b>.
+	The default prompt will consist of your username, the name of your machine, as well as the current active directory (more on this later).
+    </p>
+    <p>
+	The text you will be typing into Terminal are known as <b>commands</b>.
+	These current commands allow you to perform various tasks in the Terminal, and we will be going
+	over many of them here. Sometimes, a command may require you to specify a file
+	to perform the command to, so you may need to provide <b>arguments</b> to a command if necessary.
+    </p>
+
+    <h5>Where Are We?</h5>
+    <p>
+	As mentioned before, the Terminal allows you to navigate your file system. Imagine
+	the Terminal as a person in a public library. The various categories of books and, within those books,
+	the different chapters, represent the folders, or <b>directories</b>, in your file system.
+    </p>
+    <p>
+	So now that we have a grasp of what we do with the Terminal, let's introduce a very basic
+	command: <code>pwd</code>. Enter the command like this:
+	<codeblock>
+	    username@Linux:~$ pwd
+	</codeblock>
+    </p>
+    <p>
+	This command will tell you where you currently are in your file system. For example, your usual
+	starting directory will be in your home directory, which should look something like : <code>/home/username</code>
+    </p>
+    <p>
+	Many times the home directory is abbreviated as a tilde: <code>~</code>
+    </p>
+    <h5>Who's There?</h5>
+    <p>
+	We often forget what files are currently in our system. To view what files and other folders are in our current directory, use the <code>ls</code> command.
+	This command will display all the files and folders within the directory you are currently in.
+    </p>
+    <p>
+	There are some variations of the <code>ls</code> command, with the use of <b>flags</b>:
+	<ul>
+	    <li>
+		<code>ls -l</code> Views the files in a list format, alongside other
+		properties of these files, like permissions and write times.
+	    </li>
+	    <li><code>ls -a</code> Views ALL files in the directory, including hidden files
+		(hidden files have a preceding <code>.</code> in their name).
+	    </li>
+	</ul>
+
+	<h5>Moving Around</h5>
+	<p>
+	    Staying in our home directory must be boring. We would really like to move ourselves around to other folders within directories. We can accomplish this with the <code>cd</code> command.
+	</p>
+	<p>
+	    Typing
+	    <codeblock>
+		$ cd folderName/
+	    </codeblock>
+	    will send you into <code>folderName</code> and make that your current directory. We can also navigate through multiple folders at the same time:
+	    <codeblock>
+		$ cd folder1/folder2/folder3/
+	    </codeblock></p>
+	<p>
+	    We also want to know how to navigate backwards in our directory system. To go one level back, the command is <code>cd ..</code>. We can also go two levels up at the same time: <code>cd ../..</code>
+	</p>
+
+	<h5>Making Files</h5>
+	<p>
+	    To make a blank file within the current directory, use the touch command:
+	</p>
+	<codeblock>
+	    $ touch blah.txt
+	</codeblock>
+	<p>This can also be used to update the timestamp on a currently existing file.
+	    <h5>Making Directories</h5>
+	    <p>
+		Making new folders is simple:
+	    </p>
+	    <codeblock>
+		$ mkdir folderName
+	    </codeblock>
+	    <p>
+		This creates a new directory in which you can navigate now.
+	    </p>
+
+	    <h5>Be Gone!</h5>
+	    <p>
+		Making things is cool and everything, but what happens when you want to remove a file?
+		We can use the <code>rm</code> and <code>rmdir</code> commands to remove files and directories, respectively.
+	    </p>
+	    <p>
+		Two important things: once you remove a file through the Terminal, there is no "recycling bin"; the file is gone for good.
+		Also, <code>rmdir</code> only works if the desired directory is empty. Therefore, you must remove all the objects in a directory before deleting it.
+		If you wish to remove a folder in one go, you may do:
+	    </p>
+	    <codeblock>
+		$ rm -rf folderName
+	    </codeblock>
+	    <p>
+		Be very careful when you do this; you could possibly remove a whole bunch of files within a massive folder.
+	    </p>
+
+	    <h5>Moving</h5>
+	    <p>
+		To move a file, use the <code>mv</code> command as follows:
+	    </p>
+	    <codeblock>
+		$ mv fileName newFolder/
+	    </codeblock>
+	    <p>
+		This moves the file into a new (already existing!) folder. Note that we can also use this command to rename files:
+	    </p>
+	    <codeblock>
+		$ mv oldName newName
+	    </codeblock>
+
+	    <h5>Replication</h5>
+	    <p>
+		We can also make copies of a file and give it a new name:
+	    </p>
+	    <codeblock>
+		$ cp file1 file1copy
+	    </codeblock>
+
+	    <h5>Having a Look</h5>
+	    <p>
+		If we ever want to look at the contents of a file and have it print it in the Terminal, we can use the <code>cat</code> command;
+		this just takes a file and shows what text is in it.
+	    </p>
+
+	    <h5>I Am Superuser</h5>
+	    <p>
+		You should note that your entire file system isn't editable by the typical user.
+		Some files that are critical to the functioning of the computer have limiting write permissions.
+		There are two modes you can be in the Terminal: normal user mode, which you should be in when you open the terminal, and <b>root</b>, or <b>sudo</b>, mode, which is analogous to having "admin" privileges.
+	    </p>
+	    <p>
+		To run a command with sudo privileges, simply precede the desired command with <code>sudo</code>
+	    </p>
+	    <codeblock>
+		$ sudo mv file1 file2
+	    </codeblock>
+	    <p>
+		Admin privileges don't come for free, so you will have to enter your password before the command runs.
+		After running a command with sudo, you will maintain sudo privileges for a brief while.
+	    </p>
+
+	    <h5>Some Terminal Perks</h5>
+	    <p>
+		There are many more Terminal commands that exist.
+		<a href="http://ss64.com/bash/">This website</a> is a good comprehensive list of many Terminal commands.
+		Here, we go over a few more things you can do with your Terminal.
+	    </p>
+
+	    <h6>Auto Complete</h6>
+	    <p>
+		If you have a long file name to type, you can type the first few letters of the name, then hit the <code>Tab</code> key to autocomplete the rest of the name!
+		Convenient! However, if you have multiple files with the same first few letters, the terminal will display the names of those files and you can type a few more letters to get the desired files.
+	    </p>
+	    
+	    <h6>Customizing Terminal</h6>
+	    <p>
+		You can change the color scheme of your Terminal, the way the prompt looks, and many other things!
+		Many configurations lie in the <code>.bashrc</code> file in your home directory; go check them out, and feel free to look up how to do more!
+	    </p>
+	    
+	    <h6>ZShell</h6>
+	    <p>
+		You can soup your Terminal up from the built-in Bash, and change it into ZShell, which is more versatile and more customizable.
+		More <a href="http://www.zsh.org/">here</a>.
+	    </p>
+
+	    <h5>Conclusion</h5>
+	    <p>
+		That concludes this guide on Terminal. Hopefully you are able to navigate your system efficiently; happy coding!
+	    </p>
+
+{% endblock %}

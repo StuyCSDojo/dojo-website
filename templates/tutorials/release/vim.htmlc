@@ -1,0 +1,194 @@
+{% extends "master.html" %}
+
+{% block title %}Tutorial: Introduction to Vim{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block nav %}
+    <div class="nav-wrapper blue darken-4">
+
+        <a href='/' class="left-padding breadcrumb left"><strong>CS
+            DOJO</strong></a>
+        <a href='/resources' class='breadcrumb'>Resources</a>
+
+        <a href='#!' class='breadcrumb white-text'>Tutorial: Introduction to Vim</a>
+
+
+        <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+            <li><a href='/'>Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li class='active'><a href="/resources">Resources</a></li>
+            <li><a href='/calendar'>Calendar</a></li>
+            <li><a href="/blog">Dojo Blog</a></li>
+            <li><a href="/irc">Chat</a></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block container %}
+    <h4>Introduction to Vim</h4>
+    <p class='condensed light a_info'>Written by Yicheng Wang on 2016-04-05</p>
+    <h5>What is Vim</h5>
+    <p>
+        Vim stands for "vi-improved", which in turn stands for "visual
+        instrument-improved." It is one of the most widely used text editors on the planet. It is
+        a terminal based programmable editor, backed by its very own (and much hated) macro
+        language <i>vimscript</i>, but supports interpreters of a wide array of
+        scripting languages such as bash, python, ruby, perl, and lua.
+    </p>
+    <p>
+        It is worth noting that Vim (or at least Vi) comes pre-installed in almost
+        every Linux distribution, and it is worthwhile for everyone to at least know the
+        basics of Vim because it's going to come in handy sometimes down the line.
+    </p>
+
+    <h5>Installing Vim</h5>
+    <p>
+        Vi should come pre-installed in almost all linux distributions. to install
+        vim in ubuntu, one needs to run:
+    </p>
+    <codeblock>$ sudo apt-get install vim</codeblock>
+    <p>
+        For other operating systems, one can get instructions form the vim website
+        <a href="http://www.vim.org/download.php">here</a>
+    </p>
+
+    <h5>Using Vim</h5>
+    <p>
+        The hallmark of Vim and what distinguishes it from other text editors is its
+        <b>modal</b> nature. Vim operates in several modes, each with its own key
+        bindings and functions, here's a brief rundown of the three most basic ones:
+    </p>
+    <ul>
+        <li>
+            <b>Normal Mode</b>: The default mode that Vim is in. This is the mode
+            that Vim starts in. It is also where you put in a lot of the commands
+            for Vim. Commands are entered either by a key binding or by typing
+            <code>:</code> in normal mode. One can enter this mode by pressing <code>&lt;Esc&gt;</code> in
+            any of the other modes.
+        </li>
+        <li>
+            <b>Insert Mode</b>: Triggered by typing <code>i</code> in normal mode, this what
+            you use to insert characters into the buffer. This is also why people are so
+            confused when they smash keys and they don't appear on the screen in Vim --
+            they need to be in insert mode!
+        </li>
+        <li>
+            <b>Visual Mode</b>: Triggered by typing <code>v</code> in normal mode,
+            this is what you use to select text within the buffer.
+        </li>
+    </ul>
+    <p>
+        This system may seem convoluted and overtly complicated at first, but it
+        actually opens up so many quick key bindings by quickly switching between normal
+        and insert mode. It will make sense after a while, trust me.
+    </p>
+    <p>
+        But to beginners this may be very confusing, and this is perhaps best
+        illustrated by the simple act of exiting Vim. This is a frustration to many and
+        a running joke in the community, as demonstrated by the following tweet:
+    </p>
+    <center>
+        <img width='400px' src='../static/vim/vim_meme.png'></img>
+    </center>
+    <p>
+	This is how you quit Vim: <code>:q!</code> in normal mode. The <code>q</code> stands for "quit" and <code>!</code> stands for ignore warnings
+	and errors.
+    </p>
+
+    <p>
+	Apart from <code>q</code>, here are a few more commands to start (optional
+        parameters are surrounded by parenthesis, necessary parameters are surrounded by
+        brackets):
+    </p>
+    <ul>
+        <li><b>Movement (Applicable in Both Normal and Visual Modes)</b></li>
+        <li>
+            <ul>
+                <li><code>h</code> Left</li>
+                <li><code>j</code> Down</li>
+                <li><code>k</code> Up</li>
+                <li><code>l</code> Right</li>
+                <li><code>$</code> Go to end of line</li>
+                <li><code>^</code> Go to beginning of line</li>
+                <li><code>x</code> Cut character under cursor</li>
+                <li><code>s</code> Cut current character AND enter insert mode</li>
+            </ul>
+        </li>
+        <li><b>Visual Mode Key Bindings and Commands</b>:</li>
+        <li>
+            <ul>
+                <li>
+		    <code>y</code> Yanks (copies) selected text
+		</li>
+            </ul>
+        </li>
+        <li><b>Normal Mode Key Bindings and Commands</b>:</li>
+        <li>
+            <ul>
+                <li><code>p</code> Paste after the cursor</li>
+                <li><code>P</code> Paste before the cursor</li>
+                <li><code>i</code> Enter insert mode</li>
+                <li><code>v</code> Enter visual mode</li>
+                <li><code>o</code> Create newline and enter insert mode</li>
+                <li><code>O</code> Create newline before current line and enter
+                    insert mode</li>
+                <li><code>A</code> Go to end of current line and enter insert mode</li>
+                <li><code>I</code> Go to beginning of current line and enter insert
+                    mode</li>
+                <li><code>:w (filename)</code> Write/save</li>
+                <li><code>:sp (filename)</code> Split screen horizontally, if a filename is
+                    provided, also opens said file</li>
+                <li><code>:vsp (filename)</code> Split screen vertically</li>
+                <li><code>&lt;Ctrl&gt;w [direction]</code> Switch to buffer in
+                    [direction] of the current one</li>
+                <li><code>![shell command]</code> Execute shell command</li>
+                <li><code>/[string]</code> Search for the given string</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h5>Configuring/Personalizing Vim</h5>
+    <p>
+	Vim is a programmable editor, it comes with its own scripting language
+        <i>vimscript</i>, which is a very interesting language. I will not cover it
+        here, but <a href='http://learnvimscriptthehardway.stevelosh.com/'>this book</a>
+        is a really good tutorial. But before you click on the link, let us first go
+        over where these stuff goes.
+    </p>
+
+    <p>
+	There is a folder that stores your Vim configurations, it is a part of the
+        Vim RUNTIME_PATH variable, and on unix-based systems it is located at
+        <code>~/.vim</code> and on Windows it's located at
+        <code>%USERPROFILE%</code>. In this file one puts one's personal configuration
+        and settings. It is worthwhile to dig around a bit around the <a href='http://vim.wikia.com/wiki/Vim_Tips_Wiki'>Vim Tip Wiki</a> for
+        guidelines. If you want a sample, here's <a href='https://github.com/alex-wyc/dotFiles/blob/master/nvimrc'>my vimrc file</a>.
+    </p>
+
+    <h5>Useful Plugins</h5>
+    <p>
+	Of course, like emacs, Vim has a great community and tons of useful plugins,
+        some useful plugins I use are:
+    </p>
+    <ul>
+        <li>
+	    <a href='https://github.com/scrooloose/nerdtree'>NERDTree</a> - A
+            directory explorer for Vim
+	</li>
+        <li>
+	    <a href='https://github.com/scrooloose/syntastic'>Syntastic</a> -
+            Automatic Syntax Checking for Vim
+	</li>
+        <li>
+	    <a href='https://github.com/SirVer/ultisnips'>UltiSnips</a> - Powerful
+            Snippet Tool for Vim
+	</li>
+        <li>
+	    <a href='https://github.com/tpope/vim-surround'>Vim-Surround</a> -
+            Surrounding Changes (This sounds stupid and dumb but is super useful)
+	</li>
+    </ul>
+{% endblock %}

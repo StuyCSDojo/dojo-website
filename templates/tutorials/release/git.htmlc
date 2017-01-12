@@ -9,21 +9,21 @@
 {% block nav %}
     <div class="nav-wrapper blue darken-4">
 
-	<a href='/' class="left-padding breadcrumb left"><strong>CS
+        <a href='/' class="left-padding breadcrumb left"><strong>CS
             DOJO</strong></a>
-	<a href='/resources' class='breadcrumb'>Resources</a>
+        <a href='/resources' class='breadcrumb'>Resources</a>
 
-	<a href='#!' class='breadcrumb white-text'>Tutorial: Learning Git</a>
+        <a href='#!' class='breadcrumb white-text'>Tutorial: Learning Git</a>
 
 
-	<ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+        <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
             <li><a href='/'>Home</a></li>
             <li><a href="/about">About</a></li>
             <li class='active'><a href="/resources">Resources</a></li>
             <li><a href='/calendar'>Calendar</a></li>
             <li><a href="/blog">Dojo Blog</a></li>
             <li><a href="/irc">Chat</a></li>
-	</ul>
+        </ul>
     </div>
 {% endblock %}
 
@@ -47,50 +47,28 @@
     <p>When working with partners, try not to modify the same files at the same time.  This leads to merge conflicts.  Aim to work on separate files.</p>
 
     <p>Before making any additional changes:</p>
-    <codeblock>
-	// Make sure you download all changes, this allows you to avoid merge conflicts<br>
-	$ git pull
-    </codeblock>
+    <codeblock>// Make sure you download all changes, this allows you to avoid merge conflicts<br>$ git pull</codeblock>
 
     <p>After making your changes:</p>
-    <codeblock>
-	$ git add &ltfilename&gt/&ltfileName&gt <em>OR</em> git add . -A<br>
-	$ git commit -am &ltyour commit message&gt<br>
-	// Make sure you push your changes upstream or the teacher can't see your changes<br>
-	$ git push
-    </codeblock>
+    <codeblock>$ git add &ltfilename&gt/&ltfileName&gt <em>OR</em> git add . -A<br>$ git commit -am &ltyour commit message&gt<br>// Make sure you push your changes upstream or the teacher can't see your changes<br>$ git push</codeblock>
 
     <h5><b><i><u>GitHub Basic Operations</u></i></b></h5>
     <p><strong>Cloning a repo:</strong> Make a copy of the repo onto your local machine.  Repo links are defined above</p>
-    <codeblock>
-	$ git clone &ltrepo link&gt
-    </codeblock>
+    <codeblock>$ git clone &ltrepo link&gt</codeblock>
 
     <p><strong>Pulling from a repo:</strong> Sync your repo with upstream by downloading any changes and merging them with your local copy.  Always do this before you make any changes to your repo, or else merge conflicts will hound you to death.</p>
     <codeblock>  $ git pull</codeblock>
-
     <p><strong>Find the status of the repo:</strong> The command to uses to see what has been added, modified, removed.  Allows you to see untracked files.</p>
-    <codeblock>
-	$ git status
-    </codeblock>
+    <codeblock>$ git status</codeblock>
 
     <p><strong>Adding changes:</strong> To uploads files to GitHub, you need to tell GitHub to keep track of it using this command.  This command doesn't change upstream, it simply tells Git to keep an eye on when the file changes.  There are two forms of this command.</p>
-    <codeblock>
-	// Tell Git to keep an eye on all files in current directory<br>
-	$ git add . -A<br>
-	// Tell Git to keep an eye on all previously added files, and this additional file<br>
-	$ git add &ltfilename&gt/&ltfileName&gt
-    </codeblock>
+    <codeblock>// Tell Git to keep an eye on all files in current directory<br>$ git add . -A<br>// Tell Git to keep an eye on all previously added files, and this additional file<br>$ git add &ltfilename&gt/&ltfileName&gt</codeblock>
 
     <p><strong>Committing changes:</strong> This command prepares your files for upload.  Again, this does not change the upstream repo.  Use this command to "save" your work which creates a unique hash and keep a record of the files changed and the authors who made the changes.  Typically a message is passed which briefly states the changes that has been made.</p>
-    <codeblock>
-	// Surround your message with quotes<br>  $ git commit -am &ltcommit message&gt
-    </codeblock>
+    <codeblock>// Surround your message with quotes<br>  $ git commit -am &ltcommit message&gt</codeblock>
 
     <p><strong>Pushing to a repo:</strong> Sync your repo with upstream by uploading any changes and merging them with the online copy.  Always remember to do after you finished your work locally.</p>
-    <codeblock>
-	$ git push
-    </codeblock>
+    <codeblock>$ git push</codeblock>
 
     <h5><b><i><u>GitHub Advance Operations</u></i></b></h5>
     <p>To be updated in the future...</p>
