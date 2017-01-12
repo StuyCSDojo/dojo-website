@@ -3,33 +3,35 @@
 {% block title %}IRC Chat{% endblock %}
 
 {% block head %}
-{{ super() }}
+    {{ super() }}
 {% endblock %}
 
 {% block nav %}
-            <div class="nav-wrapper blue darken-4">
-                <a href='/' class="left-padding breadcrumb left"><strong>CS
-                        DOJO</strong></a>
-                <a href='#!' class='breadcrumb white-text'>IRC</a>
+    <div class="nav-wrapper blue darken-4">
+        <a href='/' class="left-padding breadcrumb left"><strong>CS
+            DOJO</strong></a>
+        <a href='#!' class='breadcrumb white-text'>IRC</a>
 
-                <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
-                    <li><a href='/'>Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/resources">Resources</a></li>
-                    <li><a href='/calendar'>Calendar</a></li>
-                    <li><a href="/blog">Dojo Blog</a></li>
-                    <li class='active'><a href="/irc">Chat</a></li>
-                </ul>
-            </div>
+        <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+            <li><a href='/'>Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li><a href='/calendar'>Calendar</a></li>
+            <li><a href="/blog">Dojo Blog</a></li>
+            <li class='active'><a href="/irc">Chat</a></li>
+        </ul>
+    </div>
 {% endblock %}
 
 {% block container %}
-            <h4>IRC Chat Room</h4>
-            <p>IRC, or internet-relay-chat is one of the oldest online messaging
-            services on the internet. It is quick and easy to use, go ahead and
-            try it out! Feel free to ask for help on the chatroom. At least one
-            sensai/senpai will be online. You can access the dojo here even if
-            you can't make it in person.</p>
+    <h4>IRC Chat Room</h4>
+    <p>
+	IRC, or internet-relay-chat is one of the oldest online messaging
+        services on the internet. It is quick and easy to use, go ahead and
+        try it out! Feel free to ask for help on the chatroom. At least one
+        sensai/senpai will be online. You can access the dojo here even if
+        you can't make it in person.
+    </p>
 
-            <iframe src="https://kiwiirc.com/client/irc.freenode.com/#csdojo" style="border:0; width:100%; height:450px;"></iframe>
+    <iframe src="https://kiwiirc.com/client/irc.freenode.com/#stuycsdojo" style="border:0; width:100%; height:450px;"></iframe>
 {% endblock %}
