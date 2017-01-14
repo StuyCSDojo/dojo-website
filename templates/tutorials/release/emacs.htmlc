@@ -34,38 +34,209 @@
     <p>Emacs is a multi-purpose extensible text editor built upon Elisp (think Scheme).</p>
 
     <h5>Installing Emacs</h5>
-    <p>Unlike vim which comes pre-installed on almost all linux distributions, one usually needs to install emacs.  Feel free to come to the Dojo if you are having trouble</p>
     <p>
+        Unlike vim which comes pre-installed on almost all linux distributions, one usually needs to install
+        emacs. Feel free to come to the Dojo if you are having trouble.
+    </p>
+    <p>
+        <strong>Debian Users</strong>
+        <br>
         The instruction for Debian/Ubuntu (using the official repo):
         <codeblock>$ sudo apt-get install emacs</codeblock>
-        
+        <br>
         The instruction for Ubuntu (for the latest development version):
-        <codeblock>$ sudo add-apt-repository ppa:ubuntu-elisp/ppa$ sudo apt-get update$ sudo apt-get install emacs-snapshot emacs-snapshot-el$ sudo ln -s /usr/bin/emacs-snapshot /usr/bin/emacs</codeblock>
+        <codeblock>$ sudo add-apt-repository ppa:ubuntu-elisp/ppa
+$ sudo apt-get update
+$ sudo apt-get install emacs-snapshot emacs-snapshot-el
+$ sudo ln -s /usr/bin/emacs-snapshot /usr/bin/emacs</codeblock>
+	<br>
+	Either way, run emacs with the following command:
+	<codeblock>$ emacs &</codeblock>
+        <br>
+    </p>
+    <p>
+        <strong>The instruction for Mac OSX:</strong>
+        <br>
+        Check if you need to install homebrew:
+        <codeblock>$ brew doctor</codeblock>
+        If you get a command not found error, follow the next set of instructions to install homebrew.  Otherwise,
+        skip to the next step.
+        <codeblock>$ xcode-select --install
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+// Follow the instructions provided by the script
+$ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+// Close the current terminal and fire up a new terminal
+$ brew doctor
+// You should see something like: Your system is ready to brew.
+// If you get something like the following (where &ltdirectory&gt is name of any directory)
+Warning: /usr/local/&ltdirectory&gt isn&#39t writable
+$ sudo chmod g+w /usr/local
+$ sudo chgrp staff /usr/local</codeblock>
+        Time to install Emacs!
+        <codeblock>$ brew update
+$ brew tap railwaycat/emacsmacport
+$ brew install emacs-mac</codeblock>
+        Test out your Emacs installation by running:
+        <codeblock>$ emacs-mac &</codeblock>
+	<br>
+    </p>
+    <p>
+        <strong>The instructions for Windows Users:</strong>
+        <br>
+        1. Download Emacs (x64 version) from <a href="https://github.com/zklhp/emacs-w64/releases">here</a>.  Any
+        of the links under the download section should work, but if you are not sure, download
+        <a href="https://github.com/zklhp/emacs-w64/releases/download/f0eb70d/emacs-w64-25.1-Og.7z">this one</a>
+        (Do not worry if this is not the latest version).
+        <br>
+        2. Extract the downloaded file, you can find a free archiver <a href="http://www.7-zip.org/">here</a>.
+        <br>
+        3. To run Emacs, navigate to emacs/bin under the newly extracted folder and double-click on runemacs.exe.
     </p>
 
     <h5>Using Emacs</h5>
     <p>
-        Emacs commands generally involve the CONTROL/CTRL key or the META/ALT key.  For this guide we will use the following abbreviations:
+        Let us go over the key notation in Emacs
+        <codeblock>C-    (press and hold) the Control/Ctrl key
+M-    (press and hold) the Meta/Alt key
+S-    (press and hold) the Shift key
+DEL   backspace key, sometimes written as <backspace>
+RET   Return or Enter key
+SPC   Space bar/Space key
+ESC   Escape key
+TAB   Tab key</codeblock>
+        <br>
+        <code>C-x C-f</code> means while holding down the <code>Ctrl</code> key, press the <code>x</code> key and then press the <code>f</code> key
+        <br>
+        <code>M-x</code> means while holding down the <code>Alt</code> key or the <code>Meta</code>, press the <code>x</code> key
     </p>
     <p>
-        <code>C-&ltchr&gt</code> means hold the CONTROL key while typing the character &ltchr&gt
-        
-        <code>M-&ltchr&gt</code> means hold the META/ALT key while typing the character &ltchr&gt
-        
-        Example: <code>C-f</code> means hold the CONTROL key and type f
-    </p>
-    <p>
-        Some common emacs command:
-        <codeblock>C-x C-c    save-buffers-kill-terminal    Exit emacsC-x C-s    save-buffer                   Save fileC-x C-f    find-file                     Open fileC-h C-h    help-for-help                 Open up the help windowC-g        keyboard-quit                 Quit a partially entered command</codeblock>
+        Some common emacs commands:
+        <codeblock>Key        Commands                      What it does
+C-x C-c    save-buffers-kill-terminal    Exit emacs
+C-x C-s    save-buffer                   Save file
+C-x C-f    find-file                     Open file or create it if it does not exists
+C-h C-h    help-for-help                 Open up the help window
+C-g        keyboard-quit                 Quit a partially entered command</codeblock>
+        <br>
+        <strong>Note:</strong> To execute commands in the second column, you would do <code>M-x &ltcommand&gt</code>
     </p>
 
     <h5>Emacs KeyBinding</h5>
     <p>
+        There are a few and easy rules to remember regarding Emacs key binding
+        <ul>
+            <li>&#x2022; <strong>C-x</strong> is the default global prefix</li>
+            <li>&#x2022; <strong>C-c</strong> prefix is typically used for user-defined commands</li>
+            <li>&#x2022; <strong>C-u</strong> is for altering the behavior of a command</li>
+            <li>&#x2022; <strong>C-&ltnumber&gt</strong> passes a number to a command, usually used to specify how many times to repeat a command</li>
+        </ul>
+        Think of <em>prefix</em> as a key sequence that tells Emacs to interpret the next set of keystrokes
+        differently.  For example, the global Emacs prefix, <strong>C-x</strong>, comes before the default Emacs
+        commands.  To open a file, you will do <strong>C-x</strong> and then <strong>C-f</strong>.
+        <br>
+        <br>
+        We will talk more about <strong>C-u</strong> and <strong>C-&ltnumber&gt</strong> later.
     </p>
 
-    <h5>Buffers and Windows</h5>
+    <h5>Text Navigation</h5>
     <p>
-
+        Basic motion commands that are also used by popular shells such as bash or zsh:
+        <codeblock>Key        Commands                      What it does
+C-f        forward-char                  Move point forward one character
+C-b        backward-char                 Move point backward one character
+C-p        previous-line                 Move point up one line
+C-n        next-line                     Move point down one line
+C-a        beginning-of-line             Move point to the beginning of the current line
+C-e        end-of-line                   Move point to the end of the current line
+M-f        forward-word                  Move point forward one word
+M-b        backward-word                 Move point backward one word</codeblock>
+        <br>
+        Motions commands only available in Emacs:
+        <codeblock>M-a        backward-sentence             Move point to the beginning of current sentence
+M-e        forward-sentence              Move point to the end of the current sentence
+M-<        beginning-of-buffer           Move point to the beginning of the current buffer
+M->        end-of-buffer                 Move point to the end of the current buffer</codeblock>
+        <br>
+        <strong>Exercise:</strong> Practice the commands above a couple of times to get a feel for them.
     </p>
-    <script src="../../static/main.js"></script>
+
+    <h5>Text Editing</h5>
+    <p>
+        Some of the most frequent operations when we edit files are: copy, cut, and paste.  In Emacs, we have the
+        concept of killing and yanking.
+
+        Currently under construction!
+    </p>
+
+    <h5>Frames and Windows</h5>
+    <img src="../static/emacs/emacs-terminology.png" height="456" width="736">
+    <p>
+        In Emacs, GUI windows are refers to as <em>frames</em>.  Each Emacs <em>window</em> contains a buffer.
+        When editing files, it may be helpful to look at multiple files at the same time.  To do this we use the
+        following commands:
+        <br>
+        <codeblock>Key      Commands              What it does
+C-x 2    split-window-below    Split the current window in half vertically
+C-x 3    split-window-right    Split the current window in half horizontally</codeblock>
+        <br>
+        After splitting the window, you will notice that both windows contain the same content.  This is hardly
+        useful.  To change that, we will need to know the following command:
+        <codeblock>C-x o    other-window          Move the cursor to the other window</codeblock>
+        <br>
+        <img src="../static/emacs/emacs-split-window.jpg">
+        <br>
+        To get the same layout as the picture above, execute the following commands:
+        <codeblock>Key      Commands
+C-x 2    split-window-below
+C-x o    other-window
+C-x 3    split-window-right</codeblock>
+        <br>
+        <strong>Exercise:</strong> Use what you learn just now to move the point/cursor to the top window.
+    </p>
+
+    <h5>Buffers</h5>
+    <p>
+        When you open a file in Emacs, the file is contained in a separate <em>buffer</em>, which is a temporary
+        copy of your file which you might modify as you please.  To keep the changes, you would call the
+        <code>save-buffer</code> command, which is bound to <code>C-x C-s</code>.  If you wish to save it under a
+        different name (think "Save as" in other editors), you would call the <code>write-buffer</code> command,
+        which is bound to <code>C-x C-w</code>.
+        <br>
+        <br>
+        To kill/delete a buffer, use <code>C-x k</code> or call the <code>kill-buffer</code> command.  Pressing
+        <code>RET</code> will kill the current buffer.  You may also type the name of the buffer you wish to
+        delete.  Buffer names are typically the same as the file name.
+        <br>
+        <br>
+        Remember that <em>file</em> and <em>buffer</em> are two distinct concepts.  <em>Buffers</em> refer to the
+        temporary content of a file, while <em>files</em> refer to the physical file on your disk.  Deleting a
+        buffer does not delete the actual physical copy of the file.
+        <br>
+        <br>
+        To switch to a different buffer, use the <code>switch-to-buffer</code> command which is bound to
+        <code>C-x b</code>.
+        <br>
+        <br>
+        <strong>Here is an exercise for you:</strong>
+        <ul>
+            <li>&#x2022; Open/Create the file hi.txt</li>
+            <li>&#x2022; Modify hi.txt</li>
+            <li>&#x2022; Open/Create the file bye.txt</li>
+            <li>&#x2022; Switch back to the buffer named hi.txt</li>
+        </ul>
+        Notice that any modifications you made to the original buffer (ie hi.txt) is still there.  This is because
+        the content of a buffer is stored in memory after the initial read which is faster than reading the file
+        from disk every single time.
+    </p>
+
+    <h5>And now...</h5>
+    <p>
+        Use what you learn about buffers and windows to boost your productivity.  Learn the shortcuts to maximize
+        your productivity! :)
+        <br>
+        <br>
+        Here are some additional information to expand your Emacs knowledge:
+        <br>
+        Under construction
+    </p>
 {% endblock %}

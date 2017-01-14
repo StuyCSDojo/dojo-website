@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from sys import argv
 from os import sep
 
@@ -15,8 +17,8 @@ def patchCodeblockWhiteSpace(filename):
                     line = fileContent[index]
                     fileContent[index] = line.lstrip()
                     index += 1
-                    fileContent[index - 1] = fileContent[index - 1].strip('\r\n')
-                    fileContent[index] = fileContent[index].lstrip()
+                fileContent[index - 1] = fileContent[index - 1].strip('\r\n')
+                fileContent[index] = fileContent[index].lstrip()
         index += 1
     with open('../release/' + filename[filename.rfind(sep) + 1:] + 'c', 'w') as file_:
         file_.writelines(fileContent)

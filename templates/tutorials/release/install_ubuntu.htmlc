@@ -199,7 +199,8 @@
         forever and ever.
     </p>
 
-    <codeblock>$ mkdir ~/refind/<br>$ unzip refind-bin-0.10.2.zip -d ~/refind</codeblock>
+    <codeblock>$ mkdir ~/refind/<br>
+$ unzip refind-bin-0.10.2.zip -d ~/refind</codeblock>
 
     <p><img src="../static/install_ubuntu/screenshot2.png" width='1000px' alt=""></p>
 

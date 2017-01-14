@@ -1,11 +1,35 @@
-patrickC -- 2016-12-08 09:54
-- Fix TypeError when navigating through the resources section
-- Updated the "Installing Ubuntu" tutorial
+patrickC -- 2017-01-14
+- Modified generatePasswordHash.py and html_preprocessor.py to run as executable
+- Updated git tutorial
+- Updated the following sections in emacs.html: Installing Emacs, Emacs KeyBinding, Text Navigation,
+  Frames and Windows,  Buffers, and Conclusion
+
+patrickC -- 2017-01-11 10:20
+- Added generatePasswordHash.py and html_preprocessor.py
+- Updated channel name for irc.html
+- Updated tutorial section with cleaner source code
+
+patrickC -- 2017-01-05 18:20
+- Modified index.html to display proper time
+- Fixed error in api.py which was using the wrong function for date stamps
+- Corrected typo in resource.html: Softwares -> Software
+- Updated git, install_ubuntu, terminal tutorials
+
+patrickC -- 2017-12-09 21:40
+- Modified soem tutorial design for greater consistency
+- Added to do list
+- Fixed bug on announcement page that prevented announcements from showing up
+- Modified start_server.sh to run on port 80 (default Http port)
+- Created admin account for Stephanie Yoon
 
 patrickC -- 2016-12-08 15:11
 - Modified api.py while exploring announcement functionality
 - Organized the static files
 - Tutorials
-  - Added git tutorial
-  - Started working on emacs tutorial
+- Added git tutorial
+- Started working on emacs tutorial
 - Updated resource.html to point to new tutorials
+
+patrickC -- 2016-12-08 09:54
+- Fix TypeError when navigating through the resources section
+- Updated the "Installing Ubuntu" tutorial

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from getpass import getpass
 from hashlib import sha1, sha256, sha512
 

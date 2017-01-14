@@ -20,7 +20,7 @@ from functools import wraps
 from hashlib import sha512
 from sys import argv
 from werkzeug.contrib.fixers import ProxyFix
-from time import gmtime, strftime
+from time import localtime, strftime
 
 def log_name(f):
     @wraps(f)
@@ -41,19 +41,21 @@ def log_time(f):
     return inner
 
 admin_accounts = {
-    'pchan': 'ce57d8bc990447c7ec35557040756db2a9ff7cdab53911f3c7995bc6bf3572cda8c94fa53789e523a680de9921c067f6717e79426df467185fc7a6dbec4b2d57',
-    'st234pa': '14d60abd2dc5d59e023913ca2ec999970071da68cee4a0ec56dd4e44d442bc113ef4f09a548f348290ad329119963400c77b3684a412e588faedb4821d0e5c72'
+    'pchan': '23066cad285c767bf0e63c67515d7f1d9955a158a6f2ecdd1d93eb10d782f4000947c0d91986f2436db799e198d086fc35ea117846e172dbb007f8deca2bb0bb',
+    'st234pa': '14d60abd2dc5d59e023913ca2ec999970071da68cee4a0ec56dd4e44d442bc113ef4f09a548f348290ad329119963400c77b3684a412e588faedb4821d0e5c72',
+    'lvargas': '9c373b042c68ffe0949ac51c893aa8a8206e56d463e5ec4425effb4a20c30b5d51546755ea191c99ab679c4a3c99366bd5ea1f1f1073dfd0d243be0214c4e0fd'
 }
 
 admin_names = {
     'pchan' : 'PChan',
-    'st234pa' : 'Stephanie Yoon'
+    'st234pa' : 'Stephanie Yoon',
+    'lvargas' : 'Lorenz Vargas'
 }
 
 def format_announcement(name, title, body):
     return """<h4>%s</h4>
     <p class='condensed light a_info'>Posted by %s on %s</p>
-    <p>%s</p>""" % (title, admin_names[name], strftime('%c', gmtime()), body)
+    <p>%s</p>""" % (title, admin_names[name], strftime('%c', localtime()), body)
 
 app = Flask(__name__)
 
@@ -85,7 +87,7 @@ def calendar():
 @log_name
 def tutorial(tut):
     try:
-        return render_template("./tutorials/" + tut)
+        return render_template("./tutorials/release/" + tut)
     except:
         return render_template('404.html'), 404
 
