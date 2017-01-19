@@ -1,1 +1,24 @@
-Emacs Guide
+Documentation
+   - Come up with the design for the documentation (possibly something similar to javadoc)
+       - Needs to be easy to update and readable
+   - Write documentation for all current functions and scripts
+Make consistent format of all tutorials
+Get the Google Calendar to work
+   - Collaborate with the Sensei on whether to continue the usage of a calendar
+   - Research how the calendar is integrated
+   - Send out mass email to get the days for the Senpai + Sensei
+   - Update the existing calendar
+IRC channel
+   - Send out the tutorial
+   - Take questions and discuss how it would be integrated into current Dojo life
+Work on the Blog
+   - Create the design for how the blog page would look like
+   - Create a design allowing one to post and edit blogs
+Additional Tutorials
+   - Bash tutorial
+   - Tutorials on best coding practices
+   - Tutorials for different courses
+       - APCS
+          - Big Oh Notation
+       - Intro
+          - Recursion

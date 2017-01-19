@@ -53,11 +53,11 @@
             $ sudo apt-get install emacs-snapshot emacs-snapshot-el
             $ sudo ln -s /usr/bin/emacs-snapshot /usr/bin/emacs
         </codeblock>
-	<br>
-	Either way, run Emacs with the following command:
-	<codeblock>
-	    $ emacs &
-	</codeblock>
+        <br>
+        Either way, run Emacs with the following command:
+        <codeblock>
+            $ emacs &
+        </codeblock>
         <br>
     </p>
     <p>
@@ -68,7 +68,7 @@
             $ brew doctor
         </codeblock>
         If you get a command not found error, follow the next set of instructions to install homebrew.  Otherwise,
-        skip to the next step.
+        skip to the set of instructions for installing Emacs.
         <codeblock>
             $ xcode-select --install
             $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -76,11 +76,12 @@
             $ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
             // Close the current terminal and fire up a new terminal
             $ brew doctor
-            // You should see something like: Your system is ready to brew.
-	    // If you get something like the following (where &ltdirectory&gt is name of any directory)
-	    Warning: /usr/local/&ltdirectory&gt isn&#39t writable
-	    $ sudo chmod g+w /usr/local
-	    $ sudo chgrp staff /usr/local
+            // You should see something like:
+            Your system is ready to brew.
+            // If you get something like the following (where &ltdirectory&gt is name of any directory)
+            Warning: /usr/local/&ltdirectory&gt isn&#39t writable
+            $ sudo chmod g+w /usr/local
+            $ sudo chgrp staff /usr/local
         </codeblock>
         Time to install Emacs!
         <codeblock>
@@ -92,17 +93,17 @@
         <codeblock>
             $ emacs-mac &
         </codeblock>
-	<br>
+        <br>
     </p>
     <p>
         <strong>The instructions for Windows Users:</strong>
         <br>
         1. Download Emacs (x64 version) from <a href="https://github.com/zklhp/emacs-w64/releases">here</a>.  Any
         of the links under the download section should work, but if you are not sure, download
-        <a href="https://github.com/zklhp/emacs-w64/releases/download/f0eb70d/emacs-w64-25.1-Og.7z">this one</a>
+        <a href="https://github.com/zklhp/emacs-w64/releases/download/f0eb70d/emacs-w64-25.1-Og.7z" target="_blank">this one</a>
         (Do not worry if this is not the latest version).
         <br>
-        2. Extract the downloaded file, you can find a free archiver <a href="http://www.7-zip.org/">here</a>.
+        2. Extract the downloaded file, you can find a free archiver <a href="http://www.7-zip.org/" target="_blank">here</a>.
         <br>
         3. To run Emacs, navigate to emacs/bin under the newly extracted folder and double-click on runemacs.exe.
     </p>
@@ -114,7 +115,7 @@
             C-    (press and hold) the Control/Ctrl key
             M-    (press and hold) the Meta/Alt key
             S-    (press and hold) the Shift key
-            DEL   backspace key, sometimes written as <backspace>
+            DEL   backspace key, sometimes written as &ltbackspace&gt
             RET   Return or Enter key
             SPC   Space bar/Space key
             ESC   Escape key
@@ -123,7 +124,7 @@
         <br>
         <code>C-x C-f</code> means while holding down the <code>Ctrl</code> key, press the <code>x</code> key and then press the <code>f</code> key
         <br>
-        <code>M-x</code> means while holding down the <code>Alt</code> key or the <code>Meta</code>, press the <code>x</code> key
+        <code>M-x</code> means while holding down the <code>Alt</code> key or the <code>Meta</code> key, press the <code>x</code> key
     </p>
     <p>
         Some common Emacs commands:
@@ -145,20 +146,21 @@
         <ul>
             <li>&#x2022; <strong>C-x</strong> is the default global prefix</li>
             <li>&#x2022; <strong>C-c</strong> prefix is typically used for user-defined commands</li>
-            <li>&#x2022; <strong>C-u</strong> is for altering the behavior of a command</li>
             <li>&#x2022; <strong>C-&ltnumber&gt</strong> passes a number to a command, usually used to specify how many times to repeat a command</li>
         </ul>
         Think of <em>prefix</em> as a key sequence that tells Emacs to interpret the next set of keystrokes
         differently.  For example, the global Emacs prefix, <strong>C-x</strong>, comes before the default Emacs
         commands.  To open a file, you will do <strong>C-x</strong> and then <strong>C-f</strong>.
-        <br>
-        <br>
-        We will talk more about <strong>C-u</strong> and <strong>C-&ltnumber&gt</strong> later.
     </p>
 
     <h5>Text Navigation</h5>
     <p>
-        Basic motion commands that are also used by popular shells such as bash or zsh:
+        In Emacs, <em>point</em> refers to the location of the cursor.  In most cases, <em>point</em> and cursor
+        can be used interchangeably.
+        <br>
+        <br>
+        Productivity is increased when you use the keyboard instead of the mouse.  Here are the basic motion
+        keybindings in Emacs that are also used by popular shells such as bash or zsh:
         <codeblock>
             Key        Commands                      What it does
             C-f        forward-char                  Move point forward one character
@@ -171,8 +173,9 @@
             M-b        backward-word                 Move point backward one word
         </codeblock>
         <br>
-        Motions commands only available in Emacs:
+        Some additional motions commands that are only available in Emacs:
         <codeblock>
+            Key        Commands                      What it does
             M-a        backward-sentence             Move point to the beginning of current sentence
             M-e        forward-sentence              Move point to the end of the current sentence
             M-<        beginning-of-buffer           Move point to the beginning of the current buffer
@@ -184,12 +187,136 @@
 
     <h5>Text Editing</h5>
     <p>
-        Some of the most frequent operations when we edit files are: copy, cut, and paste.  In Emacs, we have the
-        concept of killing and yanking.
-
-        Currently under construction!
+        It is nice to know how to move around, but what about copying, cutting, pasting, or undoing?  In Emacs, cutting is
+	known as <em>killing</em> and pasting is known as <em>yanking</em>.
+        <br>
+        <br>
+        Here are some basic Emacs editing key bindings (some also work in the terminal):
+        <codeblock>
+            Key        Commands                      What it does
+            DEL        delete-backward-char          Delete the highlighted region or character before the point
+            C-d        delete-char                   Delete the character at point (Same as the delete key)
+            M-\        delete-horizontal-space       Delete all spaces and tabs around point
+            M-SPC      just-one-space                Delete all spaces and tabs around point except for one space
+            M-d        kill-word                     Kill to the end of a word starting at point
+            M-DEL      backward-kill-word            Kill to the beginning of a word starting at point
+            C-S-DEL    kill-whole-line               Kill the entire line (only non-terminal Emacs)
+            C-k        kill-line                     Kill to the end of the line
+            M-k        kill-sentence                 Kill to the end of sentence
+            C-x DEL    backward-kill-sentence        Kill to the beginning of sentence
+	    C-w        kill-region                   Kill the highlighted region
+        </codeblock>
+        <br>
+        Note: <em>Delete</em> and <em>kill</em> means two different things.  When you <em>delete</em> something,
+        it is gone <strong><em>forever!!</em></strong>  When you <em>kill</em> something, it is saved to the
+        <em>kill ring</em> which can be thought of as the clipboard.
+        <br>
+	<br>
+        Great, but how would you paste something?
+        <codeblock>
+            Key        Commands                      What it does
+            C-y        yank                          Yank the most recent kill into the buffer
+            M-y        yank-pop                      Replace the yanked text with an earlier kill
+        </codeblock>
+        <code>C-y</code> is your normal paste operation.  However, Emacs keeps a history of all your previous
+        <em>kills</em> and you can retrieve those via <code>M-y</code>.  If you were to cut or copy something
+	from another application more recently than your last kill, <code>C-y</code> would yank from the clipboard.
+        <br>
+        <br>
+        Note: <code>M-y</code> can only be used after a previous <code>M-y</code> or a <code>C-y</code>.  After
+	doing <code>M-y</code>, successive <code>C-y</code> will yank the same thing instead of your most recent
+	kill.  After reaching the beginning of the <em>kill ring</em>, executing <code>M-y</code> would wrap back to
+	the most recent kill.
+	<br>
+	<br>
+	Emacs uses the following key to copy:
+	<codeblock>
+	    Key        Commands                      What it does
+	    M-w        kill-ring-save                Copy the highlighted region
+	</codeblock>
+	<br>
+	We keep saying <em>highlighted region</em>, but how do you highlight a region without using the mouse? The answer is:
+	<codeblock>
+	    Key        Commands                      What it does
+	    C-SPC      set-mark-command              Toggle the activation of the mark
+	</codeblock>
+	When you press <code>C-SPC</code> the first time, Emacs set the mark at <em>point</em>.  When you move
+	the <em>point</em> around, the region between the <em>point</em> and the location of the mark is
+	highlighted.  To get rid of the mark, press execute it twice: <code>C-SPC C-SPC</code>.
+	<br>
+	<br>
+	<strong>Exercise:</strong> Now create a text file in Emacs and type some text into it.  Practice
+	highlighting different regions and using Emacs shortcuts to delete, move, or copy text around.
+	<br>
+	<br>
+	Now you may be wondering, how would you undo your most recent change.  The following command would solve
+	your issue:
+	<codeblock>
+            Key        Commands                      What it does
+	    C-/        undo                          Undo your most recent change (or redo them)
+	    C-x u      undo                          Undo your most recent change (or redo them)
+	</codeblock>
+	When you press <code>C-/</code> or <code>C-x u</code>, you undo your most recent change.  Any command
+	other than the <code>undo</code> command would break the undo sequence and push the entire sequence of
+	undo commands as a single set of changes.  For example, to reverse an undo, you might press
+	<code>C-f</code> and then press <code>C-/</code> or <code>C-x u</code>.        
     </p>
 
+    <h5>Searching and Replacing</h5>
+    <p>
+	One of the most important operation when editing text is find and replace.  In Emacs, searching is done
+	via:
+	<codeblock>
+            Key        Commands                      What it does
+	    C-s        isearch-forward               Perform an incremental search from point onward
+	    C-r        isearch-backward              Perform an incremental search backward from point
+	</codeblock>
+	When you press <code>C-s</code>, you would notice that Emacs start searching the moment you enter a single
+	character.  It also highlights all instances of the query.  Pressing <code>C-s</code> again would move the
+	point to the next instance of the query.  Pressing <code>C-r</code> would move the point to the previous
+	instance of the query.  Cancel the search by pressing <code>C-g</code>.
+	<br>
+	<br>
+	<strong>Exercise:</strong> Open up a large text file or create a new file and dump a large amount of text
+	in it.  Practice using <code>C-s</code> and <code>C-r</code> to search through the files.
+	<br>
+	<br>
+	Replacing in Emacs is done via:
+	<codeblock>
+	    Key                    Commands                      What it does
+	    M-%  (Meta-Shift-5)    query-replace                 Replace a string with a different string
+	</codeblock>
+	<br>
+	This would prompt you about each replacement for one of the following characters:
+	<codeblock>
+	    SPC                   replace the current occurence with the new string
+	    y
+	</codeblock>
+	<br>
+	<codeblock>
+	    DEL                   skip the current occurence
+	    delete
+            n
+	</codeblock>
+        <br>
+	<codeblock>
+	    C-g                   exit without doing any more replacement
+	    RET
+	    q
+	</codeblock>
+	<br>
+        <codeblock>
+	    .                     replace the current occurence and then exit
+	    !                     replace all remaining occurences without prompting
+	    ^                     go back to the previous occurence
+	</codeblock>
+	If you press <code>M-%</code> after doing <code>C-s</code> or <code>C-r</code>, it would look for the
+	current search string and prompt you for the replacement. (Find and replace)
+	<br>
+	<br>
+	<strong>Exercise:</strong> Open up a large text file and practice these new commands.
+    </p>
+    
     <h5>Frames and Windows</h5>
     <img src="../static/emacs/emacs-terminology.png" height="456" width="736">
     <p>
@@ -198,25 +325,26 @@
         following commands:
         <br>
         <codeblock>
-            Key      Commands              What it does
-            C-x 2    split-window-below    Split the current window in half vertically
-            C-x 3    split-window-right    Split the current window in half horizontally
+	    Key      Commands              What it does
+	    C-x 2    split-window-below    Split the current window in half vertically
+	    C-x 3    split-window-right    Split the current window in half horizontally
         </codeblock>
         <br>
         After splitting the window, you will notice that both windows contain the same content.  This is hardly
         useful.  To change that, we will need to know the following command:
         <codeblock>
-            C-x o    other-window          Move the cursor to the other window
+	    Key      Commands              What it does
+	    C-x o    other-window          Move the cursor to the other window
         </codeblock>
         <br>
         <img src="../static/emacs/emacs-split-window.jpg">
         <br>
-        To get the same layout as the picture above, execute the following commands:
+        To get the same layout as the picture above, execute the following commands in a new instance of Emacs:
         <codeblock>
-            Key      Commands
-            C-x 2    split-window-below
-            C-x o    other-window
-            C-x 3    split-window-right
+	    Key      Commands
+	    C-x 2    split-window-below
+	    C-x o    other-window
+	    C-x 3    split-window-right
         </codeblock>
         <br>
         <strong>Exercise:</strong> Use what you learn just now to move the point/cursor to the top window.
@@ -225,15 +353,15 @@
     <h5>Buffers</h5>
     <p>
         When you open a file in Emacs, the file is contained in a separate <em>buffer</em>, which is a temporary
-        copy of your file which you might modify as you please.  To keep the changes, you would call the
+        copy of your file that you may modify as you please.  To keep the changes, you would call the
         <code>save-buffer</code> command, which is bound to <code>C-x C-s</code>.  If you wish to save it under a
         different name (think "Save as" in other editors), you would call the <code>write-buffer</code> command,
         which is bound to <code>C-x C-w</code>.
         <br>
         <br>
-        To kill/delete a buffer, use <code>C-x k</code> or call the <code>kill-buffer</code> command.  Pressing
-        <code>RET</code> will kill the current buffer.  You may also type the name of the buffer you wish to
-        delete.  Buffer names are typically the same as the file name.
+        To kill/delete a buffer, use <code>C-x k</code> or call the <code>kill-buffer</code> command.  Then, press
+        <code>RET</code> to kill the current buffer.  You may also type the name of the buffer you wish to
+        delete followed by <code>RET</code>.  Buffer names are typically the same as the file name.
         <br>
         <br>
         Remember that <em>file</em> and <em>buffer</em> are two distinct concepts.  <em>Buffers</em> refer to the
@@ -247,10 +375,10 @@
         <br>
         <strong>Here is an exercise for you:</strong>
         <ul>
-            <li>&#x2022; Open/Create the file hi.txt</li>
-            <li>&#x2022; Modify hi.txt</li>
-            <li>&#x2022; Open/Create the file bye.txt</li>
-            <li>&#x2022; Switch back to the buffer named hi.txt</li>
+	    <li>&#x2022; Open/Create the file hi.txt</li>
+	    <li>&#x2022; Modify hi.txt</li>
+	    <li>&#x2022; Open/Create the file bye.txt</li>
+	    <li>&#x2022; Switch back to the buffer named hi.txt</li>
         </ul>
         Notice that any modifications you made to the original buffer (ie hi.txt) is still there.  This is because
         the content of a buffer is stored in memory after the initial read which is faster than reading the file
@@ -263,8 +391,13 @@
         your productivity! :)
         <br>
         <br>
-        Here are some additional information to expand your Emacs knowledge:
+        Here are some additional resources to expand your Emacs knowledge:
         <br>
-        Under construction
+        <br>
+        Start off with is the <a href="https://emacswiki.org/">Emacs Wiki</a>.  You might need to scroll down a
+        bit for the meaningful information.
+        <br>
+        <br>
+        Stay tuned for Elisp snippets to turbo boost your Emacs editor...
     </p>
 {% endblock %}

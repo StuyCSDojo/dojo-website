@@ -1,4 +1,7 @@
-patrickC -- 2017-01-14
+patrickC -- 2017-01-18 10:15
+- Proofread the Emacs tutorial, fixed minor issues and typos
+
+patrickC -- 2017-01-14 18:32
 - Modified generatePasswordHash.py and html_preprocessor.py to run as executable
 - Updated git tutorial
 - Updated the following sections in emacs.html: Installing Emacs, Emacs KeyBinding, Text Navigation,
