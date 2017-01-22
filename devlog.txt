@@ -1,3 +1,10 @@
+patrickC -- 2017-01-22 16:52
+- Started the documentation for the dojo website, using reStructuredText Markup to write the documentation and
+  sphinx to build the documentation
+- Added a windows script that adds a new path to the %path% variable for the user
+- Tweaked the css to make the website more responsive on smaller screens (yet to fix the navbar)
+- Fixed typo in the vim guide
+
 patrickC -- 2017-01-18 10:15
 - Proofread the Emacs tutorial, fixed minor issues and typos
 

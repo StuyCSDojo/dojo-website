@@ -24,8 +24,14 @@ codeblock {
     padding: 0px 4px 0px 4px;
     border-radius: 5px;
     font-family:monospace;
-    white-space:pre;
+    white-space:pre-wrap;
     display:block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
 }
 
 span.badge.newc {

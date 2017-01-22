@@ -15,7 +15,7 @@
 # Dev Log
 #  Project Created: 2016-02-25 16:46 - Yicheng W.
 
-from flask import Flask, request, render_template, session, redirect, url_for
+from flask import Flask, request, render_template, session, redirect, send_from_directory, url_for
 from functools import wraps
 from hashlib import sha512
 from sys import argv
@@ -91,6 +91,12 @@ def tutorial(tut):
     except:
         return render_template('404.html'), 404
 
+@app.route('/doc/')
+@app.route('/doc/<path:filename>')
+@log_name
+def docs(filename='index.html'):
+    return send_from_directory('docs/build/html', filename)
+    
 @app.route('/admins')
 @log_name
 def admins():

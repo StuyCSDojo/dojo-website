@@ -1,4 +1,11 @@
 Documentation
+   - Preparing the Development Environment
+   - Replace the check for flask and sphinx with pip freeze | grep <package>
+   - Recommend the usage of virtualenv
+
+Website
+
+Documentation
    - Come up with the design for the documentation (possibly something similar to javadoc)
        - Needs to be easy to update and readable
    - Write documentation for all current functions and scripts
