@@ -1,14 +1,10 @@
 Documentation
-   - Preparing the Development Environment
-   - Replace the check for flask and sphinx with pip freeze | grep <package>
-   - Recommend the usage of virtualenv
+   - Require team members to run through the instructions to ensure accuracy and clarity
+   - Create documentation for modifying the documentation
+   - Document the actual code
 
 Website
 
-Documentation
-   - Come up with the design for the documentation (possibly something similar to javadoc)
-       - Needs to be easy to update and readable
-   - Write documentation for all current functions and scripts
 Make consistent format of all tutorials
 Get the Google Calendar to work
    - Collaborate with the Sensei on whether to continue the usage of a calendar
@@ -24,8 +20,12 @@ Work on the Blog
 Additional Tutorials
    - Bash tutorial
    - Tutorials on best coding practices
+   - Integrate the usage of terminal with vim in the vim tutorial
    - Tutorials for different courses
        - APCS
           - Big Oh Notation
+	  - Key Java terms (Polymorphism, overloading vs overriding, etc)
+	  - Sorts
        - Intro
           - Recursion
+Make the navbar responsive on small displays

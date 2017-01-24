@@ -1,3 +1,9 @@
+patrickC -- 2017-01-23 23:55
+- Rewrote the documentation for preparing the development environment, need people to test the instructions for
+  clarity and accuracy
+- Added requirements.txt for installing dependencies
+- Updated to do list
+
 patrickC -- 2017-01-22 16:52
 - Started the documentation for the dojo website, using reStructuredText Markup to write the documentation and
   sphinx to build the documentation

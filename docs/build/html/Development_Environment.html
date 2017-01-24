@@ -87,9 +87,8 @@
                 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Preparing the Development Environment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#linux"><em>Linux</em></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mac-osx">Mac OSX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#windows"><em>Windows</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unix"><em>Unix</em></a></li>
 </ul>
 </li>
 </ul>
@@ -155,121 +154,33 @@
             
   <div class="section" id="preparing-the-development-environment">
 <h1>Preparing the Development Environment<a class="headerlink" href="#preparing-the-development-environment" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="linux">
-<h2><em>Linux</em><a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul>
-<li><p class="first"><strong>Python is most likely installed by default.</strong>
-<br />
-To check if this is the case, open up a terminal (<code class="docutils literal"><span class="pre">Ctrl-Alt-T</span></code>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ python --version
-</pre></div>
-</div>
-<p>If the command does not return an error, make sure that the version reported is in the format of 2.x.x.  Most
-distros ship with Python2 by default.  If yours does not (currently Arch Linux &amp; Gentoo), do whatever you need
-to install Python2 (or use <a class="reference external" href="https://github.com/yyuu/pyenv">pyenv</a>)</p>
-</li>
-<li><p class="first"><strong>If you are using the default installation of Python, install pip.</strong>
-<br />
-Pip is the package manager for Python and we need it to install extra libraries.</p>
-<ul>
-<li><p class="first">On Ubuntu/Debian/Mint system:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo apt-get install python-pip
-</pre></div>
-</div>
-</li>
-<li><p class="first">On Fedora 21:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo yum upgrade python-setuptools
-$ sudo yum install python-pip python-wheel
-</pre></div>
-</div>
-</li>
-<li><p class="first">On Fedora 22+:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo dnf upgrade python-setuptools
-$ sudo dnf install python-pip python-wheel
-</pre></div>
-</div>
-</li>
-<li><p class="first">If you are using some other distro, you probably know how to install Python/pip.</p>
-</li>
-</ul>
-</li>
-<li><p class="first"><strong>Install virtualenv</strong>
-<br />
-Virtualenv allows one to create an isolated Python environment local to you which means you do not have to
-install extra libraries globally as that is not a good idea.  It also allows you to freeze the versions of
-these libraries so that you do not accidentally upgrade your package.  Do so via:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install virtualenv
-</pre></div>
-</div>
-</li>
-<li><p class="first"><strong>Install flask and sphinx</strong>
-<br />
-To check if you need to install either library, run the following commands in a terminal:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ python
-&gt;&gt;&gt; import flask
-&gt;&gt;&gt; import sphinx
-&gt;&gt;&gt; exit()
-</pre></div>
-</div>
-<p>If either import statement throw an error, you would need to install the corresponding library:
-<br />
-For flask:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo pip install flask
-</pre></div>
-</div>
-<p>For sphinx:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo pip install sphinx==1.4.8
-</pre></div>
-</div>
-<p>We are using version 1.4.8 as the latest version seems to have trouble building the documentation.</p>
-</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="mac-osx">
-<h2>Mac OSX<a class="headerlink" href="#mac-osx" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul>
-<li><p class="first"><strong>Install</strong> <a class="reference external" href="http://dojo.stuycs.org/tutorials/emacs.htmlc">homebrew</a></p>
-</li>
-<li><p class="first"><strong>Install Python</strong>
-* If you did not install Python with homebrew with the current machine before, execute the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ brew install python
-</pre></div>
-</div>
-<ul class="simple">
-<li>If you have already installed Python with homebrew, update it with:</li>
-</ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ brew update python
-</pre></div>
-</div>
-</li>
-<li><p class="first">Install flask and sphinx
-<br />
-First, let us check if that is necessary.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip freeze | grep flask
-$ pip freeze | grep sphinx
-</pre></div>
-</div>
-<p>If either of the import statement failed, you need to install the corresponding library.
-<br />
-For flask:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install flask
-</pre></div>
-</div>
-<p>For sphinx:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install sphinx==1.4.8
-</pre></div>
-</div>
-</li>
-</ul>
-</div></blockquote>
-</div>
 <div class="section" id="windows">
 <h2><em>Windows</em><a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><ul>
+<div><dl class="docutils">
+<dt>Notation:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">C:\Users\Username&gt;</span></code> signals that you should enter the commands afterward in the command prompt.</li>
+</ul>
+</dd>
+</dl>
+<ul>
+<li><p class="first"><strong>Install Git and clone the Dojo Website repo</strong></p>
+<ul>
+<li><p class="first">If you do not have Git installed, check the <a class="reference external" href="http://dojo.stuycs.org/tutorials/git.htmlc">tutorial here</a>
+for instructions on installing it along with a brief introduction to git.</p>
+</li>
+<li><p class="first">It is recommended for you set up your ssh keys, information can be found in the <a class="reference external" href="http://dojo.stuycs.org/tutorials/git.htmlc">git tutorial</a>.</p>
+</li>
+<li><p class="first">Create a folder for the project and clone the repo inside the directory with the following commands:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">mkdir</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">directory</span><span class="o">&gt;</span>
+<span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">cd</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">directory</span><span class="o">&gt;</span>
+<span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">StuyCSDojo</span><span class="o">/</span><span class="n">dojo</span><span class="o">-</span><span class="n">website</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
 <li><p class="first"><strong>Install Python</strong>
 <br />
 If you do not already have Python installed, download it from <a class="reference external" href="https://www.continuum.io/downloads">here</a>.
@@ -281,8 +192,8 @@ Anaconda Python has a few advantages:</p>
 </li>
 <li><p class="first"><strong>Add Python and pip to path</strong>
 <br />
-If you have vanilla Python <a class="footnote-reference" href="#f1" id="id1">[1]</a> installed, there is a chance that Python and/or is not in your path.  Open
-up command prompt and try executing python and then pip:</p>
+If you have vanilla Python <a class="footnote-reference" href="#f1" id="id1">[1]</a> installed, there is a chance that Python and/or pip is not in your path.
+Open up command prompt and test if python and pip are in your path:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
@@ -290,13 +201,19 @@ up command prompt and try executing python and then pip:</p>
 <p>If either command gave you an error, then you need to add them to your path.
 <br />
 Here are the steps (You will need Administer access):</p>
+<ul>
+<li><p class="first">Open Control Panel</p>
+</li>
+<li><p class="first">Click System and Security</p>
+</li>
+<li><p class="first">Select System</p>
+</li>
+<li><p class="first">Select Advanced System Settings on the left side</p>
+</li>
+<li><p class="first">Click Environment Variables in the pop up window</p>
+</li>
+<li><p class="first">On the bottom window, click on PATH and then click Edit</p>
 <ul class="simple">
-<li>Open Control Panel</li>
-<li>Click System and Security</li>
-<li>Select System</li>
-<li>Select Advanced System Settings on the left side</li>
-<li>Click Environment Variables in the pop up window</li>
-<li>On the bottom window, click on PATH and then click Edit<ul>
 <li>If executing <code class="docutils literal"><span class="pre">python</span> <span class="pre">--version</span></code> gave you an error:<ul>
 <li>At the end of the bottom text box, add a semicolon followed by the path to the Python executable</li>
 </ul>
@@ -307,14 +224,17 @@ Here are the steps (You will need Administer access):</p>
 </li>
 </ul>
 </li>
-<li>Make sure you save as you close all the pop up window.</li>
-<li>Close the current command prompt and open up another one</li>
-<li>Try executing Python and/or pip again in the command prompt:</li>
-</ul>
+<li><p class="first">Make sure you save as you close all the pop up window.</p>
+</li>
+<li><p class="first">Close the current command prompt and open up another one</p>
+</li>
+<li><p class="first">Try executing Python and/or pip again in the command prompt:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
+</li>
+</ul>
 <p>It is recommended that you learn how to modify the path in Windows, but there is an alternative.  At the root
 of the repo, there is a directory named devUtilities where you will find a Windows script named setPath.bat.</p>
 <ul class="simple">
@@ -332,50 +252,38 @@ installed, a semicolon, and then directory where pip is installed
 <li>After making the necessary changes for you, it will reboot the machine so make sure you save your work!</li>
 </ul>
 </li>
-<li><p class="first"><strong>Installing and Creating virtualenv</strong>
+<li><p class="first"><strong>Installing and creating virtualenv</strong>
 <br />
-If you installed Anaconda Python, you may skip this step.  Otherwise, you should install the virtualenv
-library which allows you to create isolated python environments and install extra libraries without cluttering
-your system.  It also allow you to test for compability with newer libraries without breaking current
-products.  Simply execute the following:</p>
+If you installed Anaconda Python, you may skip this step.  Otherwise, install the virtualenv library which</p>
+<blockquote>
+<div><ul class="simple">
+<li>Allows you to create isolated python environments to install libraries without cluttering the system</li>
+<li>Allows you to test for compatibility with newer libraries without breaking current products.</li>
+</ul>
+</div></blockquote>
+<p>Simply execute the following:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
 </pre></div>
 </div>
-<p>Create a project folder for the dojo website.  Inside that directory, create a virtualenv for the dojo
-website like this (a directory would be created):</p>
+<p>Inside the directory containing the git repo, create a virtualenv for the dojo website (the result would be a
+directory):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">virtualenv</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">virtualenv</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Installing Git and Cloning the Dojo Website repo</strong>
-<br /></p>
-<ul>
-<li><p class="first">If you do not have git installed, check the <a class="reference external" href="http://dojo.stuycs.org/tutorials/git.htmlc">tutorial here</a>
-for instructions on installing it along with a brief introduction to git.</p>
-</li>
-<li><p class="first">If you has not done so yet, create a folder for the project.  Inside that directory, clone the repo with the
-following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">StuyCSDojo</span><span class="o">/</span><span class="n">dojo</span><span class="o">-</span><span class="n">website</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
 <li><p class="first"><strong>Installing dependencies</strong>
 <br />
-You can skip this step if you installed Anaconda Python as the dependencies for this project would already be
-installed.  Otherwise:</p>
+You can skip this step if you installed Anaconda Python as the dependencies would already be installed.
+Otherwise...</p>
 <ul>
 <li><p class="first">Activate the virtualenv</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">path</span>\<span class="n">to</span>\<span class="n">virtualenv</span>\<span class="n">created</span>\<span class="n">earlier</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">cd</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">virtualenv</span><span class="o">&gt;</span>
 <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">Scripts</span>\<span class="n">activate</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Copy the requirements.txt file at the root of the git repository to the virtualenv directory</p>
-</li>
-<li><p class="first">Inside the virtualenv directory, install the dependencies via pip:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<li><p class="first">Install the dependencies via pip:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Username</span><span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="o">..</span>\<span class="n">dojo</span><span class="o">-</span><span class="n">website</span>\<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 </li>
@@ -390,6 +298,122 @@ installed.  Otherwise:</p>
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Version of Python downloaded from <a class="reference external" href="https://www.python.org/">python.org</a></td></tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="unix">
+<h2><em>Unix</em><a class="headerlink" href="#unix" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first"><strong>Install Git and clone the Dojo website repo</strong></p>
+<ul>
+<li><p class="first">If you do not have Git installed, check the <a class="reference external" href="http://dojo.stuycs.org/tutorials/git.htmlc">tutorial here</a>
+for instructions on installing it along with a brief introduction to git.</p>
+</li>
+<li><p class="first">It is recommended for you set up your ssh keys, information can be found in the <a class="reference external" href="http://dojo.stuycs.org/tutorials/git.htmlc">git tutorial</a>.</p>
+</li>
+<li><p class="first">Create a folder for the project and clone the repo inside the directory with the following commands:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir &lt;name of directory&gt;
+$ cd &lt;name of directory&gt;
+$ git clone git@github.com:StuyCSDojo/dojo-website.git
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Install Python and pip</strong></p>
+<ul>
+<li><p class="first"><strong>Linux</strong>
+<br />
+Check if Python is already installed by running the following in a terminal (<code class="docutils literal"><span class="pre">Ctrl-Alt-T</span></code>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python --version
+</pre></div>
+</div>
+<p>If the command does not return an error, make sure that the version reported is in the format of 2.x.x.
+Most distros ship with Python2 by default.  If yours does not (currently Arch Linux &amp; Gentoo), do whatever
+you need to install Python2 (or use <a class="reference external" href="https://github.com/yyuu/pyenv">pyenv</a>)
+<br />
+<br />
+Pip is the package manager for Python and we need it to install extra libraries.</p>
+<ul>
+<li><p class="first">On Ubuntu/Mint/Debian system:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo apt-get install python-pip
+</pre></div>
+</div>
+</li>
+<li><p class="first">On Fedora 21:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo yum upgrade python-setuptools
+$ sudo yum install python-pip python-wheels
+</pre></div>
+</div>
+</li>
+<li><p class="first">On Fedora 22:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo dnf upgrade python-setuptools
+$ sudo dnf install python-pip python-wheels
+</pre></div>
+</div>
+</li>
+<li><p class="first">If you are using some other distro, you probably know how to install Python/pip.</p>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Mac OS</strong></p>
+<ul>
+<li><p class="first">Install <a class="reference external" href="http://dojo.stuycs.org/tutorials/emacs.htmlc">homebrew</a></p>
+</li>
+<li><p class="first">Install Python</p>
+<ul>
+<li><p class="first">If you did not install Python via homebrew on the current machine, execute the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ brew install python
+</pre></div>
+</div>
+</li>
+<li><p class="first">Otherwise, update Python via the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ brew update python
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Install and create virtualenv</strong>
+<br />
+Why install virtualenv?</p>
+<blockquote>
+<div><ul class="simple">
+<li>Allows you to create isolated python environments to install libraries without cluttering the system</li>
+<li>Allows you to test for compatibility with newer libraries without breaking current products.</li>
+</ul>
+</div></blockquote>
+<p>If you have not already done so in the past, do so via:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo pip install virtualenv
+</pre></div>
+</div>
+<p>Inside the directory containing the git repo, create a virtualenv for the dojo website (the result would be a
+directory):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ virtualenv &lt;name of virtualenv&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Install dependencies</strong></p>
+<ul>
+<li><p class="first">Activate the virtualenv</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>// the virtualenv should be in the present directory
+$ cd &lt;name of virtualenv&gt;
+$ source bin/activate
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install the dependencies via pip:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install -r ../dojo-website/requirements.txt
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
 </div>
 </div>
 
