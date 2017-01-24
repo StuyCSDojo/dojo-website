@@ -28,4 +28,6 @@ Additional Tutorials
 	  - Sorts
        - Intro
           - Recursion
+   - Tutorial for homebrew
+   - Modify tutorial for git to include installation and ssh keygens instructions
 Make the navbar responsive on small displays
