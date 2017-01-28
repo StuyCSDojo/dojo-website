@@ -1,0 +1,62 @@
+{% extends "master.html" %}
+
+{% block title %}Tutorial: Learning Bash{% endblock %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+<div class="nav-wrapper blue darken-4">
+
+  <a href='/' class="left-padding breadcrumb left"><strong>CS
+      DOJO</strong></a>
+  <a href='/resources' class='breadcrumb'>Resources</a>
+
+  <a href='#!' class='breadcrumb white-text'>Tutorial: Learning Bash</a>
+
+
+  <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+    <li><a href='/'>Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li class='active'><a href="/resources">Resources</a></li>
+    <li><a href='/calendar'>Calendar</a></li>
+    <li><a href="/blog">Dojo Blog</a></li>
+    <li><a href="/irc">Chat</a></li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block container %}
+<h4>Introduction to Bash</h4>
+<p class='condensed light a_info'>Written by Shakil Rafi: 2017-01-26</p>
+<h5>What is Bash?</h5>
+<p>Bash is the language of the terminal. Whenever you enter a command into the terminal it is executed using Bash.</p>
+<h5>How to get Bash</h5>
+<p>Bash is readily available to use on any Linux and Mac OSX machine. Windows has a similar toolset powering its command line and Powershell, however it is not as comprehensive as Bash.</p>
+<h5>Using Bash</h5>
+<p>Bash is generally used to make custom scripts for anything you do often. For example, let's say you always generate a file to start your CS homework in the format:
+  <codeblock>John Smith
+APCS1
+Period 11
+2016-01-20</codeblock>
+  you could write a bash script to make that file for you and then you could easily run that script each time you start your homework instead of manually typing the template.<br>
+  <strong>Running a Bash script</strong><br>
+  To run a Bash script, simply write the name of script preceded by './'. For example: <code>./myscript</code><br>
+  <strong>Utilizing your PATH variable</strong><br>
+  As previously stated, everything you use in your terminal is run using bash. So why don't you have to use './' everytime you run <code>ls</code> to list all files and directories or <code>python</code> to enter a Python shell? Well there are a bunch of scripts that are located in various directories specified in your PATH variable. The PATH variable is held by the terminal inthe format <code>dir1:dir2:dir3</code>. Each time you open a new terminal, these directories are scanned for scripts and they are made readily available for your use without typing './'. For the sake of custom scripts being available in the same way, you can make a new directory to hold your scripts and then modify your PATH variable to look through that directory using the following commands:
+  <codeblock>$ mkdir custom_scripts
+$ echo "export PATH=$PATH:$PWD/custom_scripts" >> ~/.bashrc</codeblock><br>
+  At this point, you might be asking "Why can't I just add all directories to the PATH variable?" Well, the simple answer is that it would greatly slow down your terminal to have to look through your entire computer for a script that would only possibly be located in a few directories. On top of that duplicate filenames would create a larger issue. If you have two files named 'starthw' in different directories, which one should the terminal run?
+</p>
+<h5>Writing bash scripts</h5>
+<p>
+  Writing a bash script is fairly simple. To start off, you have to write the header of the file:
+  <codeblock>#! /bin/bash</codeblock>
+  As for the rest, it is essentially just a list of commands for the terminal to run. For example, the script below would make a directory named 'foo' and then print out 'bar'.
+  <codeblock>#! /bin/bash
+mkdir foo
+echo bar</codeblock>
+  
+</p>
+{% endblock %}
