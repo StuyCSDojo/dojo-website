@@ -20,28 +20,7 @@ from functools import wraps
 from hashlib import sha512
 from sys import argv
 from werkzeug.contrib.fixers import ProxyFix
-from time import localtime, strftime
-from lib.utils import getFromDict
-
-def log_name(f):
-    @wraps(f)
-    def inner(*args, **kwargs):
-        keyWordArgs = kwargs.values()
-        print f.func_name + '(' + str(*args) + str(','.join(keyWordArgs)) + ')'
-        return f(*args, **kwargs)
-        
-    return inner
-
-def log_time(f):
-    @wraps(f)
-    def inner(*args):
-        init_t = time()
-        ret_val = f(*args)
-        fin_t = time()
-        print 'Time: %f' % (fin_t - init_t)
-        return ret_val
-        
-    return inner
+from lib.utils import get_from_dict, format_announcement, log_name, log_time
 
 admin_accounts = {
     'pchan': '23066cad285c767bf0e63c67515d7f1d9955a158a6f2ecdd1d93eb10d782f4000947c0d91986f2436db799e198d086fc35ea117846e172dbb007f8deca2bb0bb',
@@ -54,11 +33,6 @@ admin_names = {
     'st234pa' : 'Stephanie Yoon',
     'lvargas' : 'Lorenz Vargas'
 }
-
-def format_announcement(name, title, body):
-    return '''<h4>%s</h4>
-    <p class='condensed light a_info'>Posted by %s on %s</p>
-    <p>%s</p>''' % (title, admin_names[name], strftime('%c', localtime()), body)
 
 app = Flask(__name__)
 
@@ -110,9 +84,7 @@ def admins():
 def update_announcements():
     user = request.form['user']
     if user in admin_accounts:
-        password = sha512()
-        password.update(request.form['pass'])
-        password = password.hexdigest()
+        password = sha512(request.form['pass']).hexdigest()
         
         if admin_accounts[user] == password: # validated
             # do stuff TODO
@@ -127,7 +99,7 @@ def update_announcements():
 
 @app.route('/register/', methods = ['POST'])
 def register():
-    username = getFromDict
+    username = get_from_dict(request.form, 'username')
     
 @app.route('/forum/')
 def forumRoot():
@@ -138,16 +110,20 @@ def forumRoot():
 def page_not_found(error):
     return render_template('404.html'), 404
 
-app.wsgi_app = ProxyFix(app.wsgi_app)
+def run():
+    app.wsgi_app = ProxyFix(app.wsgi_app)
 
-try:
-    app.secret_key = argv[argv.index('--key') + 1]
-except ValueError:
-    app.secret_key = 'afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF'
+    try:
+        app.secret_key = argv[argv.index('--key') + 1]
+    except ValueError:
+        app.secret_key = 'afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF'
     
-app.debug = True
+    app.debug = True
+
+    userManager = 
+    
+    app.run(host = '0.0.0.0', port = 5000)
 
 if __name__ == '__main__':
-    #app.run()
-    app.run(host='0.0.0.0', port=5000)
+    run()
     
