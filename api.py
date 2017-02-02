@@ -28,6 +28,7 @@ def log_name(f):
         keyWordArgs = kwargs.values()
         print f.func_name + '(' + str(*args) + str(','.join(keyWordArgs)) + ')'
         return f(*args, **kwargs)
+        
     return inner
 
 def log_time(f):
@@ -36,8 +37,9 @@ def log_time(f):
         init_t = time()
         ret_val = f(*args)
         fin_t = time()
-        print "Time: %f" % (fin_t - init_t)
+        print 'Time: %f' % (fin_t - init_t)
         return ret_val
+        
     return inner
 
 admin_accounts = {
@@ -53,56 +55,56 @@ admin_names = {
 }
 
 def format_announcement(name, title, body):
-    return """<h4>%s</h4>
+    return '''<h4>%s</h4>
     <p class='condensed light a_info'>Posted by %s on %s</p>
-    <p>%s</p>""" % (title, admin_names[name], strftime('%c', localtime()), body)
+    <p>%s</p>''' % (title, admin_names[name], strftime('%c', localtime()), body)
 
 app = Flask(__name__)
 
-@app.route("/")
-@app.route("/home")
+@app.route('/')
+@app.route('/home/')
 def home():
-    return render_template("index.html")
+    return render_template('index.html')
 
-@app.route("/about")
+@app.route('/about/')
 def about():
-    return render_template("about.html")
+    return render_template('about.html')
 
-@app.route("/resources")
+@app.route('/resources/')
 @log_name
 def resources():
-    return render_template("resources.html")
+    return render_template('resources.html')
 
-@app.route("/irc")
+@app.route('/irc/')
 @log_name
 def irc():
-    return render_template("irc.html")
+    return render_template('irc.html')
 
-@app.route('/calendar')
+@app.route('/calendar/')
 @log_name
 def calendar():
     return render_template('calendar.html')
 
-@app.route("/tutorials/<tut>")
+@app.route('/tutorials/<tut>/')
 @log_name
 def tutorial(tut):
     try:
-        return render_template("./tutorials/release/" + tut)
+        return render_template('./tutorials/release/' + tut)
     except:
         return render_template('404.html'), 404
 
 @app.route('/doc/')
-@app.route('/doc/<path:filename>')
+@app.route('/doc/<path:filename>/')
 @log_name
 def docs(filename='index.html'):
     return send_from_directory('docs/build/html', filename)
     
-@app.route('/admins')
+@app.route('/admins/')
 @log_name
 def admins():
     return render_template('make_announcement_admin.html')
 
-@app.route('/admins', methods = ['POST'])
+@app.route('/admins/', methods = ['POST'])
 @log_name
 def update_announcements():
     user = request.form['user']
@@ -110,6 +112,7 @@ def update_announcements():
         password = sha512()
         password.update(request.form['pass'])
         password = password.hexdigest()
+        
         if admin_accounts[user] == password: # validated
             # do stuff TODO
             title = request.form['title']
@@ -121,6 +124,14 @@ def update_announcements():
 
     return render_template('make_announcement_admin.html', err='Incorrect username/password')
 
+@app.route('/register/', methods = ['POST'])
+def register():
+    
+    
+@app.route('/forum/')
+def forumRoot():
+    return render_template('forum.html')
+
 @app.errorhandler(404)
 @log_name
 def page_not_found(error):
@@ -131,11 +142,11 @@ app.wsgi_app = ProxyFix(app.wsgi_app)
 try:
     app.secret_key = argv[argv.index('--key') + 1]
 except ValueError:
-    app.secret_key = "afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF"
+    app.secret_key = 'afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF'
     
 app.debug = True
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     #app.run()
     app.run(host='0.0.0.0', port=5000)
     
