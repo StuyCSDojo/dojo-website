@@ -21,6 +21,7 @@ from hashlib import sha512
 from sys import argv
 from werkzeug.contrib.fixers import ProxyFix
 from time import localtime, strftime
+from lib.utils import getFromDict
 
 def log_name(f):
     @wraps(f)
@@ -126,7 +127,7 @@ def update_announcements():
 
 @app.route('/register/', methods = ['POST'])
 def register():
-    
+    username = getFromDict
     
 @app.route('/forum/')
 def forumRoot():
