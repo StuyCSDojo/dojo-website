@@ -15,12 +15,15 @@
 # Dev Log
 #  Project Created: 2016-02-25 16:46 - Yicheng W.
 
-from flask import Flask, request, render_template, session, redirect, send_from_directory, url_for
-from functools import wraps
 from hashlib import sha512
 from sys import argv
+
+from flask import (Flask, request, render_template, session, redirect,
+                   send_from_directory, url_for, flash, get_flashed_messages)
 from werkzeug.contrib.fixers import ProxyFix
-from lib.utils import get_from_dict, format_announcement, log_name, log_time
+
+from lib.util import get_from_dict, format_announcement, log_name, log_time
+from lib.database import UserManager
 
 admin_accounts = {
     'pchan': '23066cad285c767bf0e63c67515d7f1d9955a158a6f2ecdd1d93eb10d782f4000947c0d91986f2436db799e198d086fc35ea117846e172dbb007f8deca2bb0bb',
@@ -35,7 +38,17 @@ admin_names = {
 }
 
 app = Flask(__name__)
+userManager = UserManager('dojo-website')
 
+def isLoggedIn():
+    username = get_from_dict(session, 'username')
+    if username is None:
+        return False
+    elif userManager.isRegistered(username):
+        return True
+    else:
+        session.pop('username')
+        
 @app.route('/')
 @app.route('/home/')
 def home():
@@ -82,25 +95,68 @@ def admins():
 @app.route('/admins/', methods = ['POST'])
 @log_name
 def update_announcements():
-    user = request.form['user']
-    if user in admin_accounts:
-        password = sha512(request.form['pass']).hexdigest()
+    username = get_from_dict(request.form, 'username')
+    password = get_from_dict(request.form, 'password')
+
+    if userManager.isAdmin(username) and userManager.authAdmin(username, password):
+        # do stuff TODO
+        title = get_from_dict(request.form, 'title')
+        body = get_from_dict(request.form, 'textarea1')
+        oldpage = open('./templates/index.html', 'r').read().split('<h4>')
+        newpage = open('./templates/index.html', 'w')
+        newpage.write(oldpage[0] + format_announcement(user, title, body) + '\n<h4>' + '<h4>'.join(oldpage[1:]))
+        return redirect(url_for('home'))
+    else:
+        return render_template('make_announcement_admin.html', err='Incorrect username/password')
+
+@app.route('/auth/')
+def auth():
+    if isLoggedIn():
+        return redirect(url_for('home'))
+    else:
+        return render_template('auth.html')
+
+@app.route('/login/', methods = ['POST'])
+def login():
+    username = get_from_dict(request.form, 'username')
+    password = get_from_dict(request.form, 'password')
+    
+    if username is None or password is None:
+        flash('Please fill out all fields!')
+        return redirect(url_for('auth'))
+    else:
+        results = userManager.login(username, password)
+
+        print results
         
-        if admin_accounts[user] == password: # validated
-            # do stuff TODO
-            title = request.form['title']
-            body = request.form['textarea1']
-            oldpage = open('./templates/index.html', 'r').read().split('<h4>')
-            newpage = open('./templates/index.html', 'w')
-            newpage.write(oldpage[0] + format_announcement(user, title, body) + '\n<h4>' + '<h4>'.join(oldpage[1:]))
-            return redirect(url_for('home'));
-
-    return render_template('make_announcement_admin.html', err='Incorrect username/password')
-
+        if results[0]:
+            session['username'] = username
+            return redirect(url_for('home'))
+        else:
+            flash(results[1])
+            return redirect(url_for('auth'))
+    
 @app.route('/register/', methods = ['POST'])
 def register():
     username = get_from_dict(request.form, 'username')
-    
+    password = get_from_dict(request.form, 'password')
+    confirm = get_from_dict(request.form, 'confirm')
+
+    if username is None or password is None or confirm is None:
+        flash('Please fill out all fields!')
+        return redirect(url_for('auth'))
+    else:
+        results = userManager.register(username, password, confirm)
+        flash(results[1])
+        return redirect(url_for('auth'))
+
+@app.route('/logout/')
+def logout():
+    if isLoggedIn():
+        session.pop('username')
+
+    return redirect(url_for('home'))
+        
 @app.route('/forum/')
 def forumRoot():
     return render_template('forum.html')
@@ -120,8 +176,6 @@ def run():
     
     app.debug = True
 
-    userManager = 
-    
     app.run(host = '0.0.0.0', port = 5000)
 
 if __name__ == '__main__':

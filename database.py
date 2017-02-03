@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from hashlib import sha512
+from util import hash_string
 
 client = MongoClient()
 
@@ -17,13 +17,16 @@ class UserManager:
     def login(self, username, password):
         result = self.db.users.find_one({
           'username': username,
-          'passhash': sha512(password).hexdigest()
+          'passhash': hash_string(password)
         })
 
+        print username, password
+        print result
+        
         if result is None:
-            return True, 'Successfully logged in!'
-        else:
             return False, 'Invalid username or password.'
+        else:
+            return True, 'Successfully logged in!'
 
     def register(self, username, password, confirm):
         if password != confirm:
@@ -50,3 +53,14 @@ class UserManager:
             return False, 'User is already an admin'
         else:
             return True, 'User is now an admin'
+
+    def authAdmin(self, username, password):
+        result = self.db.admins.find_one({
+            'username': username,
+            'passhash': hash_string(password)
+        })
+
+        if result is None:
+            return False, 'Invalid username or password.'
+        else:
+            return True, 'Successfully logged in!'

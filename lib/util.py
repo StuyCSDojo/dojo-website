@@ -1,11 +1,16 @@
-from time import localtime, strftime
+from functools import wraps
+import time
+from hashlib import sha512
 
-def getFromDict(d, key):
-    if 'key' in d:
+def get_from_dict(d, key):
+    if key in d:
         return d[key]
     else:
         return None
 
+def hash_string(s):
+    return sha512(s).hexdigest()
+        
 def format_announcement(name, title, body):
     return '''<h4>%s</h4>
     <p class='condensed light a_info'>Posted by %s on %s</p>
