@@ -1,3 +1,16 @@
+patrickC -- 2017-02-01 15:40
+- Reconfigured to use nginx as reverse proxy for gunicorn
+- Fixed the breadcrumb icon not showing up properly
+- Removed link to bash.html
+
+patrickC -- 2017-01-25 21:40
+- Finished the guide on running the flask app
+
+patrickC -- 2017-01-25 18:45
+- Modified the layout of the guide for preparing the development environment
+- Started the guide on running the flask app
+- Figured out how to keep the sidebar content constant
+
 patrickC -- 2017-01-23 23:55
 - Rewrote the documentation for preparing the development environment, need people to test the instructions for
   clarity and accuracy
