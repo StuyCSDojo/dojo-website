@@ -1,10 +1,11 @@
-from flask import Flask, Session
+from flask import Flask, render_template
 from sys import argv
 from werkzeug.contrib.fixers import ProxyFix
 
 from lib.security.security import security
 from lib.views.publicViews import publicViews
 from lib.views.privateViews import privateViews
+from lib.util import log_name
 
 ####  ALL OF THIS STUFF SHOULD REMAIN FREE FLOATING ####
 app = Flask(__name__)
@@ -17,6 +18,12 @@ try:
     app.secret_key = argv[argv.index('--key') + 1]
 except ValueError:
     app.secret_key = 'afsdhghjkasdfUASGFDHusdfhyaYYJHJSDF'
+
+@app.errorhandler(404)
+@log_name
+def page_not_found(error):
+    return render_template('404.html'), 404
+
 #### FREE FLOATING SECTION ENDS HERE ####
     
 def run():

@@ -1,3 +1,12 @@
+patrickC -- 2017-02-05 14:13
+- Fixed path for all routes
+- Moved project folder and make it accessible to everyone
+Note:
+  - Need to work out redirect from login to next (url trying to access before getting redirected)
+  - Need to make a logout button/easier way to logout
+  - Clean up some code
+  - Tweak based on agreed code convention
+  
 patrickC -- 2017-02-04 21:52
 - Finished and integrated a new security system
 - Reorganized all python files
