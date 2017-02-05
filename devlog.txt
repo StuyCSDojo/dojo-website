@@ -1,3 +1,14 @@
+patrickC -- 2017-02-04 21:52
+- Finished and integrated a new security system
+- Reorganized all python files
+- Block make_announcment page from public view
+Note:
+  - Need to work out redirect from login to next (url trying to access before getting redirected)
+  - Need to make a logout button/easier way to logout
+  - Clean up some code
+  - Tweak based on agreed code convention
+  - Make sure all required resources are loaded under HTTPS
+
 patrickC -- 2017-02-01 15:40
 - Reconfigured to use nginx as reverse proxy for gunicorn
 - Fixed the breadcrumb icon not showing up properly

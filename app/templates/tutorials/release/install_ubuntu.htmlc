@@ -36,7 +36,7 @@
 
     <p>
         To install Ubuntu, you must first choose a <em>version</em> of Ubuntu to install. You
-        can find downloads for recent versions <a href="http://www.ubuntu.com/download/desktop">here</a>.
+        can find downloads for recent versions <a href="https://www.ubuntu.com/download/desktop">here</a>.
     </p>
 
     <p>
@@ -97,7 +97,7 @@
     </p>
 
     <p>
-        A tutorial for this prerequisite can be found <a href="http://www.eightforums.com/tutorials/6320-fast-startup-turn-off-windows-8-a.html">here</a>!.
+        A tutorial for this prerequisite can be found <a href="https://www.eightforums.com/tutorials/6320-fast-startup-turn-off-windows-8-a.html">here</a>!.
     </p>
 
     <h6>Disabling Secure Boot</h6>
@@ -128,7 +128,7 @@
     </p>
 
     <p>
-        <img src="http://www.howtogeek.com/wp-content/uploads/2013/11/650x488xaccess-uefi-firmware-settings.jpg.pagespeed.gp+jp+jw+pj+js+rj+rp+rw+ri+cp+md.ic.Wm6RQz8gSk.jpg" alt="win8_shift_restart">
+        <img src="https://www.howtogeek.com/wp-content/uploads/2013/11/650x488xaccess-uefi-firmware-settings.jpg.pagespeed.gp+jp+jw+pj+js+rj+rp+rw+ri+cp+md.ic.Wm6RQz8gSk.jpg" alt="win8_shift_restart">
     </p>
 
     <p>
@@ -140,13 +140,13 @@
     </p>
 
     <p>
-        <img src="http://www.howtogeek.com/wp-content/uploads/2013/11/650x488xsurface-pro-2-uefi.jpg.pagespeed.gp+jp+jw+pj+js+rj+rp+rw+ri+cp+md.ic.ChAM0muMv5.jpg" alt="bios1">
+        <img src="https://www.howtogeek.com/wp-content/uploads/2013/11/650x488xsurface-pro-2-uefi.jpg.pagespeed.gp+jp+jw+pj+js+rj+rp+rw+ri+cp+md.ic.ChAM0muMv5.jpg" alt="bios1">
     </p>
 
     <p>Or like this:</p>
 
     <p>
-        <img src="http://docs.oracle.com/cd/E22693_01/doc.12/e23342/figures/figc-2.jpg" alt="bios2">
+        <img src="https://docs.oracle.com/cd/E22693_01/doc.12/e23342/figures/figc-2.jpg" alt="bios2">
     </p>
 
     <p>
@@ -172,7 +172,7 @@
 
     <p>
         The tool you will be installing is called <code>rEFInd</code>. For El Capitan users, the
-        creator of rEFInd loves you: <a href="http://askubuntu.com/questions/688632/dual-boot-mac-el-captain-along-with-ubuntu-14-04">Click me! :heart:</a>
+        creator of rEFInd loves you: <a href="https://askubuntu.com/questions/688632/dual-boot-mac-el-captain-along-with-ubuntu-14-04">Click me! :heart:</a>
     </p>
 
     <p>
@@ -187,7 +187,7 @@
 
     <p>Use <code>cd</code> to navigate to your <code>Downloads</code> folder:</p>
 
-    <p><img src="../static/install_ubuntu/screenshot1.png" width='1000px' alt=""></p>
+    <p><img src="../../static/install_ubuntu/screenshot1.png" width='1000px' alt=""></p>
 
     <p>
 	You&#39;ll see that I have an earlier version of refind installed. I&#39;ll be guiding
@@ -202,17 +202,17 @@
     <codeblock>$ mkdir ~/refind/<br>
 $ unzip refind-bin-0.10.2.zip -d ~/refind</codeblock>
 
-    <p><img src="../static/install_ubuntu/screenshot2.png" width='1000px' alt=""></p>
+    <p><img src="../../static/install_ubuntu/screenshot2.png" width='1000px' alt=""></p>
 
     <p>If we go into our new folder, you&#39;ll see refind has been installed.</p>
 
     <codeblock>$ cd ~/refind/refind-bin-0.10.2</codeblock>
 
-    <p><img src="../static/install_ubuntu/screenshot3.png" width='1000px' alt=""></p>
+    <p><img src="../../static/install_ubuntu/screenshot3.png" width='1000px' alt=""></p>
 
     <p>We can execute <code>refind-install</code> by doing <code>./refind-install</code>:</p>
 
-    <p><img src="../static/install_ubuntu/screenshot4.png" width='1000px' alt=""></p>
+    <p><img src="../../static/install_ubuntu/screenshot4.png" width='1000px' alt=""></p>
 
     <p>The command we want to use to install everything is:</p>
 
@@ -223,7 +223,7 @@ $ unzip refind-bin-0.10.2.zip -d ~/refind</codeblock>
 	nothing bad happened to me, but take that with a grain of salt.
     </p>
 
-    <p><img src="../static/install_ubuntu/screenshot5.png" width='1000px' alt=""></p>
+    <p><img src="../../static/install_ubuntu/screenshot5.png" width='1000px' alt=""></p>
 
     <p>Reboot, and now you&#39;re all set to run boot from a USB!</p>
 
@@ -247,7 +247,7 @@ $ unzip refind-bin-0.10.2.zip -d ~/refind</codeblock>
 	The rest of this guide is a simple <strong><em>INSTALLATION</em></strong> guide. This means the rest
 	of this guide will be assuming you want to erase your computer&#39;s hard disk completely
 	and put Linux on it. If you wish to retain your original operating system, refer
-	to the guide on <strong><a href="{{url_for('tutorial', tut='dualBoot.htmlc')}}">Dual Booting</a></strong>.
+	to the guide on <strong><a href="{{url_for('publicViews.tutorial', tutorialName='dualBoot.htmlc')}}">Dual Booting</a></strong>.
     </p>
 
     <p>
@@ -281,7 +281,7 @@ $ unzip refind-bin-0.10.2.zip -d ~/refind</codeblock>
 	this:
     </p>
 
-    <p><img src="http://www.rodsbooks.com/refind/refind.png" alt="">.</p>
+    <p><img src="https://www.rodsbooks.com/refind/refind.png" alt="">.</p>
 
     <p>
 	Arrow over to your USB (it should be fairly obvious which one it is) and hit
@@ -296,13 +296,13 @@ $ unzip refind-bin-0.10.2.zip -d ~/refind</codeblock>
 	should reach a screen that looks like this:
     </p>
 
-    <p><img src="http://i.stack.imgur.com/6sFHc.jpg" alt=""></p>
+    <p><img src="https://i.stack.imgur.com/6sFHc.jpg" alt=""></p>
 
     <p>You should check both boxes, and hit <code>Continue</code>.</p>
 
     <p>Next, you should reach something that looks like this:</p>
 
-    <p><img src="http://i.stack.imgur.com/wwvWX.jpg" alt=""></p>
+    <p><img src="https://i.stack.imgur.com/wwvWX.jpg" alt=""></p>
 
     <p>
 	Again, this is a guide for <strong><em>installing</em></strong> Ubuntu. <strong>NOT</strong> dual booting. As
