@@ -7,6 +7,27 @@ class DBManager:
     def __init__(self, db):
         self.db = client[db]
 
+    def is_registered(self, username):
+        result = self.db.users.find_one({
+            'username': username
+        })
+
+        return bool(result)
+
+    def is_admin(self, username):
+        result = self.db.admins.find_one({
+            'username': username
+        })
+
+        return bool(result)
+
+    def is_developer(self, username):
+        result = self.db.developers.find_one({
+            'username': username
+        })
+
+        return bool(result)
+    
     def login(self, username, password):
         result = self.db.users.find_one({
             'username': username,
@@ -18,13 +39,6 @@ class DBManager:
         else:
             return True, 'Successfully logged in!'
 
-    def is_registered(self, username):
-        result = self.db.users.find_one({
-            'username': username
-        })
-
-        return bool(result)
-
     def register(self, username, password, confirm_password):
         if self.is_registered(username):
             return False, 'User already exists.'
@@ -35,25 +49,71 @@ class DBManager:
                 'username': username,
                 'passhash': hash_string(password)
             })
-
             return True, 'Successfully registered!'
 
+    def make_admin(self, username):
+        if not self.is_registered(username):
+            return False, 'User does not exist!'
+        elif self.isAdmin(username):
+            return False, 'User is already an admin.'
+        else:
+            self.db.admins.insert_one({
+                'username': username,
+                'passhash': result['passhash']
+            })
+            return True, 'User is now an admin!'
+
+    def make_developer(self, username):
+        if not self.is_registered(username):
+            return False, 'User does not exist!'
+        elif self.isDeveloper(username):
+            return False, 'User is already a developer!'
+        else:
+            self.db.developers.insert_one({
+                'username': username,
+                'passhash': result['passhash']
+            })
+
+            self.makeAdmin(username)
+
+            return True, 'User is now a developer!'
+        
     def drop_user(self, username):
-        if self.is_registered(username):
+        if not self.is_registered(username):
+            return False, 'User does not exist!'
+        else:
             self.db.users.remove({
                 'username': username
             })
             
-            return True, 'User removed.'
+            self.dropAdmin(username)
+            self.dropDeveloper(username)
+            
+            return True, 'User dropped!'
+                    
+    def drop_admin(self, username):
+        if not self.is_registered(username):
+            return False, 'User does not exist!'
+        elif not self.is_admin(username):
+            return False, 'User is not an admin!'
         else:
-            return False, 'User not found!'
-        
-    def is_admin(self, username):
-        result = self.db.admins.find_one({
-            'username': username
-        })
+            result = self.db.admins.remove({
+                'username': username
+            })
 
-        return bool(result)
+            return True, 'Admin dropped!'
+
+    def drop_developer(self, username):
+        if not self.is_registered(username):
+            return False, 'User does not exist!'
+        elif not self.is_developer(username):
+            return False, 'User is not a developer!'
+        else:
+            self.db.developers.remove({
+                'username': username
+            })
+            
+            return True, 'Developer dropped!'
             
     def make_admin(self, username):
         if not self.is_registered(username):
@@ -66,27 +126,6 @@ class DBManager:
             })
                 
             return True, 'User is now an admin'
-
-    def auth_admin(self, username, password):
-        result = self.db.admins.find_one({
-            'username': username,
-            'passhash': hash_string(password)
-        })
-
-        if result is None:
-            return False, 'Invalid username or password.'
-        else:
-            return True, 'Successfully logged in!'
-
-    def drop_admin(self, username):
-        if self.is_admin(username):
-            self.db.admins.remove({
-                'username': username
-            })
-
-            return True, 'Admin removed.'
-        else:
-            return False, 'Admin not found!'
 
     def create_post(self, title, author, body):
         result = self.db.posts.insert_one({
@@ -114,5 +153,3 @@ class DBManager:
 
     def get_announcements(self):
         return [announcement for announcement in self.db.announcements.find()]
-
-

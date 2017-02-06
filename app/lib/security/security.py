@@ -45,10 +45,14 @@ def register():
     if not username or not password or not confirm_password:
         flash('Please fill out all fields!')
         return redirect(url_for('security.register_form'))
-    else:
-        results = db_manager.register(username, password, confirm_password)
-        flash(results[1])
+
+    results = db_manager.register(username, password, confirm_password)
+
+    if results[0]:
         return redirect(url_for('security.login_form'))
+    else:
+        flash(results[1])
+        return redirect(url_for('security.register_form'))
 
 @security.route('/login/')
 def login_form():

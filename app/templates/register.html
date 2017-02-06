@@ -5,7 +5,7 @@ Login
 {% endblock %}
 
 {% block container %}
-<h2>Login</h2>
+<h2>Register</h2>
 <div class="divider"></div>
 <br>
 <div class="flash">
@@ -15,7 +15,7 @@ Login
 <form action="/register/" method="POST">
     <input type="text" class="validate" name="username" placeholder="Username">
     <input type="password" class="validate" name="password" placeholder="Password">
-    <input type="password" class="validate" name="confirmationPassword" placeholder="Confirmation Password">
+    <input type="password" class="validate" name="confirm_password" placeholder="Confirm Password">
     <br><br>
     <input type="submit" class="btn waves-effect waves-light" name="submit" value="Login">
 </form>
