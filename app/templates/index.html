@@ -3,36 +3,44 @@
 {% block title %}Home{% endblock %}
 
 {% block head %}
-{{ super() }}
+    {{ super() }}
 {% endblock %}
 
 {% block nav %}
-<div class="nav-wrapper blue darken-4">
-    <a href='/' class="left-padding left brand-logo">CS DOJO</a>
-    <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
-        <li class='active'><a href='/'>Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/resources">Resources</a></li>
-        <li><a href='/calendar'>Calendar</a></li>
-        <li><a href="/blog">Dojo Blog</a></li>
-        <li><a href="/irc">Chat</a></li>
-    </ul>
-</div>
+    <div class="nav-wrapper blue darken-4">
+	<a href='/' class="left-padding left brand-logo">CS DOJO</a>
+	<ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+            <li class='active'><a href='/'>Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li><a href='/calendar'>Calendar</a></li>
+            <li><a href="/blog">Dojo Blog</a></li>
+            <li><a href="/irc">Chat</a></li>
+	</ul>
+    </div>
 {% endblock %}
 
 {% block container %}
-<h2>Announcements</h2>
-<div class='divider'></div>
-<h4>Dojo is slated to be open on Monday!</h4>
-<p class='condensed light a_info'>Posted by PChan on Thu Feb  2 21:51:24 2017</p>
+    <h2>Announcements</h2>
+    <div class='divider'></div>
+
+    {% for announcement in announcements %}
+    <h4>
+        {{announcement['title']}}
+    </h4>
+    <p class='condensed light a_info'>
+        Posted by {{announcement['username']}} on {{announcement['timestamp']}}
+    </p>
+    <p>{{announcement['body']}}</p>
+    {% endfor %}
+    
+    <!--<h4>Dojo is slated to be open on Monday!</h4>
+        <p class='condensed light a_info'>Posted by PChan on Thu Feb  2 21:51:24 2017</p>
 <p>Feeling lonely?  Can't wait to come to the Dojo?  Feel free to stop by starting Monday (February 6)!</p>
 <h4>Dojo Extended Hour</h4>
-    <p class='condensed light a_info'>Posted by PChan on Wed Jan 18 09:59:40 2017</p>
-    <p>Dojo is open on Friday, January 20 of this week!</p>
-<h4>Test</h4>
-<p class='condensed light a_info'>Posted by Stephanie Yoon on Thu Jan  5 09:40:27 2017</p>
-<p>Woah</p>
+<p class='condensed light a_info'>Posted by PChan on Wed Jan 18 09:59:40 2017</p>
+<p>Dojo is open on Friday, January 20 of this week!</p>
 <h4>Dojo Website is UP!! :)</h4>
 <p class='condensed light a_info'>Posted by PChan on Fri Dec  9 21:53:37 2016</p>
-<p>Fixed navigation errors in the resources section and added Git Tutorial!  Stay tuned for more updates! :)</p>
+<p>Fixed navigation errors in the resources section and added Git Tutorial!  Stay tuned for more updates! :)</p>-->
 {% endblock %}

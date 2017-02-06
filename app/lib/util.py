@@ -12,11 +12,14 @@ admin_names = {
     'lvargas': 'Lorenz Vargas'
 }
 
-def format_announcement(name, title, body):
+def format_announcement(username, title, body):
     return '''<h4>%s</h4>
     <p class='condensed light a_info'>Posted by %s on %s</p>
-    <p>%s</p>''' % (title, admin_names[name], strftime('%c', localtime()), body)
+    <p>%s</p>''' % (title, username, strftime('%c', localtime()), body)
 
+def get_timestamp():
+    return strftime('%a %b %d %Y %I:%M:%S %p')
+    
 def log_name(f):
     @wraps(f)
     def inner(*args, **kwargs):
