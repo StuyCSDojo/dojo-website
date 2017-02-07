@@ -30,11 +30,17 @@
 	    <label for="icon_telephone">Password</label>
 	</div>
     </div>
-</div>
-<br><br>
-<button class="btn waves-effect waves-light" type="submit" name="action">Register
-    <i class="material-icons right">send</i>
-</button>
+    <div class="row" >
+	<div class="input-field col s6">
+	    <i class="material-icons prefix">lock</i>
+	    <input id="confirm_password" name="confirm_password" type="password" class="validate">
+	    <label for="icon_telephone">Confirmation Password</label>
+	</div>
+    </div>
+    <br><br>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Register
+	<i class="material-icons right">send</i>
+    </button>
 </form>
 {% endblock %}
 

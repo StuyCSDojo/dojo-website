@@ -11,6 +11,8 @@ db_manager = DBManager('dojo_website')
 @private_views.route('/doc/')
 @private_views.route('/doc/<path:filename>/')
 @log_name
+@back.anchor
+@login_required(developer_required=True)
 def render_documentation(filename='index.html'):
     if filename != 'index.html' and 'html' in filename[:filename.find('/')]:
         while 'html' in filename[:filename.find('/')] and filename.find('html') != len(filename) - 4:

@@ -44,7 +44,7 @@ class DBManager:
         else:
             self.db.users.insert_one({
                 'username': username,
-                'passhash': password
+                'passhash': hash_string(password)
             })
             return True, 'Successfully registered!'
 

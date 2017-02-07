@@ -7,26 +7,28 @@ from lib.database import DBManager
 security = Blueprint('security', __name__)
 db_manager = DBManager('dojo_website')
 
-def login_required(admin_required = False):
+def login_required(admin_required=False, developer_required=False):
     def actual_decorator(function):
         @wraps(function)
         def wrapper(*args, **kwargs):
-            if is_logged_in(admin_required = admin_required):
+            if is_logged_in(admin_required=admin_required, developer_required=developer_required):
                 return function(*args, **kwargs)
             return redirect(url_for('security.login_form'))
         return wrapper
     return actual_decorator
                                     
-def is_logged_in(admin_required = False):
+def is_logged_in(admin_required=False, developer_required=False):
+    print developer_required
+    print admin_required
     username = session.get('username')
     
     if not username:
         return False
-    elif not admin_required and db_manager.is_registered(username):
+    elif db_manager.is_registered(username) and (not admin_required and not developer_required):
         return True
-    elif admin_required and db_manager.is_admin(username):
+    elif (admin_required and db_manager.is_admin(username)) or (developer_required and db_manager.is_developer(username)):
         return True
-    elif admin_required:
+    elif admin_required or developer_required:
         return False
     else:
         session.pop('username')
