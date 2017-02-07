@@ -15,7 +15,7 @@ def test_load():
 @public_views.route('/')
 @public_views.route('/home/')
 def home():
-    return render_template('index.html', announcements=db_manager.get_announcements())
+    return render_template('index.html', announcements = db_manager.get_announcements())
 
 @public_views.route('/about/')
 def about():
