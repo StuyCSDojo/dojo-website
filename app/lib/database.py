@@ -127,20 +127,6 @@ class DBManager:
             
             return True, 'Developer dropped!'
             
-    def create_post(self, title, author, body):
-        result = self.db.posts.insert_one({
-            'title': title,
-            'author': author,
-            'body': body
-        })
-
-        return result
-
-    def get_post(self, _id):
-        return self.db.posts.find_one({
-            '_id': _id
-        })
-
     def make_announcement(self, username, title, body, timestamp):
         result = self.db.announcements.insert_one({
             'username': admin_names[username],
@@ -155,3 +141,44 @@ class DBManager:
         announcements = [announcement for announcement in self.db.announcements.find()]
         announcements.reverse()
         return announcements
+
+    def create_post(self, title, author, body, timestamp):
+        result = self.db.posts.insert_one({
+            'title': title,
+            'author': author,
+            'body': body,
+            'timestamp': timestamp
+        })
+
+        return result
+
+    def get_post(self, post_id):
+        return self.db.posts.find_one({
+            '_id': post_id
+        })
+
+    def create_comment(self, post_id, parent_id, author, body, timestamp):
+        result = self.db.comments.insert_one({
+            'post_id': post_id,
+            'parent_id': parent_id,
+            'author': author,
+            'body': body,
+            'timestamp': timestamp
+        })
+
+        return result
+
+    def get_comment(self, comment_id):
+        return self.db.comments.find_one({
+            '_id': comment_id
+        })
+        
+    def get_comments_from_post(self, post_id):
+        return self.db.comments.find({
+            'post_id': post_id
+        })
+
+    def get_child_comments(self, comment_id):
+        return self.db.comments.find({
+            'parent_id': comment_id
+        })
