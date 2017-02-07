@@ -4,7 +4,6 @@ from lib.database import DBManager
 
 public_views = Blueprint('public_views', __name__)
 db_manager = DBManager('dojo_website')
-announcements = db_manager.get_announcements()
 
 @public_views.route('/loaderio-8281aaa87be94ab093606230a67f774e/')
 def test_load():
@@ -16,7 +15,7 @@ def test_load():
 @public_views.route('/')
 @public_views.route('/home/')
 def home():
-    return render_template('index.html', announcements = announcements)
+    return render_template('index.html', announcements=db_manager.get_announcements())
 
 @public_views.route('/about/')
 def about():

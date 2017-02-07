@@ -1,3 +1,15 @@
+patrickC -- 2017-02-06 21:34
+- Fixed merge conflicts
+- Added redirection from login to next url
+- Fixed naming in new forms, switched from flash to toast, moved all database information from DojoWebsite to dojo_website, updated old forms
+Note:
+  - Need to add a logout button
+  - Refactor code and tweak base on coding convention
+
+patrickC -- 2017-02-06 15:07
+- Refactored database.py based on new coding convention
+- Added methods for the new rank: developer (highest rank, greatest access)
+
 patrickC -- 2017-02-05 14:13
 - Fixed path for all routes
 - Moved project folder and make it accessible to everyone
@@ -5,7 +17,7 @@ Note:
   - Need to work out redirect from login to next (url trying to access before getting redirected)
   - Need to make a logout button/easier way to logout
   - Clean up some code
-  - Tweak based on agreed code convention
+  - Tweak base on agreed code convention
   
 patrickC -- 2017-02-04 21:52
 - Finished and integrated a new security system

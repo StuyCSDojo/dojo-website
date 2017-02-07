@@ -3,7 +3,15 @@ from util import hash_string
 
 client = MongoClient()
 
+# Convert username into proper signatures for announcements
+admin_names={
+    'st234pa': 'Stephanie Yoon',
+    'lvargas': 'Lorenz Vargas',
+    'pchan': 'PChan'
+}
+
 class DBManager:
+
     def __init__(self, db):
         self.db = client[db]
 
@@ -27,17 +35,6 @@ class DBManager:
         })
 
         return bool(result)
-    
-    def login(self, username, password):
-        result = self.db.users.find_one({
-            'username': username,
-            'passhash': hash_string(password)
-        })
-
-        if result is None:
-            return False, 'Invalid username or password.'
-        else:
-            return True, 'Successfully logged in!'
 
     def register(self, username, password, confirm_password):
         if self.is_registered(username):
@@ -47,16 +44,30 @@ class DBManager:
         else:
             self.db.users.insert_one({
                 'username': username,
-                'passhash': hash_string(password)
+                'passhash': password
             })
             return True, 'Successfully registered!'
+
+    def login(self, username, password):
+        result = self.db.users.find_one({
+            'username': username,
+            'passhash': hash_string(password)
+        })
+
+        if not result:
+            return False, 'Invalid username or password.'
+        else:
+            return True, 'Successfully logged in!'
 
     def make_admin(self, username):
         if not self.is_registered(username):
             return False, 'User does not exist!'
-        elif self.isAdmin(username):
+        elif self.is_admin(username):
             return False, 'User is already an admin.'
         else:
+            result = self.db.users.find_one({
+                'username': username
+            })
             self.db.admins.insert_one({
                 'username': username,
                 'passhash': result['passhash']
@@ -66,16 +77,17 @@ class DBManager:
     def make_developer(self, username):
         if not self.is_registered(username):
             return False, 'User does not exist!'
-        elif self.isDeveloper(username):
+        elif self.is_developer(username):
             return False, 'User is already a developer!'
         else:
+            result = self.db.users.find_one({
+                'username': username
+            })
             self.db.developers.insert_one({
                 'username': username,
                 'passhash': result['passhash']
             })
-
-            self.makeAdmin(username)
-
+            self.make_admin(username)
             return True, 'User is now a developer!'
         
     def drop_user(self, username):
@@ -86,8 +98,8 @@ class DBManager:
                 'username': username
             })
             
-            self.dropAdmin(username)
-            self.dropDeveloper(username)
+            self.drop_admin(username)
+            self.drop_developer(username)
             
             return True, 'User dropped!'
                     
@@ -115,18 +127,6 @@ class DBManager:
             
             return True, 'Developer dropped!'
             
-    def make_admin(self, username):
-        if not self.is_registered(username):
-            return False, 'User not found!' 
-        elif self.is_admin(username):
-            return False, 'User is already an admin.'
-        else:
-            self.db.admins.insert_one({
-                'username': username
-            })
-                
-            return True, 'User is now an admin'
-
     def create_post(self, title, author, body):
         result = self.db.posts.insert_one({
             'title': title,
@@ -143,7 +143,7 @@ class DBManager:
 
     def make_announcement(self, username, title, body, timestamp):
         result = self.db.announcements.insert_one({
-            'username': username,
+            'username': admin_names[username],
             'title': title,
             'body': body,
             'timestamp': timestamp
@@ -152,4 +152,6 @@ class DBManager:
         return result
 
     def get_announcements(self):
-        return [announcement for announcement in self.db.announcements.find()]
+        announcements = [announcement for announcement in self.db.announcements.find()]
+        announcements.reverse()
+        return announcements
