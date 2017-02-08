@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+
 from util import hash_string
 
 client = MongoClient()
@@ -137,9 +138,11 @@ class DBManager:
         return result
 
     def get_post(self, _id):
-        return self.db.posts.find_one({
+        reusult =  self.db.posts.find_one({
             '_id': _id
         })
+
+        return result
 
     def make_announcement(self, username, title, body, timestamp):
         result = self.db.announcements.insert_one({

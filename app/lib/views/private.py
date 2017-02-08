@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, redirect, request, send_from_directory, session, url_for
 
-from lib.security.back import back
-from lib.util import log_name, format_announcement, get_timestamp
-from lib.security.security import login_required
 from lib.database import DBManager
+from lib.security.security import login_required
+from lib.security.utils import nocache
+from lib.util import format_announcement, get_timestamp, log_name
 
 private_views = Blueprint('private_views', __name__)
 db_manager = DBManager('dojo_website')
@@ -11,7 +11,7 @@ db_manager = DBManager('dojo_website')
 @private_views.route('/doc/')
 @private_views.route('/doc/<path:filename>/')
 @log_name
-@back.anchor
+@nocache
 @login_required(developer_required=True)
 def render_documentation(filename='index.html'):
     if filename != 'index.html' and 'html' in filename[:filename.find('/')]:
@@ -21,7 +21,7 @@ def render_documentation(filename='index.html'):
 
 @private_views.route('/admins/')
 @log_name
-@back.anchor
+@nocache
 @login_required(admin_required=True)
 def admins():
     return render_template('make_announcement_admin.html')
@@ -42,5 +42,4 @@ def update_announcements():
     }
 
     db_manager.make_announcement(username, title, body, timestamp)
-    
     return redirect(url_for('public_views.home'))

@@ -8,9 +8,9 @@
 <h2>Register</h2>
 <div class="divider"></div>
 <br>
-{% if err %}
+{% if message %}
     <script>
-     var $toastContent = $('<span><strong>Register Failed!</strong> {{ err }}</span>');
+     var $toastContent = $('<span><strong>Register Failed!</strong> {{ message }}</span>');
      Materialize.toast($toastContent, 5000);
     </script>
 {% endif %}

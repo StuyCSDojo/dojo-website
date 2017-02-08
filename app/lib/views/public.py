@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
-from lib.util import log_name
+
 from lib.database import DBManager
+from lib.util import log_name
 
 public_views = Blueprint('public_views', __name__)
 db_manager = DBManager('dojo_website')
