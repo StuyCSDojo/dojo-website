@@ -8,29 +8,28 @@
 
 {% block nav %}
     <div class="nav-wrapper blue darken-4">
-	<a href='/' class="left-padding left brand-logo">CS DOJO</a>
-	<ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
-            <li class='active'><a href='/'>Home</a></li>
+        <a href="/" class="left-padding left brand-logo">CS DOJO</a>
+        <ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
+            <li class="active"><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/resources">Resources</a></li>
-            <li><a href='/calendar'>Calendar</a></li>
+            <li><a href="/calendar">Calendar</a></li>
             <li><a href="/blog">Dojo Blog</a></li>
             <li><a href="/irc">Chat</a></li>
-	</ul>
+        </ul>
     </div>
 {% endblock %}
 
 {% block container %}
     <h2>Announcements</h2>
-    <div class='divider'></div>
+    <div class="divider"></div>
     {% for announcement in announcements %}
-    <h4>
-        {{announcement['title']}}
-    </h4>
-    <p class='condensed light a_info'>
-        Posted by {{announcement['username']}} on {{announcement['timestamp']}}
-    </p>
-    <p>{{announcement['body']}}</p>
+        <h4>
+            {{announcement['title']}}
+        </h4>
+        <p class="condensed light a_info">
+            Posted by {{announcement['username']}} on {{announcement['timestamp']}}
+        </p>
+        <p>{{announcement['body']}}</p>
     {% endfor %}
-    
 {% endblock %}
