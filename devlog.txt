@@ -1,3 +1,15 @@
+patrickC -- 2017-02-07 21:11
+- Fixed @login_required(developer_required=True) bug
+- Refactored code to comply with agreed coding convention
+- Refactored for cleaner code
+- Redirect completely works now
+
+patrickC -- 2017-02-06 22:05
+- Fixed register button on register page
+- Fixed register function in database so that it hashes the password
+Bug:
+  - @login_required(developer_required=True) doesn't block access to non-developers
+
 patrickC -- 2017-02-06 21:34
 - Fixed merge conflicts
 - Added redirection from login to next url

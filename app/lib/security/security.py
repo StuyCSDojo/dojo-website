@@ -2,8 +2,8 @@ from flask import (Blueprint, flash, get_flashed_messages, redirect,
                    render_template, request, session, url_for)
 from functools import wraps
 
-from back import back
 from lib.database import DBManager
+from utils import redirect_back
 
 security = Blueprint('security', __name__)
 db_manager = DBManager('dojo_website')
@@ -12,15 +12,16 @@ def login_required(admin_required = False, developer_required = False):
     def actual_decorator(function):
         @wraps(function)
         def wrapper(*args, **kwargs):
-            if is_logged_in(admin_required = admin_required, developer_required = developer_required):
+            session['next'] = request.url
+
+            if is_logged_in(admin_required, developer_required):
                 return function(*args, **kwargs)
-            return redirect(url_for('security.login_form'))
+            else:
+                return redirect(url_for('security.login_form'))
         return wrapper
     return actual_decorator
-                                    
+
 def is_logged_in(admin_required = False, developer_required = False):
-    # print developer_required
-    # print admin_required
     username = session.get('username')
     
     if not username:
@@ -41,7 +42,7 @@ def register_form():
         return redirect(url_for('public_views.home'))
     else:
         return render_template('register.html')
-
+            
 @security.route('/register/', methods = ['POST'])
 def register():
     username = request.form.get('username')
@@ -55,7 +56,7 @@ def register():
     results = db_manager.register(username, password, confirm_password)
 
     if results[0]:
-        return redirect(url_for('security.login_form'))
+        return redirect(url_for('security.login_form', message='Successfully registered!'))
     else:
         flash(results[1])
         return redirect(url_for('security.register_form'))
@@ -80,7 +81,7 @@ def login():
         
         if results[0]:
             session['username'] = username
-            return back.redirect()
+            return redirect_back()
         else:
             flash(results[1])
             return redirect(url_for('security.login_form'))
@@ -89,5 +90,8 @@ def login():
 def logout():
     if is_logged_in():
         session.pop('username')
-        
+
+        if 'next' in session:
+            session.pop('next')
+
     return redirect(url_for('public_views.home'))
