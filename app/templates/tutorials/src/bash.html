@@ -120,5 +120,42 @@
                   exists and if it is a 
                   file
   </codeblock>
+  You can also expand your conditionals using 'elif' and end them with a default 'else' statement like so:
+  <codeblock>
+    if [ condition1 ]
+    then
+        #do stuff
+    elif [ condition2 ]
+    then
+       #do stuff
+    elif [ condition3 ]
+    then
+        #do stuff
+    else
+        #do stuff
+    fi
+  </codeblock>
+  <br>
+  <strong> For loops </strong><br>
+  For loops in Bash work a lot like they do in Python. Their main functionality is to cycle through some group or list like so:
+  <codeblock>
+    for i in $(seq 10)
+    do
+        #do stuff
+    done
+  </codeblock>
+  In the above example, $(seq 10) creates an array holding all values from 1 through 10. For loops are generally used to complete a set of tasks a certain number of times, so using <code>$(seq n)</code> is the most common way to use it.<br>
+  <strong> While loops </strong><br>
+  While loops in Bash work just like they would in any programming language with the following syntax:
+  <codeblock>
+    while [ condition ]
+    do
+        #do stuff
+    done
+  </codeblock>
+</p>
+<h5>It's all about context</h5>
+<p>
+  You can use the <code>cd</code> command at any point in your code for a bash script, but remember that you will only change the directory while that script is running. In other words, you have only changed the working directory in the context of the script. When the script is done running and it exits, all of its effects to files and directories will remain, but any variables made or any changes to the working directory will revert back to what they were before running the script.
 </p>
 {% endblock %}
