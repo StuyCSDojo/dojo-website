@@ -41,7 +41,7 @@ def calendar():
 def forum_root():
     return render_template('forum.html')
 
-@public_views.route('/tutorials/<tutorialName>/')
+@public_views.route('/tutorials/<tutorial_name>/')
 @log_name
 def tutorial(tutorial_name):
     try:
