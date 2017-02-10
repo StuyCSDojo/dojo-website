@@ -66,6 +66,59 @@
     mkdir foo
     echo bar
   </codeblock>
-  
+  <br>
+  <strong>Comments</strong><br>
+  To write a comment in bash, simply add a '#' preceding the comment like so:
+  <codeblock>
+    foo
+    bar #this is a comment
+  </codeblock>
+  <br>
+  <strong>Storing and accessing variables</strong><br>
+  To store a variable, simply write the variable name and value with an equal sign between them like so:
+  <codeblock>
+    varName=value
+  </codeblock>
+  NOTE: when storing a variable, you may not change the spacing; there must be no whitespace on either side of the equal sign.<br>
+  You can also store the output of a command using the following format:
+  <codeblock>
+    varName=$(command)
+  </codeblock>
+  <br>
+  To access a variable you have stored, you can't simply write its name like you could in most languages. Instead, you have to add a '$' before the variable name like so:
+  <codeblock>
+    echo $varName
+  </codeblock>
+</p>
+<h5>Controlling flow</h5>
+<p>
+  You might find yourself requiring different functionality depending on the usage of your script. For example, you might only want to run the command <code>foo</code> if the current direcotry has a file named <code>bar</code>. Well Bash has conditionals and loops just like any programming language to help you out with that.<br>
+  <strong>If statements</strong><br>
+  In bash, the syntax for an if statement is:
+  <codeblock>
+    if [ condition ]
+    then
+        #do stuff
+    fi
+  </codeblock>
+  Replace 'condition' in the above code with something that will evaluate to a boolean (true or false) value.<br>
+  Some useful operators:
+  <codeblock>
+    Operator      What it does            Examples
+    =             Checks for equality     1 = 1 --\> true
+                                          "foo" = "bar" --\> false
+    !=            Checks for inequality   1 != 1 --\> false
+                                          "foo" != "bar" --\> true
+    \\\<            "Less than" operator    1 \\\< 2 --\> true
+		                          2 \\\< 1 --\> false
+    \\\>            "Greater than" operator 1 \\\> 2 --\> true
+		                          2 \\\> 1 --\> false
+    -d dirName    Checks if dirName       -d "home/"
+                  exists and if it is a 
+                  directory
+    -f fileName   Checks if fileName      -d "file.txt"
+                  exists and if it is a 
+                  file
+  </codeblock>
 </p>
 {% endblock %}
