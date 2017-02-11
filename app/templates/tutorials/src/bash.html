@@ -42,9 +42,9 @@
     Period 11
     2016-01-20
   </codeblock>
-  you could write a bash script to make that file for you and then you could easily run that script each time you start your homework instead of manually typing the template.<br>
+  you could write a bash script to make that file for you and then you could easily run that script each time you start your homework instead of manually typing the template.<br><br>
   <strong>Running a Bash script</strong><br>
-  To run a Bash script, simply write the name of script preceded by './'. For example: <code>./myscript</code><br>
+  To run a Bash script, simply write the name of script preceded by './'. For example: <code>./myscript</code><br><br>
   <strong>Utilizing your PATH variable</strong><br>
   As previously stated, everything you use in your terminal is run using bash. So why don't you have to use './' everytime you run <code>ls</code> to list all files and directories or <code>python</code> to enter a Python shell? Well there are a bunch of scripts that are located in various directories specified in your PATH variable. The PATH variable is held by the terminal inthe format <code>dir1:dir2:dir3</code>. Each time you open a new terminal, these directories are scanned for scripts and they are made readily available for your use without typing './'. For the sake of custom scripts being available in the same way, you can make a new directory to hold your scripts and then modify your PATH variable to look through that directory using the following commands:
   <codeblock>
@@ -79,7 +79,7 @@
   <codeblock>
     varName=value
   </codeblock>
-  NOTE: when storing a variable, you may not change the spacing; there must be no whitespace on either side of the equal sign.<br>
+  NOTE: when storing a variable, you may not change the spacing; there must be no whitespace on either side of the equal sign.<br><br>
   You can also store the output of a command using the following format:
   <codeblock>
     varName=$(command)
@@ -109,10 +109,10 @@
                                           "foo" = "bar" --\> false
     !=            Checks for inequality   1 != 1 --\> false
                                           "foo" != "bar" --\> true
-    \\\<            "Less than" operator    1 \\\< 2 --\> true
-		                          2 \\\< 1 --\> false
-    \\\>            "Greater than" operator 1 \\\> 2 --\> true
-		                          2 \\\> 1 --\> false
+    \<            "Less than" operator    1 \< 2 --\> true
+		                          2 \< 1 --\> false
+    \>            "Greater than" operator 1 \> 2 --\> true
+		                          2 \> 1 --\> false
     -d dirName    Checks if dirName       -d "home/"
                   exists and if it is a 
                   directory
@@ -144,7 +144,7 @@
         #do stuff
     done
   </codeblock>
-  In the above example, $(seq 10) creates an array holding all values from 1 through 10. For loops are generally used to complete a set of tasks a certain number of times, so using <code>$(seq n)</code> is the most common way to use it.<br>
+  In the above example, $(seq 10) creates an array holding all values from 1 through 10. For loops are generally used to complete a set of tasks a certain number of times, so using <code>$(seq n)</code> is the most common way to use it.<br><br>
   <strong> While loops </strong><br>
   While loops in Bash work just like they would in any programming language with the following syntax:
   <codeblock>
