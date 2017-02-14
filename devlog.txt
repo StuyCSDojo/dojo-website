@@ -1,3 +1,8 @@
+patrickC -- 2017-02-13 23:55
+- Fixed path for refind.png
+- Added login/logout button to every page
+- Added a python script (extract_source_from_html.py) to make searching more meaningful (file remove all junk that clutters up the search)
+
 patrickC -- 2017-02-07 21:11
 - Fixed @login_required(developer_required=True) bug
 - Refactored code to comply with agreed coding convention
