@@ -8,6 +8,7 @@
 
 {% block nav %}
 <div class="nav-wrapper blue darken-4">
+    <a href='#' data-activates='mobile-demo' class='button-collapse'><i class='material-icons'>menu</i></a>
     <a href='/' class="left-padding breadcrumb left"><strong>CS
             DOJO</strong></a>
     <a href='#!' class='breadcrumb white-text'>Senpai Calendar</a>
@@ -16,8 +17,26 @@
         <li><a href="/about">About</a></li>
         <li><a href="/resources">Resources</a></li>
         <li class='active'><a href='/calendar'>Calendar</a></li>
-        <li><a href="/blog">Dojo Blog</a></li>
         <li><a href="/irc">Chat</a></li>
+	{% if True %}
+  	<li><a href='/login'>Login</a></li>
+	{% endif  %}
+	{% if False %}
+	<li><a href='/register'>Register</a></li>
+	{% endif  %}
+    </ul>
+    <ul class='side-nav' id='mobile-demo'>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/about'>About</a></li>
+        <li><a href='/resources'>Resources</a></li>
+        <li class='active'><a href='/calendar'>Calendar</a></li>
+        <li><a href='/irc'>Chat</a></li>
+        {% if True %}
+        <li><a href='/login'>Login</a></li>
+        {% endif  %}
+        {% if False %}
+        <li><a href='/register'>Register</a></li>
+        {% endif  %}
     </ul>
 </div>
 {% endblock %}

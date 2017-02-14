@@ -7,34 +7,35 @@
 {% endblock %}
 
 {% block nav %}
-    <div class="nav-wrapper blue darken-4">
-        <a href="/" class="brand-logo">CS DOJO</a>
-	<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-	<ul id="nav-mobile" class="right-padding right hide-on-med-and-down">
-
-          <li><a href="/about">About</a></li>
-          <li><a href="/resources">Resources</a></li>
-          <li><a href="/calendar">Calendar</a></li>
-          <li><a href="/irc">Chat</a></li>
-          {% if True %}
-	  <li><a href="/login">Login</a></li>
-	  {% endif  %}
-	  {% if False %}
-	  <li><a href="/register">Register</a></li>
-	  {% endif  %}	    
+    <div class='nav-wrapper blue darken-4'>
+        <a href='/' class='brand-logo'>CS DOJO</a>
+	<a href='#' data-activates='mobile-demo' class='button-collapse'><i class='material-icons'>menu</i></a>
+	<ul id='nav-mobile' class='right-padding right hide-on-med-and-down'>
+	    <li class='active'><a href='/'>Home</a></li>
+            <li><a href='/about'>About</a></li>
+            <li><a href='/resources'>Resources</a></li>
+            <li><a href='/calendar'>Calendar</a></li>
+            <li><a href='/irc'>Chat</a></li>
+            {% if True %}
+  	    <li><a href='/login'>Login</a></li>
+	    {% endif  %}
+	    {% if False %}
+	    <li><a href='/register'>Register</a></li>
+	    {% endif  %}	    
         </ul>
-	<ul class="side-nav" id="mobile-demo">
-	  <li><a href="/about">About</a></li>
-	  <li><a href="/resources">Resources</a></li>
-          <li><a href="/calendar">Calendar</a></li>
-          <li><a href="/irc">Chat</a></li>
-          {% if True %}
-	  <li><a href="/login">Login</a></li>
-	  {% endif  %}
-	  {% if False %}
-	  <li><a href="/register">Register</a></li>
-	  {% endif  %}
-	</ul>
+	<ul class='side-nav' id='mobile-demo'>
+	    <li class='active'><a href='/'>Home</a></li>
+	    <li><a href='/about'>About</a></li>
+	    <li><a href='/resources'>Resources</a></li>
+            <li><a href='/calendar'>Calendar</a></li>
+            <li><a href='/irc'>Chat</a></li>
+            {% if True %}
+	    <li><a href='/login'>Login</a></li>
+	    {% endif  %}
+	    {% if False %}
+	    <li><a href='/register'>Register</a></li>
+	    {% endif  %}
+        </ul>
     </div>
 {% endblock %}
 
