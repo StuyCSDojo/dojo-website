@@ -54,11 +54,11 @@ def register():
         return redirect(url_for('security.register_form'))
 
     results = db_manager.register(username, password, confirm_password)
+    flash(results[1])
 
     if results[0]:
-        return redirect(url_for('security.login_form', message='Successfully registered!'))
+        return redirect(url_for('security.login_form'))
     else:
-        flash(results[1])
         return redirect(url_for('security.register_form'))
 
 @security.route('/login/')

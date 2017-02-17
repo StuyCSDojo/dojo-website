@@ -4,15 +4,7 @@ from util import hash_string
 
 client = MongoClient()
 
-# Convert username into proper signatures for announcements
-admin_names={
-    'st234pa': 'Stephanie Yoon',
-    'lvargas': 'Lorenz Vargas',
-    'pchan': 'PChan'
-}
-
 class DBManager:
-
     def __init__(self, db):
         self.db = client[db]
 
@@ -47,6 +39,7 @@ class DBManager:
                 'username': username,
                 'passhash': hash_string(password)
             })
+            
             return True, 'Successfully registered!'
 
     def login(self, username, password):
@@ -123,47 +116,76 @@ class DBManager:
             return True, 'Developer dropped!'
             
     def make_announcement(self, username, title, body, timestamp):
-        result = self.db.announcements.insert_one({
+        announcement = {
             'username': admin_names[username],
             'title': title,
             'body': body,
             'timestamp': timestamp
-        })
+        }
 
-        return result
+        self.db.announcements.insert_one(announcement)
+        return announcement
 
     def get_announcements(self):
-        announcements = list(self.db.announcements.find())
-        announcements.reverse()
-        return announcements
+        return list(self.db.announcements.find())[::-1]
 
-    def create_post(self, title, author, body, timestamp):
-        result = self.db.posts.insert_one({
+    def get_topics(self):
+        return list(self.db.topics.find())
+
+    def make_topic(self, title, description):
+        topic = {
+            'title': title,
+            'description': description
+        }
+
+        self.db.topics.insert_one(topic)
+        return topic
+
+    def get_topic_by_title(self, title):
+        return self.db.topics.find_one({
+            'title': title
+        })
+
+    def get_topic_by_id(self, topic_id):
+        return self.db.topics.find_one({
+            '_id': topic_id
+        })
+
+    def make_post(self, topic_id, title, author, body, timestamp):
+        post = {
+            'topic_id': topic_id,
             'title': title,
             'author': author,
             'body': body,
             'timestamp': timestamp
+        }
+
+        self.db.posts.insert_one(post)
+        return post
+
+    def get_posts_by_topic(self, topic_id):
+        return self.db.posts.find({
+            'topic_id': topic_id
         })
 
-        return result
-
-    def get_post(self, post_id):
+    def get_post_by_id(self, post_id):
         return self.db.posts.find_one({
             '_id': post_id
         })
 
-    def create_comment(self, post_id, parent_id, author, body, timestamp):
-        result = self.db.comments.insert_one({
+    def make_comment(self, post_id, parent_id, author, body, timestamp):
+        comment = {
             'post_id': post_id,
             'parent_id': parent_id,
             'author': author,
             'body': body,
             'timestamp': timestamp
-        })
+        }
 
-        return result
+        self.db.comments.insert_one(comment)
+        return comment
 
-    def get_comment(self, comment_id):
+    def get_comment_by_id(self, comment_id):
         return self.db.comments.find_one({
             '_id': comment_id
         })
@@ -177,3 +199,4 @@ class DBManager:
         return self.db.comments.find({
             'parent_id': comment_id
         })
+
