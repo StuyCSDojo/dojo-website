@@ -1,0 +1,16 @@
+{% extends master.html %}
+
+{% block head %}
+<title>
+    Forum
+</title>
+{% endblock %}
+
+{% block container %}
+<h2>Front Page</h2>
+{% for topic in topics %}
+<a href="/forum/{{ topic['link'] }}">
+    {{ topic['description'] }}
+</a>
+{% endblock %}
+

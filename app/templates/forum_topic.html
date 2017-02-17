@@ -1,0 +1,27 @@
+{% extends 'master.html' %}
+
+{% block head %}
+    <title>
+        {{ topic['title'] }}
+    </title>
+{% endblock %}
+
+{% block container %}
+    <h1>
+        {{ topic['title'] }}
+    </h1>
+    {% for post in posts %}
+        <div class="post">
+            <div class="post-title">
+                <a href="/forum/{{ topic['_id'] }}/{{ post['_id'] }}">
+                    {{ post['title'] }}
+                </a>
+            </div>
+            <div class="post-author">
+                {{ post['author'] }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

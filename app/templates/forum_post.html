@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+
+{% block head %}
+    {{ post['title'] }}
+{% endblock %}
+
+{% block container %}
+    <div class="post">
+        {% for key in post %}
+            <div class="post-{{ key }}">
+                {{ post[key] }}
+            </div>
+        {% endfor %}
+    </div>
+
+    {% for comment in comments %}
+        {% for key in comment %}
+            <div class="comment-{{ key }}">
+                {{ comment[key] }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
