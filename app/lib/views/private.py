@@ -20,13 +20,37 @@ def render_documentation(filename = 'index.html'):
         
     return send_from_directory('../docs/build/html', filename)
 
+@private_views.route('/test/doc/')
+@private_views.route('/test/doc/<path:filename>/')
+@log_name
+@nocache
+@login_required(developer_required = True)
+def renderdocumentation(filename = 'index.html'):
+    if filename != 'index.html' and 'html' in filename[:filename.find('/')]:
+        while 'html' in filename[:filename.find('/')] and filename.find('html') != len(filename) - 4:
+            filename = filename[filename.find('/') + 1:]
+        
+    return send_from_directory('../../test/build/html', filename)
+
+@private_views.route('/private/resource/')
+@private_views.route('/private/resource/<path:filename>/')
+@log_name
+@nocache
+@login_required(developer_required = True)
+def render_resources(filename = 'index.html'):
+    if filename != 'index.html' and 'html' in filename[:filename.find('/')]:
+        while 'html' in filename[:filename.find('/')] and filename.find('html') != len(filename) - 4:
+            filename = filename[filename.find('/') + 1:]
+        
+    return send_from_directory('resources/build/html', filename)
+
 @private_views.route('/admins/')
 @log_name
 @nocache
 @login_required(admin_required = True)
 def admins():
     return render_template('make_announcement_admin.html')
-                        
+
 @private_views.route('/admins/', methods = ['POST'])
 @log_name
 def update_announcements():

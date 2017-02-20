@@ -1,5 +1,5 @@
-from flask import (Blueprint, flash, get_flashed_messages, redirect,
-                   render_template, request, session, url_for)
+from flask import (Blueprint, flash, get_flashed_messages, jsonify,
+                   redirect, render_template, request, session, url_for)
 from functools import wraps
 
 from lib.database import DBManager
@@ -36,6 +36,10 @@ def is_logged_in(admin_required = False, developer_required = False):
         session.pop('username')
         return False
 
+@security.route('/logged_in/')
+def logged_in():
+    return jsonify(result=True if session.get('username') else False)
+    
 @security.route('/register/')
 def register_form():
     if is_logged_in():
