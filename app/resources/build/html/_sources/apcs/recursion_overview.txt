@@ -1,0 +1,129 @@
+Recursion: An Overview
+======================
+
+.. |br| raw:: html
+
+   <br />
+
+Outline
+-------
+  * :ref:`what_is_recursion`
+  * :ref:`base_case`
+  * :ref:`tips_for_base_case`
+  * :ref:`what_is_head_recursion`
+  * :ref:`tips_for_head_recursion`
+  * :ref:`what_is_tail_recursion`
+  * :ref:`tips_for_tail_recursion`
+
+.. _what_is_recursion:
+
+What is Recursion
+^^^^^^^^^^^^^^^^^
+A **recursive function** is a function that calls itself during the recursive reduction until it has reached a
+base case. **Recursive reduction** is the process of breaking down a larger problem into smaller pieces each time
+until you reach the base case.
+
+.. _base_case:
+
+What is a Base Case
+^^^^^^^^^^^^^^^^^^^
+A **base case** is the simplest case for a problem
+  * Should not need to calculate more than one unknown (usually a constant)
+  * Allows the method to exit instead of looping infinitely
+
+It is sometimes referred to as the exit case.
+
+.. _tips_for_base_case:
+
+Tips for Finding the Base Case
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  * Use the idea that a base case should not calculate more than one unknown. Is that true? What does that mean?
+  * Define the problems in spoken English/mathematical terms first.
+  * From your definitions, attempt to eliminate all the unknowns except for the result.
+  * What general data types are you using?
+  * Data types are categories that you can put data in. what do you mean “put data in”?
+  * Examples are integers, floating-point numbers, strings, lists, arrays, dictionaries, etc.
+  * What data type does your result fall under?
+  * Use the simplest value.
+
+    * Examples include:
+
+      * Simple integers: 0, 1, 2
+      * Simple strings: " ", "a", ""
+
+.. _what_is_head_recursion:
+
+What is a Head Recursive Function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A head-recursive function is the first type of recursion that we learn.
+
+This is the type of recursion with deferred operations, operations that cannot be evaluated because not all the
+parameters are defined. This causes the stack to grow until the recursive reduction has reached the base case, at
+which point it starts to shrink.
+
+Head-recursive functions are usually done without a wrapper function since we do not need a variable to keep track
+of the product, an advantage for this type of recursion. This type of recursion is usually slower than
+tail-recursive because of the deferred operations.
+
+.. _tips_for_head_recursion:
+
+Tips for Writing Head Recursive Functions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  * Come up with the base case or figure out the recursive reduction part.
+  * Use what you got from step 1 to figure out the other part. If you figured out the base case, figure out the recursive reduction part. If you figured out the recursive reduction part, figure out the base case.
+
+Draw a diagram of how it should look like (a trace diagram might be a good idea, but maybe you like tables better or maybe you like to write psuedocode).
+Try it out.
+Did you get it?
+
+If you answer yes, hurray! 
+If you answer no, post on Google Groups or come to the CS Dojo or talk to your rubber ducky or ask your friends for help!
+
+.. _what_is_tail_recursion:
+
+What is a Tail Recursive Function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A tail-recursive function is the second type of recursion that we learn.
+
+The unique feature of a tail-recursive function is that unlike a head-recursive function there are no deferred operations.   Instead, we use state variables, which allows the function to pick up from where it stopped on the condition that we know the values of all the state variables.
+
+.. _what_are_state_variables:
+   
+What are State Variables
+^^^^^^^^^^^^^^^^^^^^^^^^
+State variables are just like normal variables, but we added the prefix because of their role in a function.
+
+A state variable's role is to keep track of a specific part of the function such as product, counter, or result. Through the usage of these variables, we can evaluate parts of the result as we continue the recursive reduction and the result is a function that uses memory more efficiently.
+
+So how do we know how many state variables to use?
+
+There is no definite answer to this question, the general rule is to use as many as you see fit. Don't worry if others use less variables than you. Eventually as you start to get the hang of it, you figure out what variables you really need and how to use one variables to keep track of multiple states.  In addition, there are times when more variables increase the readability of the code.
+
+.. _tips_for_state_variables
+
+Tips for State Variables
+^^^^^^^^^^^^^^^^^^^^^^^^
+You would probably want to use a state variable to keep track of your result/answer.Would a counter be useful for your function?Are there any other bits you want to keep track of? (For the Fibonacci sequence, you want to keep track of the first number and the second number to generate the following numbers. Those two variables would fall under here)
+
+
+Factorial Example (using the first idea)
+
+Define the problem in normal English/mathematical terms. 
+Since this is a math problem you would probably come up with something like:
+n * (n - 1)! or n * n-1 * n-2 * ... * 1
+From your definitions, attempt to eliminate all the unknowns except for the result. So, how can we get rid of n, n - 1, n - 2, etc?
+Well, if n = 1, then there is no n - 1, n - 2, n - 3, etc. So, now you got 1! = 1.
+So, if n = 1, then it should return 1.
+
+Factorial Example (using idea 3)
+
+What data types does the result fall under?
+Since n! always results in an integer, the data type would be integers.
+Use the simplest value for step 1.
+So we want the simplest value for integers (the result of step 1). Let's make it positive for simplicity and a simple integer should only be single-digit. To make it even simpler, let us choose 0 or 1.
+
+Well 1! = 1 and 0! = 1, so we can conclude that:
+
+(if (< n 2) ; base case
+    n
+    <do whatever> ) 

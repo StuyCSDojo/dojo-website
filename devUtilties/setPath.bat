@@ -42,4 +42,4 @@ set Var3=%Var2%;%Var1%
 
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_EXPAND_SZ /d "%Var3%" /f
 echo "Successfully wrote to registry, I will now reboot!"
-shudown -r -t 05
+shutdown -r -t 05

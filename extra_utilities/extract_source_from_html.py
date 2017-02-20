@@ -23,16 +23,19 @@ def get_html_files_listing():
     return html_filename_list
 
 def extract_relevant_text(html_file_content):
-    soup = BeautifulSoup(html_file_content, 'html.parser')
+    html_file_content = [line for line in html_file_content if 'class="reference internal"' not in line]
+    processed_html_file_content = ' '.join(html_file_content)
+    soup = BeautifulSoup(processed_html_file_content, 'html.parser')
     soup = soup.find('div', {'class': 'section'})
     relevant_text = soup.get_text()
     relevant_text = relevant_text.replace('\n', '')
+    relevant_text = relevant_text.replace(u'\xb6', '  ')
     return relevant_text
 
 def process_file(html_filename, txt_filename):
     PATH = '/projects/dojo-website/docs/build/html/_sources/'
     with open(html_filename) as file_:
-        html_file_content = file_.read()
+        html_file_content = file_.readlines()
     source_relevant_portion = extract_relevant_text(html_file_content)
     with io_open(PATH + txt_filename, 'w', encoding='utf-8') as file_:
         file_.write(source_relevant_portion)

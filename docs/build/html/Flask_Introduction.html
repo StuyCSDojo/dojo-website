@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+            <title>Introduction to Flask &mdash; dojo-website 0.0.1 documentation</title>
+        
+
+        
+        
+
+        
+
+        
+        
+            
+
+        
+
+        
+        
+            <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+        
+
+        
+
+        
+
+        <link rel="stylesheet" href="_static/bootstrap-glyphicons.css" type="text/css" />
+        <link rel="stylesheet" href="_static/main.css" type="text/css" />
+        <link rel="stylesheet" href="_static/button.css" type="text/css" />
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+            crossorigin="anonymous"></script>
+        <script src="_static/button.js"></script>
+        <script src="_static/set_target.js"></script>
+                <link rel="index" title="Index"
+                      href="genindex.html"/>
+                <link rel="search" title="Search" href="search.html"/>
+            <link rel="top" title="dojo-website 0.0.1 documentation" href="index.html"/>
+                <link rel="next" title="Introduction to reStructuredText" href="reStructuredText_Introduction.html"/>
+                <link rel="prev" title="Running the Flask App" href="Running_App.html"/> 
+
+        
+        <script src="_static/js/modernizr.min.js"></script>
+
+    </head>
+
+    <body class="wy-body-for-nav" role="document">
+
+         
+        <div class="wy-grid-for-nav">
+
+            
+            <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+                <div class="wy-side-scroll">
+                    <div class="wy-side-nav-search">
+                        
+
+                            
+                                    <a href="index.html" class="icon icon-home"> dojo-website
+                            
+
+                            
+                                    </a>
+
+                                    
+                                        
+                                        
+                                            <div class="version">
+                                                0.0.1
+                                            </div>
+                                        
+                                    
+
+                                    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+                        
+                    </div>
+
+                    <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                        
+                            
+                            
+                                <p class="caption"><span class="caption-text">Development Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Preparing_Development_Environment.html">Preparing the Development Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Preparing_Development_Environment.html#which-operating-system-are-you-using">Which Operating System Are You Using?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Preparing_Development_Environment.html#windows">Windows</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#install-git-and-clone-repo">Install Git and clone repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#install-python">Install Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#add-python-and-pip-to-path">Add Python and pip to path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#downloading-and-configuring-mongodb">Downloading and configuring MongoDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#installing-and-creating-virtualenv">Installing and creating virtualenv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#installing-dependencies">Installing dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Preparing_Development_Environment.html#unix">Unix</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#id4">Install Git and clone repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#install-python-and-pip">Install Python and pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#install-and-configure-mongodb">Install and configure MongoDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#install-and-create-virtualenv">Install and create virtualenv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#install-dependencies">Install dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Preparing_Development_Environment.html#school-unix">School Unix</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#create-project-directory-and-clone-repo">Create project directory and clone repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#create-and-activate-virtualenv">Create and activate virtualenv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preparing_Development_Environment.html#id8">Install dependencies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Running_App.html">Running the Flask App</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Running_App.html#how-are-you-planning-to-run-the-app">How are you planning to run the app?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Running_App.html#locally">Locally</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Running_App.html#activate-the-virtualenv">Activate the virtualenv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Running_App.html#running-the-app">Running the App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Running_App.html#accessing-the-site">Accessing the site</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Running_App.html#publicly">Publicly</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started With Writing Code</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to Flask</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-topics-are-we-covering">What Topics Are We Covering?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#flask-layout">Flask Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-flask">Basic Flask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flask-routes-and-blueprints">Flask Routes and Blueprints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flask-templates">Flask Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flask-server-and-client-communication">Flask Server and Client Communication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-decorators">Python Decorators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reStructuredText_Introduction.html">Introduction to reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reStructuredText_Introduction.html#what-topics-are-we-covering">What Topics Are We Covering?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reStructuredText_Introduction.html#what-is-rest">What is reST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reStructuredText_Introduction.html#why-use-rest">Why use reST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reStructuredText_Introduction.html#introduction-to-toctree">Introduction to Toctree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reStructuredText_Introduction.html#editing-rest-files">Editing reST files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reStructuredText_Introduction.html#basic-rest-directives">Basic reST Directives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reStructuredText_Introduction.html#building-the-source">Building the Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reStructuredText_Introduction.html#fixing-the-search-bar">Fixing the Search Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reStructuredText_Introduction.html#additional-links">Additional Links</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MongoDB_Introduction.html">Introduction to MongoDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server_Communication.html">Introduction to Server Communication</a></li>
+</ul>
+
+                            
+                        
+                    </div>
+                </div>
+                
+            </nav>
+
+            <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                
+                <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                    
+                        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                        <a href="index.html">dojo-website</a>
+                    
+                </nav>
+
+
+
+                
+                <div class="wy-nav-content">
+                    <div class="rst-content">
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Introduction to Flask</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+                        <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                            <div itemprop="articleBody">
+                                
+  <div class="section" id="introduction-to-flask">
+<h1>Introduction to Flask<a class="headerlink" href="#introduction-to-flask" title="Permalink to this headline">¶</a></h1>
+<p>&lt;Under Construction&gt;</p>
+<div class="section" id="what-topics-are-we-covering">
+<h2>What Topics Are We Covering?<a class="headerlink" href="#what-topics-are-we-covering" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#flask-layout"><span class="std std-ref">Flask Layout</span></a></li>
+<li><a class="reference internal" href="#basic-flask"><span class="std std-ref">Basic Flask</span></a></li>
+<li><a class="reference internal" href="#flask-routes-and-blueprints"><span class="std std-ref">Flask Routes and Blueprints</span></a></li>
+<li><a class="reference internal" href="#flask-templates"><span class="std std-ref">Flask Templates</span></a></li>
+<li><a class="reference internal" href="#flask-server-and-client-communication"><span class="std std-ref">Flask Server and Client Communication</span></a></li>
+<li><a class="reference internal" href="#python-decorators"><span class="std std-ref">Python Decorators</span></a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="flask-layout">
+<span id="id1"></span><h3>Flask Layout<a class="headerlink" href="#flask-layout" title="Permalink to this headline">¶</a></h3>
+<p>The standard Flask app directory tree looks something like:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Parent Directory/
+|__app.py      // this Python file contains the code for running your app; can be renamed to something else
+|__templates/  // this folder has to be named &#39;templates&#39;; place where all your html files are located
+|__static/     // only the &#39;static&#39; folder is open to public access; store your css, js, images, and etc.
+|__utils/      // named &#39;util&#39; for convention; place for all your other Python files
+|__data/       // named &#39;data&#39; for convention; place where you store any data and/or database files
+</pre></div>
+</div>
+</div>
+<div class="section" id="basic-flask">
+<span id="id2"></span><h3>Basic Flask<a class="headerlink" href="#basic-flask" title="Permalink to this headline">¶</a></h3>
+<p>Let us start with a basic Flask app:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># import the Flask class from the flask library</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="c1"># Generate an instance of the Flask class.  The first argument is the name of the module allowing Flask to</span>
+<span class="c1"># search for your templates, static files, and etc.</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># The route decorator is used to tell Flask what URL should run the function</span>
+<span class="c1"># The &#39;/&#39; denotes root and is the page that is loaded by default</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>                  <span class="c1"># Standard Python function definition, the name does not need to match the route.</span>
+    <span class="k">return</span> <span class="s1">&#39;Hello World!&#39;</span>    <span class="c1"># Return a message to be rendered in the user&#39;s browser</span>
+
+<span class="c1"># If the program is ran directly instead of imported...</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># Turn on debugging enabling more specific error messages than 500 Internal Server Error</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span>         <span class="c1"># Auto reloads itself upon code changes</span>
+    <span class="c1"># Run the app</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+    <span class="c1"># By default, the host is 127.0.0.1 and the port is 5000</span>
+    <span class="c1"># Access the site by typing host:port (127.0.0.1:5000) into the address bar of your browser.</span>
+
+    <span class="c1"># You may change the port or the host by giving app.run() extra parameters</span>
+    <span class="c1"># Ex: app.run(host=192.0.0.1, port=8000) would change the address to 192.0.0.1:8000</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flask-routes-and-blueprints">
+<span id="id3"></span><h3>Flask Routes and Blueprints<a class="headerlink" href="#flask-routes-and-blueprints" title="Permalink to this headline">¶</a></h3>
+<p>Under Construction...</p>
+</div>
+<div class="section" id="flask-templates">
+<span id="id4"></span><h3>Flask Templates<a class="headerlink" href="#flask-templates" title="Permalink to this headline">¶</a></h3>
+<p>In IntroCS2, the way you would render HTML is by printing HTML source code.  Why is this bad?</p>
+<blockquote>
+<div><ul class="simple">
+<li>Does not allow for modular design; it is hard to reuse code</li>
+<li>Squashes all your HTML and Python together, creating a mess</li>
+</ul>
+</div></blockquote>
+<p>So, how can Flask templates fix this?</p>
+<blockquote>
+<div><ul class="simple">
+<li>Reusing your HTML code is as simple as copying a file</li>
+<li>Separates the HTML into the HTML files and Python code into .py files</li>
+<li>Introduces inheritance to eliminate repetitive portions</li>
+<li>Allows you to store Python variables and run Python functions directly in your HTML file</li>
+</ul>
+</div></blockquote>
+<p>Sounds too good to be true?  Try it out!  Here is some sample HTML code to be placed into your templates folder:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> Hello World! <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Use &lt;strong&gt; instead of &lt;b&gt; and &lt;em&gt; instead of &lt;i&gt; (HTML5 standards) --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span> This is the best web page ever <span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">em</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In your Flask app, revise the function definition for home:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Replace the import statement at the top with the following</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+
+<span class="c1"># The &#39;/&#39; denotes root and is the page that is loaded by default</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;&lt;name of html file&gt;&#39;</span><span class="p">)</span> <span class="c1"># Return your html template instead of &#39;Hello World!&#39;</span>
+</pre></div>
+</div>
+<p>Run your Flask app (make sure the virtualenv is activated!).
+<br />
+<br />
+Great!  Leave your Flask app running and now let us add some more excitement by throwing some Python in there...</p>
+<div class="highlight-jinja"><div class="highlight"><pre><span></span><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">    &lt;body&gt;</span>
+<span class="x">        </span><span class="c">{# This is a comment #}</span><span class="x"></span>
+<span class="x">        &lt;h1&gt; Hello World! &lt;/h1&gt;</span>
+
+<span class="x">        </span><span class="c">{# Python if statements are allowed if you wrapped them with {% %} #}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">if</span> <span class="m">1</span><span class="o">==</span><span class="m">1</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;p&gt;&lt;strong&gt;&lt;em&gt; This is the best web page ever &lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</span>
+
+<span class="x">        </span><span class="c">{# You can also use elif statements #}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">elif</span> <span class="m">1</span><span class="o">==</span><span class="m">0</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;p&gt; This is the worst web page ever &lt;/p&gt;</span>
+
+<span class="x">        </span><span class="c">{# And else statements as well! #}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;p&gt; This is an OK web page... &lt;/p&gt;</span>
+<span class="x">        </span><span class="c">{# Make sure to close your if/elif/else statement(s) with this one line #}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">        </span><span class="c">{# You can use Python for loops! #}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">i</span> <span class="k">in</span> <span class="nv">range</span><span class="o">(</span><span class="m">100</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;p&gt; I am the coolest person ever! &lt;/p&gt;</span>
+
+<span class="x">        </span><span class="c">{# You can access the variables by surrounding the expression or variable with {{ }} #}</span><span class="x"></span>
+<span class="x">        &lt;p&gt; </span><span class="cp">{{</span><span class="nv">i</span> <span class="o">**</span> <span class="m">2</span><span class="cp">}}</span><span class="x"> &lt;/p&gt;</span>
+
+<span class="x">        </span><span class="c">{# Close for loop with the following line #}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">        </span><span class="c">{# You can use while loops as well! #}</span><span class="x"></span>
+<span class="x">    &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>Simply refresh the page and Flask would autoload the new html page.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Notice that the Python portion is really limited since we do not want to squash HTML and Python in one file.
+Some Python is allowed to make it easier to do repetitive tasks such as create a table with 100 rows and 20
+columns.</p>
+</div>
+</div>
+<div class="section" id="flask-server-and-client-communication">
+<span id="id5"></span><h3>Flask Server and Client Communication<a class="headerlink" href="#flask-server-and-client-communication" title="Permalink to this headline">¶</a></h3>
+<p>Under Construction...</p>
+</div>
+<div class="section" id="python-decorators">
+<span id="id6"></span><h3>Python Decorators<a class="headerlink" href="#python-decorators" title="Permalink to this headline">¶</a></h3>
+<p>Under Construction...</p>
+</div>
+</div>
+</div>
+
+
+                            </div>
+                            <div class="articleComments">
+                                
+                            </div>
+                        </div>
+                        <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reStructuredText_Introduction.html" class="btn btn-neutral float-right" title="Introduction to reStructuredText" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Running_App.html" class="btn btn-neutral" title="Running the Flask App" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PChan, Kenneth, Shakil, Jake, Leo, WX.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+                    </div>
+                </div>
+                
+            </section>
+            
+        </div>
+	<div class="rst-versions" data-toggle="rst-versions" role="note">
+	    <form action="/logout" id="button_form">
+		<button class="button">
+		    <span>Logout</span>
+		    <span class="glyphicon glyphicon-log-out"></span>
+		</button>
+            </form>
+	</div>
+        
+
+
+        
+
+            <script type="text/javascript">
+             var DOCUMENTATION_OPTIONS = {
+                 URL_ROOT:'./',
+                 VERSION:'0.0.1',
+                 COLLAPSE_INDEX:false,
+                 FILE_SUFFIX:'.html',
+                 HAS_SOURCE:  true,
+                 SOURCELINK_SUFFIX: ''
+             };
+            </script>
+                <script type="text/javascript" src="_static/jquery.js"></script>
+                <script type="text/javascript" src="_static/underscore.js"></script>
+                <script type="text/javascript" src="_static/doctools.js"></script>
+
+        
+
+        
+        
+            <script type="text/javascript" src="_static/js/theme.js"></script>
+        
+
+        
+        
+            <script type="text/javascript">
+             jQuery(function () {
+                 SphinxRtdTheme.StickyNav.enable();
+             });
+            </script>
+         
+
+    </body>
+</html>
