@@ -3,7 +3,7 @@
 {% block title %}About{% endblock %}
 
 {% block head %}
-{{ super() }}
+    {{ super() }}
 {% endblock %}
 
 {% block nav %}
@@ -12,104 +12,97 @@
         <a href='/' class='left-padding breadcrumb left'><strong>CS DOJO</strong></a>
         <a href='#!' class='breadcrumb white-text'>About</a>
         <ul id='nav-mobile' class='right-padding right hide-on-med-and-down'>
-  	    <li><a href='/'>Home</a></li>
+            <li><a href='/'>Home</a></li>
             <li class='active'><a href='/about'>About</a></li>
             <li><a href='/resources'>Resources</a></li>
             <li><a href='/calendar'>Calendar</a></li>
             <li><a href='/irc'>Chat</a></li>
             {% if is_logged_in %}
-		<li><a href='/logout'>Logout</a></li>
-	    {% else %}
-		<li><a href='/login'>Login</a></li>
-            {% endif  %}	    
+                <li><a href='/logout'>Logout</a></li>
+            {% else %}
+                <li><a href='/login'>Login</a></li>
+            {% endif  %}
         </ul>
         <ul class='side-nav' id='mobile'>
-	    <li><a href='/'>Home</a></li>
+            <li><a href='/'>Home</a></li>
             <li class='active'><a href='/about'>About</a></li>
             <li><a href='/resources'>Resources</a></li>
             <li><a href='/calendar'>Calendar</a></li>
             <li><a href='/irc'>Chat</a></li>
             {% if is_logged_in %}
-		<li><a href='/logout'>Logout</a></li>
-	    {% else %}
-		<li><a href='/login'>Login</a></li>
+                <li><a href='/logout'>Logout</a></li>
+            {% else %}
+                <li><a href='/login'>Login</a></li>
             {% endif  %}
         </ul>
     </div>
 {% endblock %}
 
 {% block container %}
-<h4>About</h4>
-<div class='divider'></div>
-<p>
-    CS Dojo is a space for anyone struggling in a computer science
-    class to find the help they need. Anyone may come simply to have a
-    place to do their work, to ask specific questions about concepts
-    from class that they do not understand, to have some guidance in
-    completing homework assignments, or to receive help studying for a
-    test.
-</p>
+    <h4>About</h4>
+    <div class='divider'></div>
+    <p>
+        CS Dojo is a space for anyone struggling in a computer science
+        class to find the help they need. Anyone may come simply to have a
+        place to do their work, to ask specific questions about concepts
+        from class that they do not understand, to have some guidance in
+        completing homework assignments, or to receive help studying for a
+        test.
+    </p>
 
-<h4>Rules of the Dojo</h4>
-<div class='divider'></div>
-<p>
-    The rules of the dojo are simple -- don't be stupid, and don't be a jerk. But If
-    you want specifics, the following should serve as pretty good guidelines:</p>
-<ul>
-    <li>&#x2022; Keep Computer Area Clean</li>
-    <li>&#x2022; No Food or Drink</li>
-    <li>&#x2022; No Unauthorized Printing</li>
-    <li>&#x2022; No Games or Unauthorized Internet (Facebook, Youtube, Twitter, and etc.)</li>
-    <li>&#x2022; Log Out And Take Your Belongings With You When You Leave</li>
-    <li>&#x2022; No PDA (Public Display of Affection)</li>
-</ul>
+    <h4>Rules of the Dojo</h4>
+    <div class='divider'></div>
+    <p>
+        The rules of the dojo are simple -- don't be stupid, and don't be a jerk. But If
+        you want specifics, the following should serve as pretty good guidelines:</p>
+    <ul>
+        <li>Under Construction</li>
+    </ul>
 
-<h4>Our Sensei</h4>
-<div class='divider'></div>
-<br>
-<div class='row'>
-    <div class='col s3'>
-        <center>
-            <img class='circle' width='150px' src='../static/about/jlee.jpg'
-		 alt='jongyoul'>
-            <h5>Jongyoul Lee</h5>
-        </center>
+    <h4>Our Sensei</h4>
+    <div class='divider'></div>
+    <br>
+    <div class='row'>
+        <div class='col s3 m3 l3'>
+            <center>
+                <img class='circle responsive-img' src='../static/about/jlee.jpg' alt='jongyoul'>
+                <p class="flow-text">Jongyoul Lee</p>
+            </center>
+        </div>
+
+        <div class='col s3 m3 l3'>
+            <center>
+                <img class="circle responsive-img" src='../static/about/lvargas.jpg' alt='lorenz'>
+                <p class="flow-text">Lorenz Vargas</p>
+            </center>
+        </div>
+
+        <div class='col s3 m3 l3'>
+            <center>
+                <img class="circle responsive-img" src='../static/about/sayoon.jpg' alt='sarah'>
+                <p class="flow-text">Sarah Yoon</p>
+            </center>
+        </div>
+
+        <div class='col s3 m3 l3'>
+            <center>
+                <img class="circle responsive-img" src='../static/about/styoon.jpg' alt='steph'>
+                <p class="flow-text">Stephanie Yoon</p>
+            </center>
+        </div>
+    </div>
+    <div class="row">
+        <div class ='col s4 m4 l4 offset-s4 offset-m4 offset-l4'>
+            <center>
+                <img class='circle' class="responsive-img" src='../static/about/dough-joe.jpg' alt='dough joe'>
+                <p class="flow-text">Dough Joe</p>
+            </center>
+        </div>
     </div>
 
-    <div class='col s3'>
-        <center>
-            <img class='circle' width='150px' src='../static/about/lvargas.jpg'
-		 alt='lorenz'>
-            <h5>Lorenz Vargas</h5>
-    </div>
-
-    <div class='col s3'>
-        <center>
-            <img class='circle' width='150px' src='../static/about/sayoon.jpg'
-		 alt='sarah'>
-            <h5>Sarah Yoon</h5>
-        </center>
-    </div>
-
-    <div class='col s3'>
-        <center>
-            <img class='circle' width='150px'
-		 src='../static/about/styoon.jpg' alt='steph'>
-            <h5>Stephanie Yoon</h5>
-        </center>
-    </div>
-</div>
-<div class ='col s3'>
-    <center>
-	<img class='circle' width='150px'
-	     src='../static/about/dough-joe.jpg'>
-	<h5>Dough Joe</h5>
-    </center>
-</div>
-
-<h4>Contact Us</h4>
-<div class='divider'></div>
-<p>Come join us in person! The Dojo meets Monday through Thursday in
-    Room 307 after 10th period. If you cannot, check out our chat or
-    email us at <a href="mailto:stuycsdojo1516@gmail.com">stuycsdojo1516@gmail.com</a></p>
+    <h4>Contact Us</h4>
+    <div class='divider'></div>
+    <p>Come join us in person! The Dojo meets Monday through Thursday in
+        Room 307 after 10th period. If you cannot, check out our chat or
+        email us at <a href="mailto:stuycsdojo1516@gmail.com">stuycsdojo1516@gmail.com</a></p>
 {% endblock %}

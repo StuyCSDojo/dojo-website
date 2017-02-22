@@ -9,44 +9,45 @@
 {% block nav %}
     <div class='nav-wrapper blue darken-4'>
         <a href='/' class='brand-logo'>CS DOJO</a>
-	<a href='#' data-activates='mobile-demo' class='button-collapse'><i class='material-icons'>menu</i></a>
-	<ul id='nav-mobile' class='right-padding right hide-on-med-and-down'>
-	    <li class='active'><a href='/'>Home</a></li>
+        <a href='#' data-activates='mobile-demo' class='button-collapse'><i class='material-icons'>menu</i></a>
+        <ul id='nav-mobile' class='right-padding right hide-on-med-and-down'>
+            <li class='active'><a href='/'>Home</a></li>
             <li><a href='/about'>About</a></li>
             <li><a href='/resources'>Resources</a></li>
             <li><a href='/calendar'>Calendar</a></li>
             <li><a href='/irc'>Chat</a></li>
             {% if is_logged_in %}
-		<li><a href='/logout'>Logout</a></li>
-	    {% else %}
-		<li><a href='/login'>Login</a></li>
+                <li><a href='/logout'>Logout</a></li>
+            {% else %}
+                <li><a href='/login'>Login</a></li>
             {% endif  %}
         </ul>
-	<ul class='side-nav' id='mobile-demo'>
-	    <li class='active'><a href='/'>Home</a></li>
-	    <li><a href='/about'>About</a></li>
-	    <li><a href='/resources'>Resources</a></li>
+        <ul class='side-nav' id='mobile-demo'>
+            <li class='active'><a href='/'>Home</a></li>
+            <li><a href='/about'>About</a></li>
+            <li><a href='/resources'>Resources</a></li>
             <li><a href='/calendar'>Calendar</a></li>
             <li><a href='/irc'>Chat</a></li>
             {% if is_logged_in %}
-		<li><a href='/logout'>Logout</a></li>
-	    {% else %}
-		<li><a href='/login'>Login</a></li>
+                <li><a href='/logout'>Logout</a></li>
+            {% else %}
+                <li><a href='/login'>Login</a></li>
             {% endif  %}
         </ul>
     </div>
 {% endblock %}
 
 {% block container %}
-    <h2>Announcements</h2>
+    <h3 class="section">Announcements</h3>
+    <!-- <p class="flow-text"><strong>Announcements</strong></p> -->
     <div class="divider"></div>
     {% for announcement in announcements %}
-        <h4>
+        <h5>
             {{announcement['title']}}
-        </h4>
-        <p class="condensed light a_info">
+	</h5>
+	<p class="condensed light a_info">
             Posted by {{announcement['username']}} on {{announcement['timestamp']}}
-        </p>
-        <p>{{announcement['body']}}</p>
+	</p>
+	<p>{{announcement['body']}}</p>
     {% endfor %}
 {% endblock %}

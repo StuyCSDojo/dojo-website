@@ -1,3 +1,24 @@
+patrickC -- 2017-02-20 10:33
+- Updated requirements.txt file
+- Finished framework for resource page, started recursion guide
+- Fixed bug where last entry in the sidenav cannot be accessed on mobile devices (by adding a
+meaningless entry)
+
+patrickC -- 2017-02-20 10:17
+- Added route to resources page
+- Aded a function allowing the server to pass information regarding the user session via AJAX
+- Modified layout.html in resources project to show logout button when user is logged in
+- Modified layout.html to add a footer for logout button
+
+patrickC -- 2017-02-18
+- Modified the logout button on the resource page to only show up when you are logged in
+
+patrickC -- 2017-02-17 22:43
+- Started the framework for the new resource page
+- Added logout button to both the documentation page and the resources page
+- Modified extract_source_from_html.py to remove some more symbols and add more whitespace
+- Made some progress on the documentation page
+
 patrickC -- 2017-02-13 23:55
 - Fixed path for refind.png
 - Added login/logout button to every page
