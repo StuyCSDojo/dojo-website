@@ -1,3 +1,11 @@
+patrickC -- 2017-02-25 18:10
+- Updated the folder structure for docs/ and app/resources/
+- Refactored and modified extract_source_from_html.py to work with both docs/ and app/resources/
+  - Take the following arguments:
+    - --resources to update the app/resources/ search sources
+    - --docs to update the docs/ search sources
+    - --all or -a to update both
+
 patrickC -- 2017-02-20 10:33
 - Updated requirements.txt file
 - Finished framework for resource page, started recursion guide

@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, redirect, request, send_from_directory, session, url_for
+from flask import Blueprint, current_app, render_template, redirect, request, session, url_for
+from os.path import join
 
 from lib.database import DBManager
 from lib.security.security import login_required
@@ -9,41 +10,32 @@ private_views = Blueprint('private_views', __name__)
 db_manager = DBManager('dojo_website')
 
 @private_views.route('/doc/')
-@private_views.route('/doc/<path:filename>/')
+@private_views.route('/doc/<path:filename>')
 @log_name
 @nocache
 @login_required(developer_required = True)
 def render_documentation(filename = 'index.html'):
-    if filename != 'index.html' and 'html' in filename[:filename.find('/')]:
-        while 'html' in filename[:filename.find('/')] and filename.find('html') != len(filename) - 4:
-            filename = filename[filename.find('/') + 1:]
-        
-    return send_from_directory('../docs/build/html', filename)
+    path = join('docs/build/html', filename)
+    return current_app.send_static_file(path)
 
 @private_views.route('/test/doc/')
-@private_views.route('/test/doc/<path:filename>/')
+@private_views.route('/test/doc/<path:filename>')
 @log_name
 @nocache
 @login_required(developer_required = True)
 def renderdocumentation(filename = 'index.html'):
-    if filename != 'index.html' and 'html' in filename[:filename.find('/')]:
-        while 'html' in filename[:filename.find('/')] and filename.find('html') != len(filename) - 4:
-            filename = filename[filename.find('/') + 1:]
-        
-    return send_from_directory('../../test/build/html', filename)
+    path = join('test/build/html', filename)
+    return current_app.send_static_file(path)
 
 @private_views.route('/private/resource/')
-@private_views.route('/private/resource/<path:filename>/')
+@private_views.route('/private/resource/<path:filename>')
 @log_name
 @nocache
 @login_required(developer_required = True)
 def render_resources(filename = 'index.html'):
-    if filename != 'index.html' and 'html' in filename[:filename.find('/')]:
-        while 'html' in filename[:filename.find('/')] and filename.find('html') != len(filename) - 4:
-            filename = filename[filename.find('/') + 1:]
-        
-    return send_from_directory('resources/build/html', filename)
-
+    path = join('resources/build/html', filename)
+    return current_app.send_static_file(path)
+                                     
 @private_views.route('/admins/')
 @log_name
 @nocache

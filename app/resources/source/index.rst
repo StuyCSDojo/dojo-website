@@ -25,8 +25,8 @@ Welcome to Dojo Resources!
    :maxdepth: 4
    :caption: Guides and Tutorials
 
-   stuycs_guides
-   software
+   stuycs/stuycs_guides
+   software_installation_and_tips/software
 	     
 .. toctree::
    :maxdepth: 1
