@@ -1,3 +1,8 @@
+patrickC -- 2017-02-26 15:31
+- Updated make_announcement_admin.html with login/logout button, removed link to Dojo blog
+- Add left-padding to breadcrumb on index page
+- Updated requirements.txt
+
 patrickC -- 2017-02-25 18:10
 - Updated the folder structure for docs/ and app/resources/
 - Refactored and modified extract_source_from_html.py to work with both docs/ and app/resources/
