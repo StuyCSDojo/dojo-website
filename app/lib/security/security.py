@@ -30,8 +30,10 @@ def is_logged_in(admin_required = False, developer_required = False):
         return True
     elif admin_required and db_manager.is_admin(username):
         return True
-    elif db_manager.is_registered(username):
+    elif not (admin_required or developer_required) and db_manager.is_registered(username):
         return True
+    elif (admin_required and not db_manager.is_admin(username)) or (developer_required and not db_manager.is_developer(username)):
+        return False
     else:
         session.pop('username')
         return False
@@ -85,9 +87,11 @@ def login():
         
         if results[0]:
             session['username'] = username
+            print 'bye'
             return redirect_back()
         else:
             flash(results[1])
+            print 'hello'
             return redirect(url_for('security.login_form'))
 
 @security.route('/logout/')

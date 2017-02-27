@@ -1,3 +1,8 @@
+patrickC -- 2017-02-26 19:14
+- Fixed location of logo on make_announcement_admin.html
+- Fixed inactive mobile navbar on make_announcement_admin.html
+- Fixed bug where any user were able to access private pages
+
 patrickC -- 2017-02-26 15:31
 - Updated make_announcement_admin.html with login/logout button, removed link to Dojo blog
 - Add left-padding to breadcrumb on index page
