@@ -17,6 +17,7 @@ Welcome to Dojo Resources!
    Racket <https://docs.racket-lang.org/>
    NetLogo <https://ccl.northwestern.edu/netlogo/docs/dictionary.html>
    Python 2.7 <https://docs.python.org/2/library/index.html>
+   Python 2.7 Quick Reference <http://rgruet.free.fr/PQR27/PQR2.7.html>
    Java 7 API <http://docs.oracle.com/javase/7/docs/api/>
    Java 7 AP subset API <https://docs.oracle.com/javase/7/docs/api>
    Processing <https://processing.org/reference>
@@ -29,16 +30,11 @@ Welcome to Dojo Resources!
    software_installation_and_tips/software
 	     
 .. toctree::
-   :maxdepth: 1
-   :caption: Other Useful Links
+   :maxdepth: 2
+   :caption: Useful Links
 
-   W3schools <http://www.w3schools.com/>
-   Emacs Wiki <http://www.w3schools.com/>
-   Vim Tips Wiki <http://vim.wikia.com/wiki/Vim_Tips_Wiki>
-   JS Fiddle <https://jsfiddle.net/>
-   C-English Translator <http://cdecl.org/>
-   Google <https://google.com/>
-
+   stuycs/useful_links
+   
 .. toctree::
    :maxdepth: 1
    :caption: Extra

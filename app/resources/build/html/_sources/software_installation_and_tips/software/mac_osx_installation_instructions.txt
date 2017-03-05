@@ -1,1 +1,2 @@
- Installation Instructions for Mac OSX Software   
+Installation Instructions for Mac OSX Software
+==============================================

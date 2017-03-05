@@ -19,7 +19,7 @@ Outline
 
 What is Recursion
 ^^^^^^^^^^^^^^^^^
-**Recursive reduction** is the process of breaking down a larger problem into smaller pieces each time the function is called.  A **recursive function** is a function that calls itself during the recursive reduction until it has reached a base case. 
+**Recursive reduction** is the process of breaking down a larger problem into smaller pieces each time the function is called.  A **recursive function** is a function that calls itself using recursive reduction until it has reached a base case. 
 
 .. _apcs_base_case:
 
@@ -34,11 +34,14 @@ A **base case** is sometimes refer to as the exit case.  It should:
     * Sample values for Strings: " ", "a", ""
     * Sample values for Arrays: [], [0]
 
+.. warning::
+   These sample values are not the only possible values for base cases.
+
 .. _apcs_what_is_head_recursion:
 
 What is a Head Recursive Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The first form of recursion you learn was head recursion and is characterize by:
+The first form of recursion you learn in Intro CS was head recursion and is characterized by:
 
   * Deferred operations: operations that cannot be computed yet because there are still unknown components
 
@@ -59,7 +62,8 @@ Example of Head Recursion
            return n;
        }else{
            return n * factorial(n - 1);
-           // the rest of the computation will go here if there are any
+	   // assuming you are not returning above...
+	   // the rest of the computation will go here if there are any
        }
    }
 
@@ -70,16 +74,16 @@ What is a Tail Recursive Function
 The second form of recursion that you might have covered is characterized by:
 
   * **NO** deferred operations
-  * Usage of :ref:`state variables <what_are_state_variables>`
+  * Usage of state variables
   * The recursive call is the last operation to be performed, all computations come before it
 
 .. _apcs_what_are_state_variables:
    
 What are State Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^
-State variables are normal variables with a specific role in a function.  They allow us to:
+State variables are variables that serve a specific role in a function.  They allow us to:
 
-  * Keep track of certain components in the computation process such as the answer so far or the counter
+  * Keep track of properties of the function as it is running, such as a counter
   * Use the aforementioned data to continue an interrupted recursive call
 
 Some of the most commonly asked questions about state variables are:

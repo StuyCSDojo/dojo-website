@@ -3,25 +3,10 @@ Software and Tools
 
 .. toctree::
    :maxdepth: 2
-
-   software/unix_installation_instructions
-
-.. toctree::
-   :maxdepth: 2
-
-   software/mac_osx_installation_instructions
-
-.. toctree::
-   :maxdepth: 2
-
-   software/linux_installation_instructions
-
-.. toctree::
-   :maxdepth: 2
-
-   software/windows_installation_instructions
-
+   
+   installation_instructions/index
+   
 .. toctree::
    :maxdepth: 2
    
-   software/software_guides
+   software_tutorials/index
