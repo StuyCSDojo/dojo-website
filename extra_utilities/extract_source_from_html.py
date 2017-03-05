@@ -30,7 +30,9 @@ def extract_relevant_text(html_file_content):
     processed_html_file_content = ' '.join(html_file_content)
     soup = BeautifulSoup(processed_html_file_content, 'html.parser')
     soup = soup.find('div', {'class': 'section'})
-    relevant_text = soup.get_text()
+    if not soup:
+        return u''
+    relevant_text = soup.get_text()    
     relevant_text = relevant_text.replace('\n\n', '\n')
     relevant_text = relevant_text.replace('\n', ' ')
     relevant_text = relevant_text.replace(u'\xb6', '  ')
@@ -54,7 +56,7 @@ def copy_source(RST_FILE_LISTING_PATH, HTML_FILE_LISTING_PATH, PROCESS_FILE_PATH
     return 'Success!'
 
 def main():
-    if '-a' in argv or '-all' in argv:
+    if '-a' in argv or '--all' in argv:
         argv.append('--resources')
         argv.append('--docs')
     for arg in argv[1:]:
