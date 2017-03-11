@@ -39,15 +39,14 @@
 
 {% block container %}
     <h3 class="section">Announcements</h3>
-    <!-- <p class="flow-text"><strong>Announcements</strong></p> -->
     <div class="divider"></div>
     {% for announcement in announcements %}
         <h5>
             {{announcement['title']}}
-	</h5>
-	<p class="condensed light a_info">
+        </h5>
+        <p class="condensed light a_info">
             Posted by {{announcement['username']}} on {{announcement['timestamp']}}
-	</p>
-	<p>{{announcement['body']}}</p>
+        </p>
+        <p>{{announcement['body']|safe}}</p>
     {% endfor %}
 {% endblock %}
