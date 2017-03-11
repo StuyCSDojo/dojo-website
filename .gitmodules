@@ -4,3 +4,6 @@
 [submodule "app/resources/sphinx_rtd_theme"]
 	path = app/resources/sphinx_rtd_theme
 	url = git@github.com:snide/sphinx_rtd_theme.git
+[submodule "docs"]
+	path = docs
+	url = https://github.com/StuyCSDojo/dojo-docs.git
