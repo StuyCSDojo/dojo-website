@@ -1,3 +1,21 @@
+patrickC -- 2017-03-15 23:58
+- Fixed minor typos, corrected links, changed layout
+- Added installing Emacs guide
+- Added a public version of the new resources guide
+
+patrickC -- 2017-03-13 23:23
+- Proofread and fixed typos, added Homebrew tutorial
+- Open up a route to updated public resources section
+
+patrickC -- 2017-03-11 18:00
+- Reconstructed all missing pages due to earlier incident where the resources folder was deleted
+
+patrickC -- 2017-03-10 23:23
+- Shifted Dojo Website documentation to separate repo
+- Shifted Dojo Website resources to separate repo
+- Added Dojo Website documentation as submodule
+- Added Dojo Website resources as submodule
+
 patrickC -- 2017-03-04 18:58
 - Updated directory structure of resources page
 - Fixed bug in extract_source_from_html.py
