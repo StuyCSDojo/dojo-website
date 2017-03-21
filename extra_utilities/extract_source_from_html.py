@@ -63,14 +63,19 @@ def main():
         if arg == '-a' or arg == '--all':
             continue
         elif arg == '--docs':
-            RST_FILE_LISTING_PATH = '/projects/dojo-website/docs/source/'
-            HTML_FILE_LISTING_PATH = '/projects/dojo-website/docs/build/html/'
-            PROCESS_FILE_PATH = '/projects/dojo-website/docs/build/html/_sources/'
+            RST_FILE_LISTING_PATH = '/projects/dojo-docs/source/'
+            HTML_FILE_LISTING_PATH = '/projects/dojo-docs/build/html/'
+            PROCESS_FILE_PATH = '/projects/dojo-docs/build/html/_sources/'
             print copy_source(RST_FILE_LISTING_PATH, HTML_FILE_LISTING_PATH, PROCESS_FILE_PATH)
         elif arg == '--resources':
-            RST_FILE_LISTING_PATH = '/projects/dojo-website/app/resources/source/'
-            HTML_FILE_LISTING_PATH = '/projects/dojo-website/app/resources/build/html/'
-            PROCESS_FILE_PATH = '/projects/dojo-website/app/resources/build/html/_sources/'
+            RST_FILE_LISTING_PATH = '/projects/dojo-resources/public_resources/source/'
+            HTML_FILE_LISTING_PATH = '/projects/dojo-resources/public_resources/build/html/'
+            PROCESS_FILE_PATH = '/projects/dojo-resources/public_resources/build/html/_sources/'
+            print copy_source(RST_FILE_LISTING_PATH, HTML_FILE_LISTING_PATH, PROCESS_FILE_PATH)
+            print ''
+            RST_FILE_LISTING_PATH = '/projects/dojo-resources/private_resources/source/'
+            HTML_FILE_LISTING_PATH = '/projects/dojo-resources/private_resources/build/html/'
+            PROCESS_FILE_PATH = '/projects/dojo-resources/private_resources/build/html/_sources/'
             print copy_source(RST_FILE_LISTING_PATH, HTML_FILE_LISTING_PATH, PROCESS_FILE_PATH)
         else:
             print 'Unknown argument: ' + str(arg)

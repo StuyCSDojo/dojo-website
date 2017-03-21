@@ -18,22 +18,13 @@ def render_documentation(filename = 'index.html'):
     path = join('docs/build/html', filename)
     return current_app.send_static_file(path)
 
-@private_views.route('/test/doc/')
-@private_views.route('/test/doc/<path:filename>')
-@log_name
-@nocache
-@login_required(developer_required = True)
-def renderdocumentation(filename = 'index.html'):
-    path = join('test/build/html', filename)
-    return current_app.send_static_file(path)
-
-@private_views.route('/private/resource/')
-@private_views.route('/private/resource/<path:filename>')
+@private_views.route('/private/resources/')
+@private_views.route('/private/resources/<path:filename>')
 @log_name
 @nocache
 @login_required(developer_required = True)
 def render_resources(filename = 'index.html'):
-    path = join('resources/build/html', filename)
+    path = join('resources/private_resources/build/html', filename)
     return current_app.send_static_file(path)
                                      
 @private_views.route('/admins/')
@@ -41,7 +32,7 @@ def render_resources(filename = 'index.html'):
 @nocache
 @login_required(admin_required = True)
 def admins():
-    return render_template('make_announcement_admin.html')
+    return render_template('make_announcement_admin.html', is_logged_in=session.get('username'))
 
 @private_views.route('/admins/', methods = ['POST'])
 @log_name
@@ -53,3 +44,14 @@ def update_announcements():
 
     db_manager.make_announcement(username, title, body, timestamp)
     return redirect(url_for('public_views.home'))
+
+@private_views.route('/presentation/')
+@private_views.route('/presentation/<path:filename>')
+@nocache
+@login_required(developer_required=True)
+def presentation(filename='index.html'):
+    if session['username'] != 'pchan' and session['username'] != 'stuycsteachers':
+        return
+    path = join('presentation/build/html', filename)
+    return current_app.send_static_file(path)
+        

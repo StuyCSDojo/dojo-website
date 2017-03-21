@@ -1,3 +1,10 @@
+patrickC -- 2017-03-21 7:53
+- Updated git submodules
+- Shifted hashing algorithm to argon2
+- Updated extract_source_from_html.py
+- Updated private.py, public.py
+- Added resources.py
+
 patrickC -- 2017-03-15 23:58
 - Fixed minor typos, corrected links, changed layout
 - Added installing Emacs guide

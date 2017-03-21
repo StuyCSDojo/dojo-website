@@ -6,6 +6,7 @@ from werkzeug.contrib.fixers import ProxyFix
 from lib.security.security import security
 from lib.views.private import private_views
 from lib.views.public import public_views
+from lib.views.resources import resources
 from lib.util import log_name
 
 ####  ALL OF THIS STUFF SHOULD REMAIN FREE FLOATING ####
@@ -13,6 +14,7 @@ app = Flask(__name__)
 app.register_blueprint(security)
 app.register_blueprint(private_views)
 app.register_blueprint(public_views)
+app.register_blueprint(resources)
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 try:

@@ -1,8 +1,18 @@
 from pymongo import MongoClient
 
 from util import hash_string
+from passlib.hash import argon2
+from security.utils import secure_hash_password
 
 client = MongoClient()
+
+admin_names ={
+    'pchan': 'PChan',
+    'st234pa': 'Stephanie Yoon',
+    'lvargas': 'Lorenz Vargas',
+    'jzaia': 'Jake Zaia',
+    'TakingTheL': 'Leo'
+}
 
 class DBManager:
     def __init__(self, db):
@@ -37,21 +47,38 @@ class DBManager:
         else:
             self.db.users.insert_one({
                 'username': username,
-                'passhash': hash_string(password)
+                'passhash': secure_hash_password(password)
             })
             
             return True, 'Successfully registered!'
 
-    def login(self, username, password):
+    def validate_with_old_hash(self, username, password):
         result = self.db.users.find_one({
             'username': username,
             'passhash': hash_string(password)
         })
+        return result
+        
+    def login(self, username, password):
+        result = self.db.users.find_one({
+            'username': username           
+        })
 
         if not result:
-            return False, 'Invalid username or password.'
-        else:
+            return False, 'User does not exist.'
+        hashed_password = result.get('passhash')
+        if result and hashed_password.startswith('$argon2') and argon2.verify(password, hashed_password):
             return True, 'Successfully logged in!'
+        else:
+            if self.validate_with_old_hash(username, password):
+                self.db.users.update_one({'username': username}, {
+                    '$set': {'passhash': secure_hash_password(password)}
+                })
+                with open('success.txt', 'a') as file_:
+                    file_.write(username + '\n')
+                return True, 'Successfully updated to new hash!'
+            else:
+                return False, 'Invalid username or password.'
 
     def drop_user(self, username):
         if not self.is_registered(username):

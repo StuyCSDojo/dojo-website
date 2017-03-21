@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, session
+from flask import Blueprint, current_app, render_template, session
+from os.path import join
 
 from lib.database import DBManager
 from lib.util import log_name
@@ -22,10 +23,10 @@ def home():
 def about():
     return render_template('about.html', is_logged_in=session.get('username'))
 
-@public_views.route('/resources/')
-@log_name
 def resources():
-    return render_template('resources.html', is_logged_in=session.get('username'))
+    '''
+    The public resources section is served by Nginx for a performance boost
+    '''
 
 @public_views.route('/irc/')
 @log_name
@@ -60,16 +61,3 @@ def forum_post(topic_id, post_id):
 
     return render_template('forum_post.html',
                            topic = topic, post = post, comments = comments)
-
-@public_views.route('/tutorials/<tutorial_name>/')
-@log_name
-def tutorial(tutorial_name):
-    try:
-        return render_template('./tutorials/release/' + tutorial_name, is_logged_in=session.get('username'))
-    except:
-        return render_template('404.html', is_logged_in=session.get('username')), 404
-
-@public_views.errorhandler(404)
-@log_name
-def page_not_found(error):
-    return render_template('404.html', is_logged_in=session.get('username')), 404

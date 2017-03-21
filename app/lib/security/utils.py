@@ -1,6 +1,7 @@
+from datetime import datetime
 from flask import make_response, redirect, render_template, session, url_for
 from functools import wraps, update_wrapper
-from datetime import datetime
+from passlib.hash import argon2
 
 def nocache(view):
     @wraps(view)
@@ -16,3 +17,6 @@ def nocache(view):
 def redirect_back():
     destination = session.get('next')
     return redirect(destination) if destination else redirect(url_for('public_views.home'))
+
+def secure_hash_password(password):
+    return argon2.using(rounds=12).hash(password)
