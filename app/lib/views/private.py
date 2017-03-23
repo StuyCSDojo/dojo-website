@@ -9,8 +9,8 @@ from lib.util import format_announcement, get_timestamp, log_name
 private_views = Blueprint('private_views', __name__)
 db_manager = DBManager('dojo_website')
 
-@private_views.route('/doc/')
-@private_views.route('/doc/<path:filename>')
+@private_views.route('/docs/')
+@private_views.route('/docs/<path:filename>')
 @log_name
 @nocache
 @login_required(developer_required = True)
