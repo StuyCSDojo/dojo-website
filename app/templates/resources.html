@@ -18,11 +18,10 @@
         <li><a href="/about">About</a></li>
         <li class='active'><a href="/resources">Resources</a></li>
         <li><a href='/calendar'>Calendar</a></li>
-        <li><a href="/irc">Chat</a></li>
-	{% if is_logged_in %}
+        {% if is_logged_in %}
 	    <li><a href='/logout'>Logout</a></li>
 	{% else %}
-	    <li><a href='/login'>Login</a></li>
+	    <!-- <li><a href='/login'>Login</a></li> -->
         {% endif  %}
     </ul>
     <ul class='side-nav' id='mobile-demo'>
@@ -30,11 +29,10 @@
         <li><a href='/about'>About</a></li>
 	<li class='active'><a href='/resources'>Resources</a></li>
 	<li><a href='/calendar'>Calendar</a></li>
-	<li><a href='/irc'>Chat</a></li>
-	{% if is_logged_in %}
+        {% if is_logged_in %}
 	    <li><a href='/logout'>Logout</a></li>
 	{% else %}
-	    <li><a href='/login'>Login</a></li>
+	    <!-- <li><a href='/login'>Login</a></li> -->
         {% endif  %}
     </ul>
 </div>
@@ -58,6 +56,8 @@
 	    <li><a href='/tutorials/vim.htmlc'>Introduction to Vim<span class='newc badge'>new</span></a></li>
 	    <li><a href='/tutorials/emacs.htmlc'>Introduction to Emacs<span class='unfinished badge'>unfinished</span></a></li>
 	    <li><a href='/tutorials/git.htmlc'>Introduction to Git<span class='newc badge'>new</span></a></li>
+	    <li><a href="/nqueens-sketchpad">NQueens Visualizer<span class="newc badge">new</span></a></li>
+            <li><a href="/knights-tour-sketchpad">Knight Tour Visualizer<span class="newc badge">new</span></a></li>
 	    <br>
 	    <li><b>Coding Practices and Tips</b></li>
 	    <div class='divider'></div>

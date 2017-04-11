@@ -27,12 +27,7 @@ def resources():
     '''
     The public resources section is served by Nginx for a performance boost
     '''
-
-@public_views.route('/irc/')
-@log_name
-def irc():
-    return render_template('irc.html', is_logged_in=session.get('username'))
-
+    
 @public_views.route('/calendar/')
 @log_name
 def calendar():
