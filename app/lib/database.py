@@ -6,7 +6,7 @@ from security.utils import secure_hash_password
 
 client = MongoClient()
 
-admin_names ={
+admin_names = {
     'pchan': 'PChan',
     'st234pa': 'Stephanie Yoon',
     'lvargas': 'Lorenz Vargas',

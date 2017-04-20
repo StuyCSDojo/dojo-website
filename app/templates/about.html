@@ -1,4 +1,5 @@
-{% extends "master.html" %}
+{% extends 'master.html' %}
+{% set active_page = 'about' %}
 
 {% block title %}About{% endblock %}
 
@@ -16,8 +17,8 @@
             <li class='active'><a href='/about'>About</a></li>
             <li><a href='/resources'>Resources</a></li>
             <li><a href='/calendar'>Calendar</a></li>
-            {% if is_logged_in %}
-		<li><a href='/logout'>Logout</a></li>
+            {% if is_logged_in() %}
+		        <li><a href='/logout'>Logout</a></li>
             {% else %}
                 <!-- <li><a href='/login'>Login</a></li> -->
             {% endif  %}
@@ -27,8 +28,8 @@
             <li class='active'><a href='/about'>About</a></li>
             <li><a href='/resources'>Resources</a></li>
             <li><a href='/calendar'>Calendar</a></li>
-            {% if is_logged_in %}
-		<li><a href='/logout'>Logout</a></li>
+            {% if is_logged_in() %}
+		        <li><a href='/logout'>Logout</a></li>
             {% else %}
                 <!-- <li><a href='/login'>Login</a></li> -->
             {% endif  %}
@@ -65,36 +66,36 @@
         <div class='col s3 m3 l3'>
             <center>
                 <img class='circle responsive-img' src='../static/about/jlee.jpg' alt='jongyoul'>
-                <p class="flow-text">Jongyoul Lee</p>
+                <p class='flow-text'>Jongyoul Lee</p>
             </center>
         </div>
 
         <div class='col s3 m3 l3'>
             <center>
-                <img class="circle responsive-img" src='../static/about/lvargas.jpg' alt='lorenz'>
-                <p class="flow-text">Lorenz Vargas</p>
+                <img class='circle responsive-img' src='../static/about/lvargas.jpg' alt='lorenz'>
+                <p class='flow-text'>Lorenz Vargas</p>
             </center>
         </div>
 
         <div class='col s3 m3 l3'>
             <center>
-                <img class="circle responsive-img" src='../static/about/sayoon.jpg' alt='sarah'>
-                <p class="flow-text">Sarah Yoon</p>
+                <img class='circle responsive-img' src='../static/about/sayoon.jpg' alt='sarah'>
+                <p class='flow-text'>Sarah Yoon</p>
             </center>
         </div>
 
         <div class='col s3 m3 l3'>
             <center>
-                <img class="circle responsive-img" src='../static/about/styoon.jpg' alt='steph'>
-                <p class="flow-text">Stephanie Yoon</p>
+                <img class='circle responsive-img' src='../static/about/styoon.jpg' alt='steph'>
+                <p class='flow-text'>Stephanie Yoon</p>
             </center>
         </div>
     </div>
-    <div class="row">
+    <div class='row'>
         <div class ='col s4 m4 l4 offset-s4 offset-m4 offset-l4'>
             <center>
-                <img class='circle' class="responsive-img" src='../static/about/dough-joe.jpg' alt='dough joe'>
-                <p class="flow-text">Dough Joe</p>
+                <img class='circle' class='responsive-img' src='../static/about/dough-joe.jpg' alt='dough joe'>
+                <p class='flow-text'>Dough Joe</p>
             </center>
         </div>
     </div>
@@ -103,5 +104,5 @@
     <div class='divider'></div>
     <p>Come join us in person! The Dojo meets Monday through Thursday in
         Room 307 after 10th period. If you cannot, check out our chat or
-        email us at <a href="mailto:stuycsdojo1516@gmail.com">stuycsdojo1516@gmail.com</a></p>
+        email us at <a href='mailto:stuycsdojo1516@gmail.com'>stuycsdojo1516@gmail.com</a></p>
 {% endblock %}

@@ -1,4 +1,5 @@
-{% extends "master.html" %}
+{% extends 'master.html' %}
+{% set active_page = 'login' %}
 
 {% block title %}
     Login
@@ -6,7 +7,7 @@
 
 {% block container %}
     <h2>Login</h2>
-    <div class="divider"></div>
+    <div class='divider'></div>
     <br>
     {% if get_flashed_messages()[0] %}
         <script>
@@ -15,24 +16,24 @@
         </script>
     {% endif %}
     <br>
-    <form action="/login/" method="POST">
-        <div class="row">
-	        <div class="input-field col s6">
-	            <i class="material-icons prefix">account_circle</i>
-	            <input type="text" class="validate" name="username" autofocus>
-	            <label for="icon_prefix">Username</label>
+    <form action='/login/' method='POST'>
+        <div class='row'>
+	        <div class='input-field col s6'>
+	            <i class='material-icons prefix'>account_circle</i>
+	            <input type='text' class='validate' name='username' autofocus>
+	            <label for='icon_prefix'>Username</label>
 	        </div>
         </div>
-        <div class="row">
-	        <div class="input-field col s6">
-	            <i class="material-icons prefix">lock</i>
-	            <input type="password" class="validate" name="password">
-	            <label for="icon_telephone">Password</label>
+        <div class='row'>
+	        <div class='input-field col s6'>
+	            <i class='material-icons prefix'>lock</i>
+	            <input type='password' class='validate' name='password'>
+	            <label for='icon_telephone'>Password</label>
 	        </div>
         </div>
         <br><br>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Login
-	        <i class="material-icons right">send</i>
+        <button class='btn waves-effect waves-light' type='submit' name='action'>Login
+	        <i class='material-icons right'>send</i>
         </button>
     </form>
 {% endblock %}
