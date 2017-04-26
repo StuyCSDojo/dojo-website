@@ -7,10 +7,7 @@ Website
 
 Make consistent format of all tutorials
 Get the Google Calendar to work
-   - Collaborate with the Sensei on whether to continue the usage of a calendar
-   - Research how the calendar is integrated
    - Send out mass email to get the days for the Senpai + Sensei
-   - Update the existing calendar
 IRC channel
    - Send out the tutorial
    - Take questions and discuss how it would be integrated into current Dojo life
@@ -18,7 +15,6 @@ Work on the Blog
    - Create the design for how the blog page would look like
    - Create a design allowing one to post and edit blogs
 Additional Tutorials
-   - Bash tutorial
    - Tutorials on best coding practices
    - Integrate the usage of terminal with vim in the vim tutorial
    - Tutorials for different courses
@@ -26,8 +22,4 @@ Additional Tutorials
           - Big Oh Notation
 	  - Key Java terms (Polymorphism, overloading vs overriding, etc)
 	  - Sorts
-       - Intro
-          - Recursion
-   - Tutorial for homebrew
    - Modify tutorial for git to include installation and ssh keygens instructions
-Make the navbar responsive on small displays

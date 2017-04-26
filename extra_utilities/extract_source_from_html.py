@@ -63,9 +63,9 @@ def main():
         if arg == '-a' or arg == '--all':
             continue
         elif arg == '--docs':
-            RST_FILE_LISTING_PATH = '/projects/dojo-docs/source/'
-            HTML_FILE_LISTING_PATH = '/projects/dojo-docs/build/html/'
-            PROCESS_FILE_PATH = '/projects/dojo-docs/build/html/_sources/'
+            RST_FILE_LISTING_PATH = '/projects/dojo-docs/docs/source/'
+            HTML_FILE_LISTING_PATH = '/projects/dojo-docs/docs/build/html/'
+            PROCESS_FILE_PATH = '/projects/dojo-docs/docs/build/html/_sources/'
             print copy_source(RST_FILE_LISTING_PATH, HTML_FILE_LISTING_PATH, PROCESS_FILE_PATH)
         elif arg == '--resources':
             RST_FILE_LISTING_PATH = '/projects/dojo-resources/public_resources/source/'

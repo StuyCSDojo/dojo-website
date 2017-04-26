@@ -1,9 +1,9 @@
 [submodule "docs/sphinx_rtd_theme"]
 	path = docs/sphinx_rtd_theme
 	url = git@github.com:snide/sphinx_rtd_theme.git
-[submodule "docs"]
-	path = docs
-	url = https://github.com/StuyCSDojo/dojo-docs.git
 [submodule "app/resources"]
 	path = app/resources
 	url = https://github.com/StuyCSDojo/dojo-resources.git
+[submodule "dojo-docs"]
+	path = dojo-docs
+	url = https://github.com/StuyCSDojo/dojo-docs
