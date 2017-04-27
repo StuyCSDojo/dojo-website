@@ -1,42 +1,6 @@
 {% extends 'master.html' %}
 {% set active_page = 'about' %}
 
-{% block title %}About{% endblock %}
-
-{% block head %}
-    {{ super() }}
-{% endblock %}
-
-{% block nav %}
-    <div class='nav-wrapper blue darken-4'>
-        <a href='#' data-activates='mobile' class='button-collapse'><i class='material-icons'>menu</i></a>
-        <a href='/' class='left-padding breadcrumb left'><strong>CS DOJO</strong></a>
-        <a href='#!' class='breadcrumb white-text'>About</a>
-        <ul id='nav-mobile' class='right-padding right hide-on-med-and-down'>
-            <li><a href='/'>Home</a></li>
-            <li class='active'><a href='/about'>About</a></li>
-            <li><a href='/resources'>Resources</a></li>
-            <li><a href='/calendar'>Calendar</a></li>
-            {% if is_logged_in() %}
-		        <li><a href='/logout'>Logout</a></li>
-            {% else %}
-                <!-- <li><a href='/login'>Login</a></li> -->
-            {% endif  %}
-        </ul>
-        <ul class='side-nav' id='mobile'>
-            <li><a href='/'>Home</a></li>
-            <li class='active'><a href='/about'>About</a></li>
-            <li><a href='/resources'>Resources</a></li>
-            <li><a href='/calendar'>Calendar</a></li>
-            {% if is_logged_in() %}
-		        <li><a href='/logout'>Logout</a></li>
-            {% else %}
-                <!-- <li><a href='/login'>Login</a></li> -->
-            {% endif  %}
-        </ul>
-    </div>
-{% endblock %}
-
 {% block container %}
     <h4>About</h4>
     <div class='divider'></div>

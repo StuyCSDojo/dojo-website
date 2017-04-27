@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 
 from util import hash_string
 from passlib.hash import argon2
@@ -175,7 +176,7 @@ class DBManager:
 
     def get_topic_by_id(self, topic_id):
         return self.db.topics.find_one({
-            '_id': topic_id
+            '_id': ObjectId(topic_id)
         })
 
     def make_post(self, topic_id, title, author, body, timestamp):
@@ -197,7 +198,7 @@ class DBManager:
 
     def get_post_by_id(self, post_id):
         return self.db.posts.find_one({
-            '_id': post_id
+            '_id': ObjectId(post_id)
         })
 
     def make_comment(self, post_id, parent_id, author, body, timestamp):

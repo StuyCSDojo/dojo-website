@@ -1,10 +1,6 @@
 {% extends 'master.html' %}
-
-{% block head %}
-    <title>
-        {{ topic['title'] }}
-    </title>
-{% endblock %}
+{% set page_path = ['forum'] %}
+{% set active_page = topic['title'] %}
 
 {% block container %}
     <h1>

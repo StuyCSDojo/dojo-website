@@ -54,6 +54,7 @@ def forum_topic(topic_id):
     topic = db_manager.get_topic_by_id(topic_id)
     posts = db_manager.get_posts_by_topic(topic_id)
 
+    print 'Topic: '
     print topic
     
     return render_template('forum_topic.html', topic = topic, posts = posts)

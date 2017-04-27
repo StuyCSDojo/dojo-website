@@ -1,8 +1,6 @@
 {% extends 'master.html' %}
-
-{% block head %}
-    {{ post['title'] }}
-{% endblock %}
+{% set page_path = ['forum'] %}
+{% set active_page = post[title] %}
 
 {% block container %}
     <div class="post">

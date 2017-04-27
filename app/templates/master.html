@@ -1,3 +1,6 @@
+{% set page_path = page_path|default([]) %}
+{% set active_page = active_page %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,27 +35,18 @@
                 ('logout', '/logout/')
             ] %}
             
-            {% set active_page = active_page|default('home') -%}          
-
             <div class='nav-wrapper blue darken-4'>
-                {%- if active_page == 'home' %}
-                    <a href='/' class='left-padding brand-logo'>
-                        <strong>CS DOJO</strong>
-                    </a>
-                    <a href='#' data-activates='mobile-demo' class='button-collapse'>
-                        <i class='material-icons'>menu</i>
-                    </a>
-                {% else %}
-                    <a href='#' data-activates='mobile' class='button-collapse'>
-                        <i class='material-icons'>menu</i>
-                    </a>
-                    <a href='/' class='left-padding breadcrumb left'>
-                        <strong>CS DOJO</strong>
-                    </a>
+                <a href='#' data-activates='mobile' class='button-collapse'>
+                    <i class='material-icons'>menu</i>
+                </a>
+                <a href='/' class='left-padding breadcrumb left'>
+                    <strong>CS DOJO</strong>
+                </a>
+                {% for page in page_path + [active_page] %}
                     <a href='#!' class='breadcrumb white-text'>
-                        {{active_page|title}}
+                        {{page|title}}
                     </a>
-                {% endif -%}
+                {% endfor %}
                 <ul id='nav-mobile' class='right-padding right hide-on-med-and-down'>
                     {%- for page in nav_elements if page[0] != 'logout' or is_logged_in %}
                         <li>
