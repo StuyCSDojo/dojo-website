@@ -4,88 +4,85 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% block head %}
-            <!--Import Google Icon Font-->
-            <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
-            <!--Import materialize.css-->
-            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css'>
-            <link rel='stylesheet' href='../../static/main.css'>
+	{% block head %}
+	    <!--Import Google Icon Font-->
+	    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+	    <!--Import materialize.css-->
+	    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css'>
+	    <link rel='stylesheet' href='../../static/main.css'>
 
-            <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+	    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 
 
-            <title>CS Dojo - {{ active_page|title }}</title>
-            <link rel='shortcut icon' href='../../static/dough-joe.jpg'>
+	    <title>CS Dojo - {{ active_page|title }}</title>
+	    <link rel='shortcut icon' href='../../static/about/dough-joe.jpg'>
 
-            <!--Import jQuery before materialize.js-->
-            <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js'></script>
-	        <script type='text/javascript' src='../../static/js/main.js'></script>
-        {% endblock %}
+	    <!--Import jQuery before materialize.js-->
+	    <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+	    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js'></script>
+		<script type='text/javascript' src='../../static/js/main.js'></script>
+	{% endblock %}
     </head>
 
     <body class='gray-lighten-4'>
 
-        <nav>
-            {% set nav_elements = [
-                ('home', '/'),
-                ('about', '/about/'),
-                ('resources', '/resources/'),
-                ('calendar', '/calendar/'),
-                ('logout', '/logout/')
-            ] %}
-            
-            <div class='nav-wrapper blue darken-4'>
-                <a href='#' data-activates='mobile' class='button-collapse'>
-                    <i class='material-icons'>menu</i>
-                </a>
-                <a href='/' class='left-padding breadcrumb left'>
-                    <strong>CS DOJO</strong>
-                </a>
-                {% for page in page_path + [active_page] %}
-                    <a href='#!' class='breadcrumb white-text'>
-                        {{page|title}}
-                    </a>
-                {% endfor %}
-                <ul id='nav-mobile' class='right-padding right hide-on-med-and-down'>
-                    {%- for page in nav_elements if page[0] != 'logout' or is_logged_in %}
-                        <li>
-                            {%- if page[0] == active_page %}
-                                <a href={{page[1]}} class='active'>
-                                    {{page[0]|title}}
-                                </a>
-                            {% else %}
-                                <a href={{page[1]}}>
-                                   {{page[0]|title}}
-                                </a>
-                            {% endif %}
-                        </li>
-                    {% endfor %}                               
-                </ul>
-                <ul class='side-nav' id='mobile'>
-                    {%- for page in nav_elements if page[0] != 'logout' or is_logged_in %}
-                        <li>
-                            {%- if page[0] == active_page %}
-                                <a href={{page[1]}} class='active'>
-                                    {{page[0]|title}}
-                                </a>
-                            {% else %}
-                                <a href={{page[1]}}>
-                                    {{page[0]|title}}
-                                </a>
-                            {% endif %}
-                        </li>
-                    {% endfor %}                               
-                </ul>
-            </div>
-        </nav>
+	<nav>
+	    {% set nav_elements = [
+		('home', '/'),
+		('about', '/about/'),
+		('resources', '/resources/'),
+		('calendar', '/calendar/'),
+		('logout', '/logout/')
+	    ] %}
 
-        <div class='container'>
-            {% block container %}
-            {% endblock %}
-        </div>	
+	    <div class='nav-wrapper blue darken-4'>
+		<a href='#' data-activates='mobile' class='button-collapse'>
+		    <i class='material-icons'>menu</i>
+		</a>
+		<a href='/' class='left-padding breadcrumb left'>
+		    <strong>CS DOJO</strong>
+		</a>
+		{% for page in page_path + [active_page] %}
+		    <a href='#!' class='breadcrumb white-text'>
+			{{page|title}}
+		    </a>
+		{% endfor %}
+		<ul id='nav-mobile' class='right-padding right hide-on-med-and-down'>
+		    {%- for page in nav_elements if page[0] != 'logout' or is_logged_in %}
+			<li>
+			    {%- if page[0] == active_page %}
+				<a href={{page[1]}} class='active'>
+				    {{page[0]|title}}
+				</a>
+			    {% else %}
+				<a href={{page[1]}}>
+				   {{page[0]|title}}
+				</a>
+			    {% endif %}
+			</li>
+		    {% endfor %}
+		</ul>
+		<ul class='side-nav' id='mobile'>
+		    {%- for page in nav_elements if page[0] != 'logout' or is_logged_in %}
+			<li>
+			    {%- if page[0] == active_page %}
+				<a href={{page[1]}} class='active'>
+				    {{page[0]|title}}
+				</a>
+			    {% else %}
+				<a href={{page[1]}}>
+				    {{page[0]|title}}
+				</a>
+			    {% endif %}
+			</li>
+		    {% endfor %}
+		</ul>
+	    </div>
+	</nav>
+
+	<div class='container'>
+	    {% block container %}
+	    {% endblock %}
+	</div>
     </body>
-    <script> console.log('ethan's back lmao'); </script>
 </html>
-
-
