@@ -17,7 +17,7 @@ auth_manager = AuthManager.AuthManager('dojo_website')
 @security_utils.nocache
 @security.login_required(developer_required=True)
 def render_documentation(filename='index.html'):
-    path = os.path.join('docs/build/html', filename)
+    path = os.path.join('dojo-docs/docs/build/html', filename)
     return flask.current_app.send_static_file(path)
 
 @private_views.route('/private/resources/')
