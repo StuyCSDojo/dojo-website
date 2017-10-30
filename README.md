@@ -1,3 +1,3 @@
-# StuyCSDojo.github.io
+# dojo.stuycs.org
 
 Website!
