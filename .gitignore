@@ -3,4 +3,5 @@
 .*.swp
 passwd.txt
 *.pyc
-.emacs*venv
+.emacs*
+venv
