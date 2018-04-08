@@ -16,7 +16,7 @@
             <li><a href="/resources">Resources</a></li>
             <li><a href='/calendar'>Calendar</a></li>
             {% if is_logged_in %}
-		<li><a href='/logout'>Logout</a></li>
+                <li><a href='/logout'>Logout</a></li>
             {% else %}
                 <!-- <li><a href='/login'>Login</a></li> -->
             {% endif  %}
@@ -27,7 +27,7 @@
             <li><a href='/resources'>Resources</a></li>
             <li><a href='/calendar'>Calendar</a></li>
             {% if is_logged_in %}
-		<li><a href='/logout'>Logout</a></li>
+                <li><a href='/logout'>Logout</a></li>
             {% else %}
                 <!-- <li><a href='/login'>Login</a></li> -->
             {% endif  %}
@@ -46,8 +46,8 @@
     <div class='divider'></div>
     <form method='post'>
         <input placeholder='Title' id='title' name='title' class='validate'></input>
-        <textarea id="textarea1" name='textarea1' class="materialize-textarea"></textarea>
-        <label for="textarea1">Body of Message (HTML Allowed)</label>
+        <textarea id="textarea1" name='message' class="materialize-textarea"></textarea>
+        <label for="message">Body of Message (HTML Allowed)</label>
         <br><br>
         <a class='btn waves-effect waves-light' id='preview'>Preview</a>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
