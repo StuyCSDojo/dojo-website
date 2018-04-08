@@ -1,0 +1,653 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+            <title>PyChan Objection Syntax &mdash; PyChan Presentation 0.0.1 documentation</title>
+        
+
+        
+        
+
+        
+
+        
+        
+            
+
+        
+
+        
+        
+            <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+        
+
+        
+
+        
+
+        <link rel="stylesheet" href="_static/bootstrap-glyphicons.css" type="text/css" />
+        <link rel="stylesheet" href="_static/main.css" type="text/css" />
+        <link rel="stylesheet" href="_static/button.css" type="text/css" />
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+            crossorigin="anonymous"></script>
+        <script src="_static/button.js"></script>
+        <script src="_static/set_target.js"></script>
+                <link rel="index" title="Index"
+                      href="genindex.html"/>
+                <link rel="search" title="Search" href="search.html"/>
+            <link rel="top" title="PyChan Presentation 0.0.1 documentation" href="index.html"/>
+                <link rel="next" title="PyChan 3" href="py3.html"/>
+                <link rel="prev" title="Taking Class With PyChan 3" href="index.html"/> 
+
+        
+        <script src="_static/js/modernizr.min.js"></script>
+
+    </head>
+
+    <body class="wy-body-for-nav" role="document">
+
+         
+        <div class="wy-grid-for-nav">
+
+            
+            <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+                <div class="wy-side-scroll">
+                    <div class="wy-side-nav-search">
+                        
+
+                            
+                                    <a href="index.html" class="icon icon-home"> PyChan Presentation
+                            
+
+                            
+                                    </a>
+
+                                    
+                                        
+                                        
+                                            <div class="version">
+                                                0.0.1
+                                            </div>
+                                        
+                                    
+
+                                    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+                        
+                    </div>
+
+                    <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                        
+                            
+                            
+                                <p class="caption"><span class="caption-text">Topics Covered</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PyChan Objection Syntax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#topics-covered">Topics Covered</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python-is-object-oriented">Python is Object Oriented</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-basics-of-writing-a-class">The Basics of Writing a Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constructing-classes">Constructing Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expanding-the-basics">Expanding the Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inheritance">Inheritance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="py3.html">PyChan 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="py3.html#topics-covered">Topics Covered</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="py3.html#you-must-call-print-or-die">You Must Call Print or Die</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py3.html#the-letter-x-is-bad">The Letter X is Bad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py3.html#the-furrows-of-war">The Furrows of War</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py3.html#containing-things-is-good">Containing Things is Good</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py3.html#your-input-would-affect-our-decisions">Your Input Would Affect Our Decisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py3.html#we-like-being-compatible">We Like Being Compatible</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                            
+                        
+                    </div>
+                </div>
+                
+            </nav>
+
+            <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                
+                <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                    
+                        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                        <a href="index.html">PyChan Presentation</a>
+                    
+                </nav>
+
+
+
+                
+                <div class="wy-nav-content">
+                    <div class="rst-content">
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+	<li><a href="index.html">Presentation</a> &raquo;</li>
+	
+      <li>PyChan Objection Syntax</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+                        <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                            <div itemprop="articleBody">
+                                
+  <div class="section" id="pychan-objection-syntax">
+<h1>PyChan Objection Syntax<a class="headerlink" href="#pychan-objection-syntax" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="topics-covered">
+<h2>Topics Covered<a class="headerlink" href="#topics-covered" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#object-oriented"><span class="std std-ref">Python is Object Oriented</span></a></li>
+<li><a class="reference internal" href="#basic-class"><span class="std std-ref">The Basics of Writing a Class</span></a></li>
+<li><a class="reference internal" href="#constructors"><span class="std std-ref">Constructing Classes</span></a></li>
+<li><a class="reference internal" href="#expanding-the-basics"><span class="std std-ref">Expanding the Basics</span></a></li>
+<li><a class="reference internal" href="#inheritance"><span class="std std-ref">Inheritance</span></a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="python-is-object-oriented">
+<span id="object-oriented"></span><h3>Python is Object Oriented<a class="headerlink" href="#python-is-object-oriented" title="Permalink to this headline">¶</a></h3>
+<p>The syntax for writing Python classes are awkward, but Python is still an object oriented language.  Take
+a look at Python list:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">a</span>
+<span class="go">[3]</span>
+</pre></div>
+</div>
+<p>Python lists are one example of a Python object</p>
+<ul class="simple">
+<li>The first line instantiates an instance of a <code class="docutils literal"><span class="pre">list</span></code> and binds it to <code class="docutils literal"><span class="pre">a</span></code></li>
+<li>In the second line, we call the <code class="docutils literal"><span class="pre">append</span></code> method of the <code class="docutils literal"><span class="pre">list</span></code> class</li>
+</ul>
+</div>
+<div class="section" id="the-basics-of-writing-a-class">
+<span id="basic-class"></span><h3>The Basics of Writing a Class<a class="headerlink" href="#the-basics-of-writing-a-class" title="Permalink to this headline">¶</a></h3>
+<p>Let us start off with the syntax of a basic Python class:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>class &lt;ClassName&gt;:
+
+    def &lt;method_name&gt;(self, args1, args2, ...):
+        &lt;stuff to do&gt;
+</pre></div>
+</div>
+<p>Here is an example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hello</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="s1">&#39;Hello&#39;</span>
+</pre></div>
+</div>
+<p>How would you use it?</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Hello</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<span class="go">Hello</span>
+</pre></div>
+</div>
+<p>Things to note:</p>
+<ul>
+<li><p class="first">You declare a class with the <code class="docutils literal"><span class="pre">class</span></code> keyword</p>
+</li>
+<li><p class="first">Each method takes <code class="docutils literal"><span class="pre">self</span></code> as the first argument</p>
+</li>
+<li><p class="first">Instantiating a class is similar to calling a function</p>
+<ul>
+<li><p class="first">Simply set a variable equal to the class name and a pair of parentheses</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="n">ClassName</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Access the methods of a class with the dot operator</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ClassName</span><span class="o">.</span><span class="n">method_name</span><span class="p">()</span>
+<span class="c1"># or</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ClassName</span><span class="p">()</span>
+<span class="n">variable</span><span class="o">.</span><span class="n">method_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="constructing-classes">
+<span id="constructors"></span><h3>Constructing Classes<a class="headerlink" href="#constructing-classes" title="Permalink to this headline">¶</a></h3>
+<p>The next step is constructors:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;You deposited some cash!&#39;</span>
+</pre></div>
+</div>
+<p>The above constructor is the same thing as the default constructor.  Let us make it more useful:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">money</span> <span class="o">=</span> <span class="mi">50</span>
+
+    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">money</span> <span class="o">+=</span> <span class="n">amount</span>
+</pre></div>
+</div>
+<p>If you were to use it:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bankaccount</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bankaccount</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">bankaccount</span><span class="o">.</span><span class="n">money</span>
+<span class="go">450</span>
+</pre></div>
+</div>
+<p>Some Things to Note:</p>
+<ul class="simple">
+<li>Python has a special keyword, <code class="docutils literal"><span class="pre">__init__</span></code>, for constructing a class<ul>
+<li>Like usual, you would need to specify <code class="docutils literal"><span class="pre">self</span></code> as the first argument</li>
+</ul>
+</li>
+<li>Instance variables are prefixed with <code class="docutils literal"><span class="pre">self.</span></code><ul>
+<li>These variables are accessible anywhere in the class and each instance has its own copy</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="expanding-the-basics">
+<span id="id1"></span><h3>Expanding the Basics<a class="headerlink" href="#expanding-the-basics" title="Permalink to this headline">¶</a></h3>
+<p>Next, we would expand upon our basic knowledge and tie up a few loose ends:</p>
+<ul>
+<li><p class="first">Modifying instance variables directly</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">b</span><span class="o">.</span><span class="n">money</span>
+<span class="go">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">money</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">b</span><span class="o">.</span><span class="n">money</span>
+<span class="go">500</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Key Notes:<ul>
+<li>In Python, you can modify the instance variables directly.</li>
+<li>Python prefers simplicity over the possibility that the user might do something stupid</li>
+<li>Ways to control how the user may alter instance variables are beyond the scope of this lesson</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first">Who am I?</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">money</span> <span class="o">+=</span> <span class="n">amount</span>
+</pre></div>
+</div>
+<p>Key Notes:</p>
+<blockquote>
+<div><ul class="simple">
+<li>In Java, you refer to the current instance with the <code class="docutils literal"><span class="pre">this</span></code> keyword</li>
+<li>In Python, you use the <code class="docutils literal"><span class="pre">self</span></code> keyword</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Static methods</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">money</span> <span class="o">=</span> <span class="mi">50</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">():</span>
+        <span class="nb">print</span> <span class="s1">&#39;BankAccount&#39;</span>
+</pre></div>
+</div>
+<p>A static method is declared by utilizing the <code class="docutils literal"><span class="pre">staticmethod</span></code> decorator.  It can be called without
+creating an instance:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BankAccount</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+<span class="go">BankAccount</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BankAccount</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+<span class="go">BankAccount</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Static Variables</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+
+    <span class="n">money</span> <span class="o">=</span> <span class="mi">50</span>
+
+    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="n">money</span> <span class="o">+=</span> <span class="n">amount</span>
+</pre></div>
+</div>
+<p>Key Notes:</p>
+<ul class="simple">
+<li>Are declared without the <code class="docutils literal"><span class="pre">self</span></code> prefix</li>
+<li>These variables can be accessed without declaring an instance of the class</li>
+<li>If you modify the class copy and not the instance copy, the instance copy will change as well</li>
+<li>Not truly static, each instance has their own copy<ul>
+<li>If you change the instance&#8217;s copy, it will no longer sync up with the class copy</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BankAccount</span><span class="o">.</span><span class="n">money</span>
+<span class="go">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">b</span><span class="o">.</span><span class="n">money</span>
+<span class="go">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BankAccount</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BankAccount</span><span class="o">.</span><span class="n">money</span>
+<span class="go">450</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">b</span><span class="o">.</span><span class="n">money</span>
+<span class="go">450</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">money</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">b</span><span class="o">.</span><span class="n">money</span>
+<span class="go">400</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">BankAccount</span><span class="o">.</span><span class="n">money</span>
+<span class="go">450</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">toString()</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">money</span> <span class="o">=</span> <span class="mi">50</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;BankAccount Representation Form&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;BankAccount String Form&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ba</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ba</span>
+<span class="go">BankAccount Representation Form</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">ba</span>
+<span class="go">BankAccount String Form</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">BankAccount</span><span class="p">(),</span> <span class="n">BankAccount</span><span class="p">()]</span>
+<span class="go">[&#39;BankAccount Representation Form&#39;, &#39;BankAccount Representation Form&#39;]</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Key Notes:</p>
+<ul class="simple">
+<li>Generally <code class="docutils literal"><span class="pre">__repr__</span></code> is defined as a string representation of the object<ul>
+<li>This means <code class="docutils literal"><span class="pre">eval(repr(object))</span> <span class="pre">==</span> <span class="pre">object</span> <span class="pre">==</span> <span class="pre">True</span></code></li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">__str__</span></code> is similar to <code class="docutils literal"><span class="pre">__repr__</span></code>, but does not have the same constraints</li>
+<li>By default, both <code class="docutils literal"><span class="pre">__str__</span></code> and <code class="docutils literal"><span class="pre">__repr__</span></code> simply contains the id (memory address) and object
+name</li>
+<li>If <code class="docutils literal"><span class="pre">__str__</span></code> is not found, it falls back to <code class="docutils literal"><span class="pre">__repr__</span></code></li>
+<li><code class="docutils literal"><span class="pre">__repr__</span></code> is used when printing a container of objects</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="inheritance">
+<span id="id2"></span><h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have cover the basics, the next step is inheritance...</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">BaseClassName</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Simply pass the name of the parent class as an argument to the derived class.  For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;??&#39;</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Let&#8217;s see what we can do with this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;tom&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">name</span>
+<span class="go">tom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+<span class="go">??</span>
+</pre></div>
+</div>
+<p>Here the <code class="docutils literal"><span class="pre">Dog</span></code> class is inheriting both the <code class="docutils literal"><span class="pre">__init__()</span></code> method and the <code class="docutils literal"><span class="pre">speak()</span></code> method from
+<code class="docutils literal"><span class="pre">Animal</span></code></p>
+<p>The next part is overriding methods, which is pretty simple:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;??&#39;</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;woof!&#39;</span>
+</pre></div>
+</div>
+<p>And the result is...</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+<span class="go">??</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;tom&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">name</span>
+<span class="go">tom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+<span class="go">woof!</span>
+</pre></div>
+</div>
+<p>Notice how <code class="docutils literal"><span class="pre">tom</span></code> says &#8216;woof!&#8217; while <code class="docutils literal"><span class="pre">a</span></code> says &#8216;??&#8217;.  While <em>overriding</em> is simple in Python,
+<strong>overloading</strong> is a lot more complicated.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;??&#39;</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Yummy!&#39;</span>
+
+    <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">food_name</span> <span class="o">==</span> <span class="s1">&#39;dogfood&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Yummy!&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Disgusting!&#39;</span>
+</pre></div>
+</div>
+<p>Testing it out, we get...</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;tom&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">eat</span><span class="p">(</span><span class="s1">&#39;dogfood&#39;</span><span class="p">)</span>
+<span class="go">Yummy!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">eat</span><span class="p">()</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">eat() takes exactly 2 arguments (1 given)</span>
+</pre></div>
+</div>
+<p>Key Notes:</p>
+<ul class="simple">
+<li>When you want to override a method, simply implement the method again in the child class</li>
+<li>When you try to overload a method, the last method implemented simply overrides the rest of them</li>
+</ul>
+<p>We can sort of get around this with either default arguments or argument packing/unpacking:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;??&#39;</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dogfood</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dogfood</span> <span class="ow">or</span> <span class="n">dogfood</span> <span class="o">==</span> <span class="s1">&#39;dogfood&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Yummy!&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Disgusting!&#39;</span>
+
+    <span class="k">def</span> <span class="nf">eat2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="ow">or</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;dogfood&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Yummy!&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Disgusting!&#39;</span>
+</pre></div>
+</div>
+<p>When we test it...</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;tom&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">eat</span><span class="p">(</span><span class="s1">&#39;dogfood&#39;</span><span class="p">)</span>
+<span class="go">Yummy!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">eat</span><span class="p">()</span>
+<span class="go">Yummy!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">eat</span><span class="p">(</span><span class="s1">&#39;halal&#39;</span><span class="p">)</span>
+<span class="go">Disgusting!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">eat2</span><span class="p">()</span>
+<span class="go">Yummy!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tom</span><span class="o">.</span><span class="n">eat2</span><span class="p">(</span><span class="s1">&#39;catfood&#39;</span><span class="p">)</span>
+<span class="go">Disgusting!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+                            </div>
+                            <div class="articleComments">
+                                
+                            </div>
+                        </div>
+                        <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="py3.html" class="btn btn-neutral float-right" title="PyChan 3" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Taking Class With PyChan 3" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PChan.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+                    </div>
+                </div>
+                
+            </section>
+            
+        </div>
+	<div class="rst-versions" data-toggle="rst-versions" role="note">
+	    <form action="/logout" id="button_form">
+		<button class="button">
+		    <span>Logout</span>
+		    <span class="glyphicon glyphicon-log-out"></span>
+		</button>
+            </form>
+	</div>
+        
+
+
+        
+
+            <script type="text/javascript">
+             var DOCUMENTATION_OPTIONS = {
+                 URL_ROOT:'./',
+                 VERSION:'0.0.1',
+                 COLLAPSE_INDEX:false,
+                 FILE_SUFFIX:'.html',
+                 HAS_SOURCE:  true,
+                 SOURCELINK_SUFFIX: ''
+             };
+            </script>
+                <script type="text/javascript" src="_static/jquery.js"></script>
+                <script type="text/javascript" src="_static/underscore.js"></script>
+                <script type="text/javascript" src="_static/doctools.js"></script>
+
+        
+
+        
+        
+            <script type="text/javascript" src="_static/js/theme.js"></script>
+        
+
+        
+        
+            <script type="text/javascript">
+             jQuery(function () {
+                 SphinxRtdTheme.StickyNav.enable();
+             });
+            </script>
+         
+
+    </body>
+</html>
