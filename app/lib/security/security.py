@@ -11,11 +11,10 @@ def login_required(admin_required=False, developer_required=False):
     def actual_decorator(function):
         @functools.wraps(function)
         def wrapper(*args, **kwargs):
-            flask.session['next'] = flask.request.url
-
             if is_logged_in(admin_required, developer_required):
                 return function(*args, **kwargs)
             else:
+                flask.session['next'] = flask.request.url
                 return flask.redirect(flask.url_for('security.login_form'))
         return wrapper
     return actual_decorator
