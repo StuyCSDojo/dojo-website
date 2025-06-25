@@ -17,7 +17,7 @@ MarkupSafe==0.23
 packaging==16.8
 passlib==1.7.1
 pycparser==2.17
-Pygments==2.2.0
+Pygments==2.15.0
 pymongo==4.6.3
 pyparsing==2.1.10
 pytz==2016.10
